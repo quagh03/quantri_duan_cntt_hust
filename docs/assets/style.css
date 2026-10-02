@@ -1,0 +1,207 @@
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1b1b1b;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+/* ---------- index (danh mục) ---------- */
+body.index { background: #f6f5f1; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+.crumb { font-size: 13px; color: #6b6b6b; margin-bottom: 28px; }
+.crumb b { color: #1b1b1b; font-weight: 600; }
+.index h1 {
+  font-family: "Times New Roman", Tinos, Times, serif;
+  font-weight: 400; font-size: 34px; line-height: 1.2; margin: 0 0 6px;
+}
+.index .sub { color: #555; margin: 0 0 28px; font-size: 15px; }
+.desc { display: block; font-size: 12.5px; color: #8a8a8a; margin-top: 2px; }
+.meta { display: grid; grid-template-columns: 170px 1fr; gap: 6px 16px; font-size: 14px; margin: 0 0 32px; padding: 16px 0; border-top: 1px solid #d8d5cc; border-bottom: 1px solid #d8d5cc; }
+.meta dt { color: #6b6b6b; }
+.meta dd { margin: 0; }
+.note { font-size: 13px; color: #7a2e1f; border-left: 3px solid #b23a2a; padding: 6px 0 6px 12px; margin: 0 0 36px; background: none; }
+.index h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: #6b6b6b; font-weight: 600; margin: 36px 0 10px; }
+table.list { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.list th { text-align: left; font-weight: 500; color: #6b6b6b; font-size: 12px; padding: 8px 10px; border-bottom: 1px solid #1b1b1b; }
+table.list td { padding: 11px 10px; border-bottom: 1px solid #e2dfd6; vertical-align: top; }
+table.list tr:hover td { background: #efede6; }
+table.list td.code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; color: #555; white-space: nowrap; }
+table.list td.num { text-align: right; color: #555; white-space: nowrap; }
+table.list a { text-decoration: none; border-bottom: 1px solid #b9b5a8; }
+table.list a:hover { border-color: #1b1b1b; }
+.fname { display: block; font-size: 12px; color: #8a8a8a; font-family: ui-monospace, Menlo, Consolas, monospace; margin-top: 2px; }
+.foot { margin-top: 48px; font-size: 12px; color: #8a8a8a; }
+
+/* ---------- viewer ---------- */
+body.viewer { background: #525659; }
+.bar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 16px;
+  height: 48px; padding: 0 16px;
+  background: #323639; color: #f1f1f1; font-size: 13px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.35);
+}
+.bar a { text-decoration: none; color: #f1f1f1; opacity: .85; }
+.bar a:hover { opacity: 1; }
+.bar .title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar .count { opacity: .7; }
+.bar button {
+  font: inherit; color: #f1f1f1; background: transparent; border: 1px solid #6a6e72;
+  padding: 5px 12px; border-radius: 3px; cursor: pointer;
+}
+.bar button:hover { background: #45494c; }
+.layout { display: flex; }
+.side {
+  width: 220px; flex: none; position: sticky; top: 48px; height: calc(100vh - 48px);
+  overflow-y: auto; background: #3a3d40; padding: 16px 12px; font-size: 12.5px; color: #ddd;
+}
+.side a { display: block; text-decoration: none; padding: 7px 8px; border-radius: 2px; color: #ddd; line-height: 1.35; }
+.side a:hover { background: #4a4e52; }
+.side a small { display: block; color: #9a9ea2; }
+.pages { flex: 1; padding: 24px 12px 64px; display: flex; flex-direction: column; align-items: center; gap: 20px; overflow-x: hidden; }
+@media (max-width: 900px) { .side { display: none; } }
+
+/* ---------- A4 page ---------- */
+.page {
+  position: relative; overflow: hidden;
+  width: 210mm; min-height: 297mm;
+  padding: 20mm 18mm 20mm 28mm;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.45);
+  font-family: "Times New Roman", Tinos, Times, serif;
+  font-size: 13.5pt; line-height: 1.45; color: #111;
+  scroll-margin-top: 64px;
+}
+.page.scan {
+  background: #fbfaf5;
+  transform: rotate(-.18deg);
+  filter: contrast(1.03) saturate(.92);
+}
+.page.scan.r { transform: rotate(.22deg); }
+.page.scan::after { /* vệt mờ mép giấy khi scan */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,0,0,.05), transparent 4%, transparent 96%, rgba(0,0,0,.04));
+}
+.page .wm { position: absolute; inset: 0; pointer-events: none; z-index: 5; background-image: var(--wm); background-repeat: repeat; }
+.page.landscape { width: 297mm; min-height: 210mm; }
+
+/* ---------- văn bản hành chính ---------- */
+.hdr { display: grid; grid-template-columns: 1fr 1.5fr; gap: 0 6px; text-align: center; font-size: 12pt; line-height: 1.3; margin-bottom: 14px; }
+.hdr .l b, .hdr .r b, .hdr .l .n { display: block; }
+.hdr .r b:first-child { font-size: 12pt; white-space: nowrap; }
+.hdr .r .motto { font-weight: 700; font-size: 13.5pt; display: inline-block; border-bottom: 1px solid #111; padding-bottom: 1px; }
+.hdr .l .rule { display: block; width: 36%; margin: 3px auto 0; border-top: 1px solid #111; }
+.hdr .so { margin-top: 8px; font-size: 13pt; }
+.hdr .date { margin-top: 10px; font-style: italic; font-size: 13pt; }
+.doc-title { text-align: center; font-weight: 700; font-size: 15pt; line-height: 1.35; margin: 22px 0 4px; }
+.doc-sub { text-align: center; font-weight: 700; margin: 0 0 14px; }
+.center { text-align: center; }
+.italic { font-style: italic; }
+.page p { margin: 0 0 7px; text-align: justify; }
+.page .indent { text-indent: 1.1cm; }
+.field { margin: 0 0 6px; }
+.field b { font-weight: 700; }
+.sec { font-weight: 700; margin: 12px 0 5px; }
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.sign { display: grid; grid-template-columns: 1fr 1fr; margin-top: 18px; }
+.sign .who { text-align: center; position: relative; min-height: 190px; }
+.sign .who .role { font-weight: 700; }
+.sign .who .hint { font-style: italic; font-size: 11.5pt; }
+.sign .who .name { font-weight: 700; margin-top: 4px; }
+.sign .who .ink { position: relative; height: 110px; }
+/* dấu đóng trùm lên khoảng 1/3 chữ ký về phía trái */
+.sign .who .ink .stamp { position: absolute; left: 50%; top: -6px; margin-left: -150px; }
+.sign .who .ink .sig { position: absolute; left: 50%; top: 18px; margin-left: -30px; }
+.recv { font-size: 11pt; line-height: 1.35; }
+.recv b { font-style: italic; font-size: 12pt; }
+.page table.t { width: 100%; border-collapse: collapse; font-size: 12pt; margin: 6px 0 10px; }
+.page table.t th, .page table.t td { border: 1px solid #333; padding: 4px 7px; vertical-align: top; text-align: left; }
+.page table.t th { font-weight: 700; text-align: center; }
+.page table.t td.c { text-align: center; }
+
+/* dấu đỏ hình chữ nhật "BẢN SAO" */
+.rect-stamp {
+  position: absolute; z-index: 4;
+  border: 2.5px solid #c8102e; color: #c8102e;
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: .12em;
+  padding: 3px 14px; font-size: 15pt; opacity: .82; transform: rotate(-4deg);
+  mix-blend-mode: multiply;
+}
+.stamp { display: inline-block; mix-blend-mode: multiply; opacity: .86; z-index: 4; }
+.stamp svg { display: block; filter: url(#ink); }
+.sig svg { display: block; }
+.giap-lai { position: absolute; right: -62px; z-index: 4; }
+
+/* ---------- ảnh chụp màn hình web ---------- */
+.shot { border: 1px solid #c9c9c9; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.4; color: #222; background: #fff; }
+.shot .chrome { display: flex; align-items: center; gap: 8px; background: #e8e8e8; border-bottom: 1px solid #cfcfcf; padding: 6px 10px; }
+.shot .dots i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #c4c4c4; margin-right: 4px; }
+.shot .url { flex: 1; background: #fff; border-radius: 3px; padding: 3px 10px; font-size: 9pt; color: #444; }
+.shot .site-top { background: #0d3a6b; color: #fff; padding: 9px 14px; display: flex; justify-content: space-between; align-items: center; }
+.shot .site-top b { font-size: 11pt; letter-spacing: .02em; }
+.shot .site-top span { font-size: 9pt; opacity: .85; }
+.shot .site-nav { background: #f2f4f7; border-bottom: 1px solid #dde2e8; padding: 6px 14px; font-size: 9pt; color: #44556b; }
+.shot .site-nav span { margin-right: 18px; }
+.shot .site-nav span.on { color: #0d3a6b; font-weight: 700; border-bottom: 2px solid #0d3a6b; padding-bottom: 4px; }
+.shot .body { padding: 14px; }
+.shot h3 { font-size: 12pt; margin: 0 0 10px; color: #0d3a6b; }
+.shot table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-bottom: 12px; }
+.shot td, .shot th { border: 1px solid #dde2e8; padding: 5px 8px; text-align: left; vertical-align: top; }
+.shot td.k { width: 36%; background: #f7f8fa; color: #4a5566; }
+.shot th { background: #eef1f5; font-weight: 700; color: #33415a; }
+.badge { display: inline-block; white-space: nowrap; padding: 1px 7px; border-radius: 2px; font-size: 9pt; font-weight: 700; }
+.badge.ok { background: #e3f3e6; color: #1d6b32; border: 1px solid #b5dcbe; }
+.printhead { display: flex; justify-content: space-between; font-family: Arial, sans-serif; font-size: 8.5pt; color: #555; margin: -10mm 0 6mm; }
+.printfoot { position: absolute; left: 28mm; right: 18mm; bottom: 10mm; display: flex; justify-content: space-between; font-family: Arial, sans-serif; font-size: 8.5pt; color: #555; }
+
+/* email */
+.mail { font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.5; }
+.mail .mh { border-bottom: 1px solid #bbb; padding-bottom: 8px; margin-bottom: 14px; }
+.mail .mh div { margin: 1px 0; }
+.mail .mh span { display: inline-block; width: 80px; color: #555; }
+.mail .subj { font-size: 14pt; margin: 0 0 10px; }
+
+/* hộp thoại chứng thư số */
+.dialog { width: 128mm; margin: 6mm auto; border: 1px solid #9a9a9a; background: #f0f0f0; font-family: "Segoe UI", Tahoma, Arial, sans-serif; font-size: 9.5pt; box-shadow: 2px 3px 8px rgba(0,0,0,.25); }
+.dialog .dt { background: #fff; padding: 6px 10px; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; }
+.dialog .tabs { padding: 8px 10px 0; }
+.dialog .tabs span { display: inline-block; padding: 3px 10px; border: 1px solid #b5b5b5; border-bottom: none; background: #e4e4e4; margin-right: 2px; }
+.dialog .tabs span.on { background: #fff; position: relative; top: 1px; }
+.dialog .pane { background: #fff; margin: 0 10px 10px; border: 1px solid #b5b5b5; padding: 8px; }
+.dialog table { width: 100%; border-collapse: collapse; }
+.dialog td { padding: 3px 6px; border-bottom: 1px solid #eee; vertical-align: top; }
+.dialog td.k { width: 38%; color: #333; }
+.dialog .btns { text-align: right; padding: 0 10px 10px; }
+.dialog .btns span { display: inline-block; border: 1px solid #adadad; background: #e1e1e1; padding: 3px 18px; }
+
+/* chứng chỉ ISO */
+.cert { position: absolute; inset: 12mm; border: 3px double #1d3b5a; padding: 4mm; }
+.cert .inner { border: 1px solid #1d3b5a; height: 100%; padding: 14mm 16mm; text-align: center; position: relative;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(29,59,90,.045) 0 22%, transparent 22.3%),
+    repeating-radial-gradient(circle at 50% 46%, transparent 0 6px, rgba(29,59,90,.035) 6px 7px);
+}
+.cert .brand { font-family: Georgia, "Times New Roman", serif; letter-spacing: .32em; font-size: 20pt; color: #1d3b5a; }
+.cert .brand small { display: block; letter-spacing: .12em; font-size: 8.5pt; color: #4a5f75; margin-top: 2px; }
+.cert h2 { font-family: Georgia, serif; font-weight: 400; letter-spacing: .2em; font-size: 24pt; margin: 14mm 0 0; color: #1d3b5a; }
+.cert .vn { font-size: 11pt; letter-spacing: .1em; color: #4a5f75; margin-bottom: 9mm; }
+.cert .org { font-size: 14.5pt; font-weight: 700; margin: 4mm 0 1mm; }
+.cert .std { font-size: 22pt; font-weight: 700; color: #1d3b5a; margin: 6mm 0 2mm; letter-spacing: .03em; }
+.cert .small { font-size: 10.5pt; line-height: 1.5; color: #333; }
+.cert .scope { margin: 6mm auto; max-width: 140mm; font-size: 11.5pt; }
+.cert .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; font-size: 10pt; margin-top: 8mm; text-align: left; }
+.cert .grid div span { display: block; color: #666; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .05em; }
+.cert .csign { position: absolute; left: 16mm; right: 16mm; bottom: 14mm; display: flex; justify-content: space-between; align-items: flex-end; font-size: 9.5pt; text-align: left; }
+
+/* ---------- print ---------- */
+@page { size: A4; margin: 0; }
+@media print {
+  body.viewer { background: #fff; }
+  .bar, .side { display: none !important; }
+  .pages { padding: 0; gap: 0; display: block; }
+  .page { box-shadow: none; transform: none !important; zoom: 1 !important; page-break-after: always; break-after: page; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
