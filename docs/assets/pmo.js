@@ -312,8 +312,24 @@
     });
   }
   window.addEventListener('resize', fit);
+  function labelLogColumns() {
+    var headers = [
+      'ID', 'Ngày', 'Nguồn', 'Went well / Improve', 'Category', 'Keywords',
+      'Ngữ cảnh', 'Tác động', 'Root cause', 'Early warning', 'Prior risk',
+      'Lesson', 'Recommendation', 'Action', 'Owner', 'Due', 'Status', 'OPA',
+      'Evidence', 'Conf.'
+    ];
+    document.querySelectorAll('#ll-log-table tbody tr').forEach(function (tr) {
+      tr.querySelectorAll('td').forEach(function (td, i) {
+        if (headers[i]) td.setAttribute('data-col', headers[i]);
+      });
+    });
+  }
+  labelLogColumns();
+
   window.addEventListener('beforeprint', function () {
     document.querySelectorAll('.pmo-sheet').forEach(function (p) { p.style.zoom = 1; });
+    labelLogColumns();
   });
   window.addEventListener('afterprint', fit);
   fit();
