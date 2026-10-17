@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E.0 – Bộ tài liệu PMO tổng hợp – Sao Bắc Tech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pmo.css">
+</head>
+<body class="pmo" data-storage-key="pmo-E0">
+
+<div class="bar">
+  <a href="index.html">← Danh mục</a>
+  <span class="title">E.0 · Bộ tài liệu PMO — one-pager tổng hợp</span>
+  <span class="bar-actions">
+    <button type="button" class="ghost" data-clear>Xóa dữ liệu form</button>
+    <button type="button" data-print>In / Lưu PDF</button>
+  </span>
+</div>
+
+<div class="layout">
+<nav class="side no-print">
+  <div class="side-label">Phần E · PMO</div>
+  <a href="pmo.html" class="active">E.0 One-pager</a>
+  <a href="pmo-gate.html">E.1 Gate checklist</a>
+  <a href="pmo-peer.html">E.2 Peer evaluation</a>
+  <a href="pmo-stakeholder.html">E.3 Stakeholder</a>
+  <a href="pmo-closure.html">E.4 Closure report</a>
+  <a href="pmo-lessons.html">E.5 Lessons Learned</a>
+</nav>
+
+<main class="pages">
+<form id="pmo-form">
+<section class="pmo-sheet" id="e0">
+  <span class="code-tag">E.0</span>
+  <h1>Bộ tài liệu quản trị sau trúng thầu</h1>
+  <p class="en-sub">PMO One-pager — khi nào dùng · ai sở hữu · lưu ở đâu</p>
+
+  <table class="pmo-meta">
+    <tr><th>Dự án</th><td>Hệ thống phân phối trực tuyến QA — IB2600184512-00</td></tr>
+    <tr><th>Chủ đầu tư</th><td>Chuỗi cửa hàng thời trang QA</td></tr>
+    <tr><th>Nhà thầu</th><td>Công ty CP Công nghệ Số Sao Bắc (Sao Bắc Tech)</td></tr>
+    <tr><th>PO / PMO owner</th><td>PO: QA · PMO owner tổng: PM/SM</td></tr>
+    <tr><th>Phiên bản / Ngày lập</th>
+      <td>v1.0 · <label>Ngày lập <input type="date" name="e0_date"></label></td></tr>
+    <tr><th>Phương pháp</th><td>Hybrid–Scrum · Gate G0/G1→G7 · Release R0–R4 · BG1–BG9 · Mốc M0–M7 · BH 12 tháng</td></tr>
+  </table>
+
+  <div class="guide">
+    <details open>
+      <summary>Hướng dẫn ngắn</summary>
+      <ol>
+        <li>Bộ này phục vụ <b>thực thi &amp; đóng dự án</b> — không đưa vào E-HSDT như tài liệu đánh giá thầu.</li>
+        <li>Mở form E.1–E.5 theo timeline gate; điền evidence trước họp exit review.</li>
+        <li>Peer raw (E.2) chỉ nội bộ HR-PMO — không gửi QA.</li>
+        <li>Stakeholder (E.3) tổng hợp ẩn danh vào Closure §5/§8.</li>
+        <li>Closure (E.4) lập sau Gate G7 / M7; Lessons (E.5) mở rộng §9 + Log sống.</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="quick-links no-print">
+    <a href="pmo-gate.html">→ E.1 Gate</a>
+    <a href="pmo-peer.html">→ E.2 Peer</a>
+    <a href="pmo-stakeholder.html">→ E.3 Stakeholder</a>
+    <a href="pmo-closure.html">→ E.4 Closure</a>
+    <a href="pmo-lessons.html">→ E.5 Lessons</a>
+  </div>
+
+  <h2>1. Danh mục biểu mẫu</h2>
+  <table class="form">
+    <thead>
+      <tr>
+        <th>#</th><th>Tài liệu</th><th>Khi nào dùng</th><th>Owner (A)</th><th>Facilitator (R)</th>
+        <th>Approve</th><th>Lưu trữ</th><th>Trang</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="c">1</td>
+        <td>Kiểm soát thoát giai đoạn<br><i>Phase Exit Review Checklist</i></td>
+        <td>Gate G0/G1→G7 (T6…T30); trước quality gate / TT M2–M7</td>
+        <td>PM/SM</td>
+        <td>PM + Lead KT/QA/DevOps</td>
+        <td>PO (G6/G7 + Ban chỉ đạo)</td>
+        <td>Confluence Governance / Phase Gates + PDF ký</td>
+        <td class="c"><a href="pmo-gate.html">E.1</a></td>
+      </tr>
+      <tr>
+        <td class="c">2</td>
+        <td>Đánh giá đồng nghiệp<br><i>Peer Evaluation Form</i></td>
+        <td>Sprint Pulse cuối sprint; Full cuối phase / EOP sau G7</td>
+        <td>PM/SM (+ HR)</td>
+        <td>Thành viên đội</td>
+        <td>HR/PM — <b>không gửi QA raw</b></td>
+        <td>Drive nội bộ HR-PMO / Peer-Eval</td>
+        <td class="c"><a href="pmo-peer.html">E.2</a></td>
+      </tr>
+      <tr>
+        <td class="c">3</td>
+        <td>Đánh giá stakeholder<br><i>Post Project Evaluation</i></td>
+        <td>Pulse R1/R2 (tuỳ chọn); Mini sau Pilot T25; Full T30</td>
+        <td>PO (QA)</td>
+        <td>Stakeholder A–E; PM gửi link</td>
+        <td>Ban chỉ đạo nhận tóm tắt</td>
+        <td>Confluence Feedback / Stakeholder</td>
+        <td class="c"><a href="pmo-stakeholder.html">E.3</a></td>
+      </tr>
+      <tr>
+        <td class="c">4</td>
+        <td>Báo cáo đóng dự án<br><i>Review and Closure Report</i></td>
+        <td>Sau Gate G7 / nghiệm thu M7 (tuần 30)</td>
+        <td>PM/SM</td>
+        <td>PM soạn; Architect/QA/IT bổ sung</td>
+        <td>PO + Ban chỉ đạo QA</td>
+        <td>Confluence Closure + PDF ký số</td>
+        <td class="c"><a href="pmo-closure.html">E.4</a></td>
+      </tr>
+      <tr>
+        <td class="c">5</td>
+        <td>Bài học kinh nghiệm<br><i>Post-Project Lessons Learned + Log</i></td>
+        <td>Log sống (Sprint/Gate/CR/R1–R4/Pilot); <b>Full Report sau G7/M7</b>; Retrieve trước KO dự án sau</td>
+        <td>PMO / Knowledge Owner</td>
+        <td>SM facilitate · PM soạn Report · Leads C evidence</td>
+        <td>PMO A repository · PO I bản tổng hợp</td>
+        <td>Confluence <code>QA-OMS / Lessons</code> + PDF ký</td>
+        <td class="c"><a href="pmo-lessons.html">E.5</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>1b. One-pager LL — khi nào dùng (rút gọn)</h2>
+  <table class="form">
+    <thead><tr><th>Sự kiện</th><th>Form</th><th>Facilitate</th><th>Approve</th><th>Lưu</th><th>Feed</th></tr></thead>
+    <tbody>
+      <tr><td>Sau Sprint</td><td>Mini → Log</td><td>SM</td><td>PM</td><td>Lessons Log</td><td>Retro actions</td></tr>
+      <tr><td>Gate Conditional/Fail</td><td>Log ± AAR 30'</td><td>SM</td><td>PM (PO nếu Fail)</td><td>Log + Gate BB</td><td>Doc 1 / OPA</td></tr>
+      <tr><td>CR lớn C.11</td><td>≥1 dòng Log</td><td>PM/SM</td><td>PM</td><td>Log + CR</td><td>Template C.11</td></tr>
+      <tr><td>R1–R4 / Pilot</td><td>Log + Pause&amp;Learn</td><td>SM</td><td>PM</td><td>Log + BB release</td><td>DoD / runbook</td></tr>
+      <tr><td><b>G7/M7</b></td><td><b>Full Report Doc 5</b></td><td>SM + PM</td><td>PMO</td><td>PDF + Confluence</td><td>Closure §9 tóm tắt</td></tr>
+      <tr><td>Trước KO dự án sau</td><td>Retrieve §7</td><td>PM mới</td><td>PMO</td><td>Đọc Log/Report</td><td>Planning</td></tr>
+    </tbody>
+  </table>
+  <p>Chi tiết form điền: <a href="pmo-lessons.html">E.5 pmo-lessons.html</a>.</p>
+
+  <h2>2. Mapping vòng đời (nhìn nhanh)</h2>
+  <div class="timeline">T0 M0 ── T3 M1 ── T6 M2/R0 ── T12 M3/R1 ── T18 M4 ── T20 R2 ── T23 M5 ── T24-25 R3 ── T26 M6/R4 ── T30 M7
+              │         │           │          │         │         │           │            │
+           BG1      G0/G1        G2-R1      G2-CC       G3        G4          G5           G6
+           Form2↑    Form2↑       Form2↑     Form2↑    Form2↑   Form3 Mini              Form3 Full
+           Pulse     Pulse        Pulse   Phase Full            + Form2                                                                                                         + Form2 EOP
+                                                                           Log←── + Form4 + Form5 FULL LL
+                                                                                              G7</div>
+
+  <h2>3. Liên kết DoD · Gate · BG · Thanh toán</h2>
+  <table class="form">
+    <thead><tr><th>Gate</th><th>BG chính</th><th>Mốc $</th><th>Form bắt buộc kèm</th></tr></thead>
+    <tbody>
+      <tr><td>G0/G1</td><td>BG1–2</td><td>M2</td><td>Doc 1 (E.1)</td></tr>
+      <tr><td>G2</td><td>BG3–5</td><td>M3/M4</td><td>Doc 1 (+ Doc 2 Pulse)</td></tr>
+      <tr><td>G3</td><td>BG6</td><td>trước M5</td><td>Doc 1</td></tr>
+      <tr><td>G4</td><td>BG7</td><td>M5</td><td>Doc 1</td></tr>
+      <tr><td>G5</td><td>chuẩn bị BG8</td><td>trước M6</td><td>Doc 1 + Doc 3 Mini</td></tr>
+      <tr><td>G6</td><td>BG8</td><td>M6</td><td>Doc 1</td></tr>
+      <tr><td>G7</td><td>BG9</td><td>M7</td><td>Doc 1 + Doc 3 Full + Doc 2 EOP + <b>Doc 4</b> + <b>Doc 5 Full LL</b></td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Quy tắc PMO</h2>
+  <ol>
+    <li><b>Tách bạch:</b> Doc 1 = kiểm soát giai đoạn · Doc 2 = nhân sự nội bộ · Doc 3 = phản hồi stakeholder · Doc 4 = đóng dự án · <b>Doc 5 = lessons</b>.</li>
+    <li><b>Evidence-based:</b> không Pass gate nếu thiếu cột Bằng chứng.</li>
+    <li><b>Conditional Pass</b> luôn có action item (owner + due) trên Jira epic <code>GATE</code>.</li>
+    <li>Peer raw <b>không</b> đưa vào E-HSDT / không gửi khách hàng; Doc 5 chỉ nhận synthesis/theme.</li>
+    <li><b>Lesson chưa vào OPA = chưa học xong</b>; Closure §9 chỉ Keep/Improve/Try — chi tiết ở E.5.</li>
+  </ol>
+
+  <h2>5. Ghi chú phiên bản (điền khi phân phối)</h2>
+  <table class="form">
+    <tr><th style="width:25%">Người phát hành PMO</th><td><input type="text" name="e0_issuer" placeholder="[điền]"></td></tr>
+    <tr><th>Ghi chú phân phối</th><td><textarea name="e0_note" placeholder="[điền] — kênh Confluence / Drive / ngày kick-off sau HĐ"></textarea></td></tr>
+  </table>
+
+  <p class="disclaimer">Bản mẫu hư cấu phục vụ bài tập đóng vai môn Quản trị dự án CNTT. Không có giá trị pháp lý; không phải tài liệu đánh giá thầu trong E-HSDT.</p>
+  <p class="print-hint">In bằng trình duyệt → Save as PDF · khổ A4 · Sao Bắc Tech PMO · v1.0</p>
+
+  <nav class="pmo-nav no-print">
+    <a href="index.html">Danh mục</a>
+    <a href="pmo-gate.html">E.1</a>
+    <a href="pmo-peer.html">E.2</a>
+    <a href="pmo-stakeholder.html">E.3</a>
+    <a href="pmo-closure.html">E.4</a>
+    <a href="pmo-lessons.html">E.5</a>
+  </nav>
+</section>
+</form>
+</main>
+</div>
+<script src="assets/pmo.js"></script>
+</body>
+</html>

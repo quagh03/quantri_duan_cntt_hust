@@ -1,0 +1,168 @@
+/* ---------- PMO form pages (extend style.css) ---------- */
+body.pmo { background: #525659; }
+body.pmo .pages { flex: 1; padding: 24px 12px 64px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+body.pmo .layout { display: flex; }
+body.pmo .side { width: 220px; flex: none; position: sticky; top: 48px; height: calc(100vh - 48px); overflow-y: auto; background: #3a3d40; padding: 16px 12px; font-size: 12.5px; color: #ddd; }
+body.pmo .side a { display: block; text-decoration: none; padding: 7px 8px; border-radius: 2px; color: #ddd; line-height: 1.35; }
+body.pmo .side a:hover, body.pmo .side a.active { background: #4a4e52; }
+body.pmo .side a small { display: block; color: #9a9ea2; }
+body.pmo .side .side-label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #9a9ea2; margin: 12px 4px 6px; }
+@media (max-width: 900px) { body.pmo .side { display: none; } }
+
+.bar .bar-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.bar label.print-opt { font-size: 12px; opacity: .9; display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.bar button.ghost { opacity: .85; }
+
+.pmo-sheet {
+  position: relative; overflow: visible;
+  width: 210mm; min-height: 297mm;
+  padding: 14mm 14mm 16mm;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.45);
+  font-family: "Times New Roman", Tinos, Times, serif;
+  font-size: 11pt; line-height: 1.4; color: #111;
+  scroll-margin-top: 64px;
+}
+.pmo-sheet h1 { font-size: 15pt; text-align: center; margin: 0 0 2px; line-height: 1.3; }
+.pmo-sheet .en-sub { text-align: center; font-style: italic; font-size: 10.5pt; margin: 0 0 10px; color: #333; }
+.pmo-sheet h2 { font-size: 12pt; margin: 14px 0 6px; border-bottom: 1px solid #333; padding-bottom: 2px; }
+.pmo-sheet h3 { font-size: 11pt; margin: 10px 0 4px; }
+.pmo-sheet p { margin: 0 0 6px; }
+.pmo-sheet .code-tag {
+  display: inline-block; font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 10pt; border: 1px solid #333; padding: 1px 6px; margin-bottom: 6px;
+}
+.pmo-meta { width: 100%; border-collapse: collapse; font-size: 10pt; margin: 0 0 10px; }
+.pmo-meta th, .pmo-meta td { border: 1px solid #333; padding: 3px 6px; vertical-align: top; text-align: left; }
+.pmo-meta th { width: 28%; background: #f3f3f3; font-weight: 700; }
+
+.guide {
+  border: 1px solid #999; background: #faf8f2; padding: 6px 10px; margin: 0 0 12px; font-size: 10pt;
+}
+.guide summary { cursor: pointer; font-weight: 700; }
+.guide ol { margin: 6px 0 0; padding-left: 18px; }
+.guide li { margin-bottom: 2px; }
+
+.warn-internal {
+  border: 1.5px solid #b23a2a; color: #7a2e1f; background: #fff5f2;
+  padding: 6px 10px; margin: 0 0 12px; font-size: 10.5pt; font-weight: 700;
+}
+
+.pmo-sheet table.form {
+  width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 4px 0 10px;
+}
+.pmo-sheet table.form th, .pmo-sheet table.form td {
+  border: 1px solid #333; padding: 3px 5px; vertical-align: top; text-align: left;
+}
+.pmo-sheet table.form th { background: #efefef; font-weight: 700; text-align: center; }
+.pmo-sheet table.form td.sec-row { background: #e8e8e8; font-weight: 700; }
+.pmo-sheet table.form .c { text-align: center; }
+.pmo-sheet table.form tr { break-inside: avoid; page-break-inside: avoid; }
+
+.pmo-sheet input[type="text"],
+.pmo-sheet input[type="date"],
+.pmo-sheet input[type="email"],
+.pmo-sheet input[type="number"],
+.pmo-sheet textarea,
+.pmo-sheet select {
+  font: inherit; font-size: 9.5pt; width: 100%;
+  border: 1px solid #888; background: #fffef8; padding: 2px 4px; border-radius: 0;
+}
+.pmo-sheet textarea { min-height: 42px; resize: vertical; }
+.pmo-sheet input.short { width: 7em; display: inline-block; }
+.pmo-sheet input.tiny { width: 3.5em; display: inline-block; }
+.pmo-sheet label.inline { display: inline-flex; align-items: center; gap: 3px; margin-right: 10px; white-space: nowrap; font-weight: 400; }
+.pmo-sheet .likert { display: flex; flex-wrap: wrap; gap: 4px 8px; justify-content: center; }
+.pmo-sheet .field-row { display: grid; grid-template-columns: 140px 1fr; gap: 4px 8px; margin-bottom: 4px; align-items: center; }
+.pmo-sheet .sig-block { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 8px; }
+.pmo-sheet .sig-block .box { border: 1px solid #333; padding: 6px; min-height: 70px; }
+.pmo-sheet .sig-block .box b { display: block; margin-bottom: 4px; font-size: 9.5pt; }
+.pmo-sheet .disclaimer {
+  margin-top: 14px; font-size: 9pt; color: #7a2e1f; border-top: 1px solid #ccc; padding-top: 6px;
+}
+.pmo-sheet .print-hint { font-size: 9pt; color: #555; margin-top: 4px; }
+.pmo-nav {
+  margin-top: 16px; padding-top: 8px; border-top: 1px dashed #999;
+  font-size: 10pt; display: flex; flex-wrap: wrap; gap: 8px 14px;
+}
+.pmo-nav a { color: #1b1b1b; }
+
+.gate-panel { display: none; }
+.gate-panel.active { display: block; }
+
+.mode-panel { display: none; }
+.mode-panel.active { display: block; }
+.group-panel { display: none; }
+.group-panel.active { display: block; }
+
+/* E.5 Lessons Learned */
+.ll-panel { display: none; }
+.ll-panel.active { display: block; }
+.ll-log-wrap { overflow-x: auto; margin: 6px 0 12px; -webkit-overflow-scrolling: touch; }
+.ll-log-table { min-width: 1400px; font-size: 8.5pt !important; }
+.ll-log-table th, .ll-log-table td { padding: 2px 3px !important; }
+.ll-log-table textarea { min-height: 36px; font-size: 8.5pt; }
+.ll-log-table .opa-cell { min-width: 120px; font-size: 8pt; }
+.example-row { background: #f7f3e8 !important; }
+.example-row .ex-tag { color: #7a2e1f; font-style: italic; font-size: 8pt; }
+.ll-card {
+  border: 1px solid #333; padding: 8px 10px; margin: 10px 0 14px;
+  background: #fcfcfa; break-inside: avoid; page-break-inside: avoid;
+}
+.ll-card h3 { margin-top: 0; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+.must-list { margin: 4px 0 10px; padding-left: 22px; }
+.must-list li { margin-bottom: 4px; }
+.note-inline { font-size: 10pt; margin: 8px 0; }
+.audit-box { margin-top: 12px; }
+
+.timeline {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 8pt; line-height: 1.35; white-space: pre; overflow-x: auto;
+  background: #f7f7f4; border: 1px solid #ccc; padding: 8px; margin: 6px 0 10px;
+}
+.quick-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+.quick-links a {
+  display: inline-block; border: 1px solid #333; padding: 4px 10px;
+  text-decoration: none; font-size: 10pt; background: #f3f3f3;
+}
+.quick-links a:hover { background: #e8e8e8; }
+
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  body.pmo { background: #fff; }
+  .bar, .side, .pmo-nav, .no-print, .guide summary { display: none !important; }
+  .guide { border: none; background: none; padding: 0; }
+  .guide[open] ol, .guide ol { display: none !important; }
+  .pages { padding: 0; gap: 0; display: block; }
+  .pmo-sheet {
+    box-shadow: none; width: auto; min-height: 0; padding: 0;
+    page-break-after: always; break-after: page;
+  }
+  .pmo-sheet:last-child { page-break-after: auto; break-after: auto; }
+  .pmo-sheet input, .pmo-sheet textarea, .pmo-sheet select {
+    border: none; border-bottom: 1px solid #999; background: transparent; color: #000;
+    -webkit-appearance: none; appearance: none;
+  }
+  .pmo-sheet textarea { border: 1px solid #ccc; min-height: auto; }
+  .pmo-sheet input[type="checkbox"], .pmo-sheet input[type="radio"] {
+    appearance: auto; -webkit-appearance: auto;
+  }
+  .mode-panel:not(.active), .group-panel:not(.active) { display: none !important; }
+  body.pmo.print-one-gate .gate-panel:not(.active) { display: none !important; }
+  body.pmo.print-one-gate .gate-panel.active { display: block !important; page-break-before: auto; }
+  body.pmo.print-all-gates .gate-panel {
+    display: block !important;
+    page-break-before: always; break-before: page;
+  }
+  body.pmo.print-all-gates .gate-panel:first-of-type { page-break-before: auto; }
+  body.pmo.print-one-ll .ll-panel:not(.active) { display: none !important; }
+  body.pmo.print-one-ll .ll-panel.active { display: block !important; }
+  body.pmo.print-all-ll .ll-panel {
+    display: block !important;
+    page-break-before: always; break-before: page;
+  }
+  body.pmo.print-all-ll .ll-panel:first-of-type { page-break-before: auto; break-before: auto; }
+  .ll-log-table { min-width: 0 !important; font-size: 7.5pt !important; }
+  .example-row { background: #f0ebe0 !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E.5 – Post-Project Lessons Learned Report – Sao Bắc Tech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pmo.css">
+</head>
+<body class="pmo" data-storage-key="pmo-E5">
+
+<div class="bar">
+  <a href="index.html">← Danh mục</a>
+  <span class="title">E.5 · Post-Project Lessons Learned Report + Lessons Log</span>
+  <span class="bar-actions">
+    <label class="print-opt no-print">Tab
+      <select id="ll-tab" name="ll_tab" aria-label="Chọn tab E.5">
+        <option value="onepager">One-pager</option>
+        <option value="log">Lessons Log</option>
+        <option value="report">Full Report</option>
+        <option value="agenda">Agenda 90'</option>
+      </select>
+    </label>
+    <label class="print-opt no-print">
+      <input type="checkbox" id="print-only-ll" name="print_only_ll" checked>
+      Chỉ in tab đang chọn
+    </label>
+    <button type="button" class="ghost" data-clear>Xóa dữ liệu đã lưu</button>
+    <button type="button" data-print>In / Lưu PDF</button>
+  </span>
+</div>
+
+<div class="layout">
+<nav class="side no-print">
+  <div class="side-label">Tab E.5</div>
+  <a href="#" data-ll-tab="onepager" class="active">A · One-pager</a>
+  <a href="#" data-ll-tab="log">B · Lessons Log</a>
+  <a href="#" data-ll-tab="report">C · Full Report</a>
+  <a href="#" data-ll-tab="agenda">D · Agenda 90'</a>
+  <div class="side-label">Phần E · PMO</div>
+  <a href="pmo.html">E.0 One-pager</a>
+  <a href="pmo-gate.html">E.1 Gate</a>
+  <a href="pmo-peer.html">E.2 Peer</a>
+  <a href="pmo-stakeholder.html">E.3 Stakeholder</a>
+  <a href="pmo-closure.html">E.4 Closure</a>
+  <a href="pmo-lessons.html" class="active">E.5 Lessons</a>
+</nav>
+
+<main class="pages">
+<form id="pmo-form">
+<section class="pmo-sheet">
+  <span class="code-tag">E.5</span>
+  <h1>Báo cáo bài học kinh nghiệm sau kết thúc dự án</h1>
+  <p class="en-sub">Post-Project Lessons Learned Report / End-of-Project Lessons Report · Lessons Log</p>
+
+  <div class="warn-internal">Không nêu tên cá nhân để trách phạt — mô tả hành vi/hệ thống. Lesson chưa vào checklist/template = chưa học xong.</div>
+
+  <table class="pmo-meta">
+    <tr><th>Ký hiệu</th><td>E.5 · mở rộng Closure (E.4) §9</td></tr>
+    <tr><th>Dự án / E-TBMT</th><td>Hệ thống phân phối trực tuyến (Web + Mobile) — <b>IB2600184512-00</b></td></tr>
+    <tr><th>Chủ đầu tư</th><td>Chuỗi cửa hàng thời trang QA</td></tr>
+    <tr><th>Nhà thầu</th><td>Công ty CP Công nghệ Số Sao Bắc (Sao Bắc Tech)</td></tr>
+    <tr><th>NTP pentest</th><td>Lá Chắn Việt</td></tr>
+    <tr><th>Phương pháp</th><td>Hybrid–Scrum · G0/G1→G7 · R0–R4 · BG1–BG9 · M0–M7 · CR C.11 · BH 12 tháng</td></tr>
+    <tr><th>Phiên bản / Ngày lập</th>
+      <td>v1.0 · <label>Ngày lập <input type="date" name="e5_date"></label></td></tr>
+    <tr><th>Lưu trữ</th><td>Confluence <code>QA-OMS / Lessons</code> + PDF ký · Jira label <code>lessons-learned</code></td></tr>
+  </table>
+
+  <div class="guide">
+    <details>
+      <summary>Hướng dẫn điền (5–7 dòng) — Doc 5 Phần E</summary>
+      <ol>
+        <li>Ghi Log ngay sau Sprint / Gate Conditional|Fail / CR lớn / Incident / Release — không chờ G7.</li>
+        <li>Mỗi dòng: ngữ cảnh → tác động → root cause → lesson 1 câu → recommendation → <b>action + owner + due</b> → OPA; thiếu evidence để <code>[điền]</code> — không bịa.</li>
+        <li>Tách quan sát / ý kiến / hành động; Category + Keywords bắt buộc để Retrieve.</li>
+        <li>Peer raw và câu hỏi cảm xúc Stakeholder <b>không</b> vào form này; chỉ synthesis/theme.</li>
+        <li>Workshop EOP 90' điền §3–§6; PM hoàn thiện §1–§2–§7–§8 trong ≤5 ngày làm việc sau họp.</li>
+        <li>Status Closed chỉ khi action xong hoặc Cancelled có lý do; Must embed chưa vào OPA = chưa học xong.</li>
+        <li>Closure E.4 §9 chỉ nhận bảng §5; chi tiết card §4 + Log ở E.5 này.</li>
+      </ol>
+    </details>
+  </div>
+
+  <!-- ========== TAB A: ONE-PAGER ========== -->
+  <div class="ll-panel active" data-ll="onepager" id="ll-onepager" role="tabpanel">
+    <h2>A · One-pager — khi nào dùng Lessons Learned</h2>
+    <table class="form">
+      <thead>
+        <tr>
+          <th>Sự kiện kích hoạt</th><th>Form</th><th>Facilitate</th>
+          <th>Approve</th><th>Lưu</th><th>Feed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Sau mỗi Sprint</td><td>Mini → Lessons Log</td><td>SM</td><td>PM</td><td>Confluence Log</td><td>Retro actions</td></tr>
+        <tr><td>Gate Conditional / Fail</td><td>Log ± AAR 30'</td><td>SM + Owner gate</td><td>PM (PO nếu Fail)</td><td>Log + BB Gate</td><td>Doc 1 action / OPA</td></tr>
+        <tr><td>CR lớn (C.11)</td><td>≥1 dòng Log</td><td>PM/SM</td><td>PM</td><td>Log + CR</td><td>Template C.11</td></tr>
+        <tr><td>Sau R1–R4</td><td>Log + Pause&amp;Learn 45–60'</td><td>SM</td><td>PM</td><td>Log + BB release</td><td>DoD / runbook</td></tr>
+        <tr><td>Sau Pilot</td><td>Log + Keep/Improve/Try</td><td>SM</td><td>PM; IT Lead C</td><td>Log + Pilot LL</td><td>G6 readiness</td></tr>
+        <tr><td><b>Sau G7 / M7</b></td><td><b>Full Report</b></td><td>SM + PM soạn</td><td>PMO repository</td><td>PDF + Confluence</td><td>Closure §9 tóm tắt</td></tr>
+        <tr><td>Trước kick-off dự án sau</td><td>Retrieve checklist §7</td><td>PM mới</td><td>PMO</td><td>Đọc Log/Report đã đóng</td><td>Planning</td></tr>
+      </tbody>
+    </table>
+    <div class="timeline">Sprint 1..n     G0/G1   R1    R2    Pilot/R3   R4/G6    G7/M7          BH
+   │              │      │     │       │         │         │             │
+ Log←Retro     Log+AAR  P&amp;L   P&amp;L    P&amp;L+KIT    P&amp;L    FULL REPORT    Retrieve
+                                                      → Closure §9</div>
+    <p class="note-inline">RACI tối thiểu: Facilitator (SM) <b>R</b> · PM <b>A</b> soạn báo cáo · Leads <b>C</b> evidence · PO <b>I</b> · PMO <b>A</b> repository.</p>
+  </div>
+
+  <!-- ========== TAB B: LOG ========== -->
+  <div class="ll-panel" data-ll="log" id="ll-log" role="tabpanel">
+    <h2>B · Lessons Log (living register)</h2>
+    <p>Status chỉ <b>Closed</b> khi action đã làm xong hoặc <b>Cancelled</b> có lý do. Ba dòng <i>Ví dụ minh họa</i> là hư cấu có cấu trúc — không phải số liệu HĐ thật.</p>
+    <p class="no-print">
+      <button type="button" id="ll-add-row" class="ghost">+ Thêm dòng Log</button>
+    </p>
+    <div class="ll-log-wrap">
+      <table class="form ll-log-table" id="ll-log-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Ngày</th><th>Nguồn</th><th>Went well / Improve</th><th>Category</th>
+            <th>Keywords</th><th>Ngữ cảnh</th><th>Tác động</th><th>Root cause</th>
+            <th>Early warning</th><th>Prior risk</th><th>Lesson</th><th>Recommendation</th>
+            <th>Action</th><th>Owner</th><th>Due</th><th>Status</th><th>OPA</th>
+            <th>Evidence</th><th>Conf.</th>
+          </tr>
+        </thead>
+        <tbody id="ll-log-body">
+
+<tr class="ll-log-row example-row" data-ll-example="1">
+  <td><input type="text" name="ex1_id" value="LL-EX-01" readonly data-ex-default="1"><br><small class="ex-tag">Ví dụ minh họa</small></td>
+  <td><input type="date" name="ex1_date" value="2026-03-23" data-ex-default="1"></td>
+  <td><select name="ex1_src" data-ex-default="1"><option value="">—</option><option>Sprint</option><option selected>Gate</option><option>CR</option><option>Incident</option><option>Workshop</option><option>Release</option></select></td>
+  <td><select name="ex1_went" data-ex-default="1"><option value="">—</option><option>Went well</option><option selected>Improve</option></select></td>
+  <td><select name="ex1_cat" data-ex-default="1"><option value="">—</option><option>People</option><option selected>Process</option><option>Technology</option><option>Vendor–Client</option><option>Commercial/Contract</option><option>Security/Compliance</option><option>Ops/Handover</option></select></td>
+  <td><input type="text" name="ex1_kw" value="DoR, CDC, gate-G2, estimation" data-ex-default="1"></td>
+  <td><textarea name="ex1_ctx" rows="2" data-ex-default="1">Gate G2 Conditional vì story CDC chưa đủ DoR khi commit Sprint R1.</textarea></td>
+  <td><textarea name="ex1_imp" rows="2" data-ex-default="1">Time: +1 sprint buffer ước tính; Quality: defect integration tăng ở STG.</textarea></td>
+  <td><textarea name="ex1_rc" rows="2" data-ex-default="1">DoR thiếu tiêu chí schema CDC đã review Architect; trigger = pressure mốc M3.</textarea></td>
+  <td>
+    <select name="ex1_ew" data-ex-default="1"><option value="">—</option><option selected>Y</option><option>N</option></select>
+    <input type="text" name="ex1_ew_txt" value="burn-up CDC phẳng 2 sprint trước gate" data-ex-default="1">
+  </td>
+  <td>
+    <select name="ex1_risk" data-ex-default="1"><option value="">—</option><option selected>Y</option><option>N</option></select>
+    <input type="text" name="ex1_risk_id" value="RISK-CDC-02" data-ex-default="1">
+  </td>
+  <td><textarea name="ex1_lesson" rows="2" data-ex-default="1">Không Pass gate tích hợp nếu DoR thiếu tiêu chí nguồn dữ liệu bên ngoài.</textarea></td>
+  <td><textarea name="ex1_rec" rows="2" data-ex-default="1">Bổ sung DoR CDC; chặn commit nếu thiếu.</textarea></td>
+  <td><textarea name="ex1_act" rows="2" data-ex-default="1">Must embed: cập nhật DoR + checklist G2 mục Integration</textarea></td>
+  <td><input type="text" name="ex1_owner" value="Proxy PO + Architect" data-ex-default="1"></td>
+  <td><input type="date" name="ex1_due" value="2026-03-30" data-ex-default="1"></td>
+  <td><select name="ex1_status" data-ex-default="1"><option>Identified</option><option>Analyzed</option><option>Action agreed</option><option>In Progress</option><option selected>Closed</option><option>Cancelled</option></select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="ex1_opa_0" value="1" checked data-ex-default="1"> DoR</label><label class="inline"><input type="checkbox" name="ex1_opa_1" value="1" data-ex-default="1"> DoD</label><label class="inline"><input type="checkbox" name="ex1_opa_2" value="1" data-ex-default="1"> C.11</label><label class="inline"><input type="checkbox" name="ex1_opa_3" value="1" checked data-ex-default="1"> Gate checklist</label><label class="inline"><input type="checkbox" name="ex1_opa_4" value="1" data-ex-default="1"> Runbook</label><label class="inline"><input type="checkbox" name="ex1_opa_5" value="1" data-ex-default="1"> Estimation</label><label class="inline"><input type="checkbox" name="ex1_opa_6" value="1" data-ex-default="1"> Training</label><label class="inline"><input type="checkbox" name="ex1_opa_7" value="1" data-ex-default="1"> Khác</label></td>
+  <td><input type="text" name="ex1_ev" value="[điền Jira GATE-xx]" data-ex-default="1"></td>
+  <td class="c"><input type="checkbox" name="ex1_conf" data-ex-default="1"></td>
+</tr>
+
+<tr class="ll-log-row example-row" data-ll-example="1">
+  <td><input type="text" name="ex2_id" value="LL-EX-02" readonly data-ex-default="1"><br><small class="ex-tag">Ví dụ minh họa</small></td>
+  <td><input type="date" name="ex2_date" value="2026-05-18" data-ex-default="1"></td>
+  <td><select name="ex2_src" data-ex-default="1"><option value="">—</option><option>Sprint</option><option>Gate</option><option selected>CR</option><option>Incident</option><option>Workshop</option><option>Release</option></select></td>
+  <td><select name="ex2_went" data-ex-default="1"><option value="">—</option><option>Went well</option><option selected>Improve</option></select></td>
+  <td><select name="ex2_cat" data-ex-default="1"><option value="">—</option><option>People</option><option>Process</option><option>Technology</option><option>Vendor–Client</option><option selected>Commercial/Contract</option><option>Security/Compliance</option><option>Ops/Handover</option></select></td>
+  <td><input type="text" name="ex2_kw" value="C.11, MoSCoW, scope-creep, payment-Mx" data-ex-default="1"></td>
+  <td><textarea name="ex2_ctx" rows="2" data-ex-default="1">CR mở rộng báo cáo marketing sau R2; impact lịch M5 chưa gắn điều kiện thanh toán.</textarea></td>
+  <td><textarea name="ex2_imp" rows="2" data-ex-default="1">Scope +; Time rủi ro M5; Cost: chờ CR duyệt mới ước lượng.</textarea></td>
+  <td><textarea name="ex2_rc" rows="2" data-ex-default="1">CR form thiếu trường ảnh hưởng mốc thanh toán M-x.</textarea></td>
+  <td>
+    <select name="ex2_ew" data-ex-default="1"><option value="">—</option><option selected>Y</option><option>N</option></select>
+    <input type="text" name="ex2_ew_txt" value="PO yêu cầu nhanh trong sprint ngoài C.11" data-ex-default="1">
+  </td>
+  <td>
+    <select name="ex2_risk" data-ex-default="1"><option value="">—</option><option>Y</option><option selected>N</option></select>
+    <input type="text" name="ex2_risk_id" value="" data-ex-default="1">
+  </td>
+  <td><textarea name="ex2_lesson" rows="2" data-ex-default="1">Mọi CR lớn phải map impact M-x trước khi PO duyệt.</textarea></td>
+  <td><textarea name="ex2_rec" rows="2" data-ex-default="1">Sửa template C.11 + SLA phản hồi CR.</textarea></td>
+  <td><textarea name="ex2_act" rows="2" data-ex-default="1">Must embed: thêm cột Impact M-x vào C.11; Should share nội bộ PMO</textarea></td>
+  <td><input type="text" name="ex2_owner" value="PM" data-ex-default="1"></td>
+  <td><input type="date" name="ex2_due" value="2026-06-01" data-ex-default="1"></td>
+  <td><select name="ex2_status" data-ex-default="1"><option>Identified</option><option>Analyzed</option><option>Action agreed</option><option selected>In Progress</option><option>Closed</option><option>Cancelled</option></select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="ex2_opa_0" value="1" data-ex-default="1"> DoR</label><label class="inline"><input type="checkbox" name="ex2_opa_1" value="1" data-ex-default="1"> DoD</label><label class="inline"><input type="checkbox" name="ex2_opa_2" value="1" checked data-ex-default="1"> C.11</label><label class="inline"><input type="checkbox" name="ex2_opa_3" value="1" data-ex-default="1"> Gate checklist</label><label class="inline"><input type="checkbox" name="ex2_opa_4" value="1" data-ex-default="1"> Runbook</label><label class="inline"><input type="checkbox" name="ex2_opa_5" value="1" checked data-ex-default="1"> Estimation</label><label class="inline"><input type="checkbox" name="ex2_opa_6" value="1" data-ex-default="1"> Training</label><label class="inline"><input type="checkbox" name="ex2_opa_7" value="1" data-ex-default="1"> Khác</label></td>
+  <td><input type="text" name="ex2_ev" value="[điền CR ticket]" data-ex-default="1"></td>
+  <td class="c"><input type="checkbox" name="ex2_conf" data-ex-default="1"></td>
+</tr>
+
+<tr class="ll-log-row example-row" data-ll-example="1">
+  <td><input type="text" name="ex3_id" value="LL-EX-03" readonly data-ex-default="1"><br><small class="ex-tag">Ví dụ minh họa</small></td>
+  <td><input type="date" name="ex3_date" value="2026-07-06" data-ex-default="1"></td>
+  <td><select name="ex3_src" data-ex-default="1"><option value="">—</option><option>Sprint</option><option>Gate</option><option>CR</option><option>Incident</option><option>Workshop</option><option selected>Release</option></select></td>
+  <td><select name="ex3_went" data-ex-default="1"><option value="">—</option><option selected>Went well</option><option>Improve</option></select></td>
+  <td><select name="ex3_cat" data-ex-default="1"><option value="">—</option><option>People</option><option>Process</option><option>Technology</option><option>Vendor–Client</option><option>Commercial/Contract</option><option selected>Security/Compliance</option><option>Ops/Handover</option></select></td>
+  <td><input type="text" name="ex3_kw" value="pentest, NTP, go-live, runbook, rollback" data-ex-default="1"></td>
+  <td><textarea name="ex3_ctx" rows="2" data-ex-default="1">Pentest NTP Lá Chắn Việt đóng finding Critical trước G6; rollback drill chạy đủ 1 lần.</textarea></td>
+  <td><textarea name="ex3_imp" rows="2" data-ex-default="1">Reputation +; NFR bảo mật đạt G6; Time drill 0.5 ngày.</textarea></td>
+  <td><textarea name="ex3_rc" rows="2" data-ex-default="1">Success: gắn finding Critical = blocker G6 trong Doc 1.</textarea></td>
+  <td>
+    <select name="ex3_ew" data-ex-default="1"><option value="">—</option><option selected>Y</option><option>N</option></select>
+    <input type="text" name="ex3_ew_txt" value="open Critical >0 trên dashboard" data-ex-default="1">
+  </td>
+  <td>
+    <select name="ex3_risk" data-ex-default="1"><option value="">—</option><option selected>Y</option><option>N</option></select>
+    <input type="text" name="ex3_risk_id" value="RISK-SEC-01" data-ex-default="1">
+  </td>
+  <td><textarea name="ex3_lesson" rows="2" data-ex-default="1">Finding Critical mở = Fail/block G6; rollback drill là DoD go-live.</textarea></td>
+  <td><textarea name="ex3_rec" rows="2" data-ex-default="1">Giữ rule blocker; đưa drill vào runbook chuẩn.</textarea></td>
+  <td><textarea name="ex3_act" rows="2" data-ex-default="1">Must embed: Doc 1 G6 Security + runbook go-live</textarea></td>
+  <td><input type="text" name="ex3_owner" value="DevOps Lead + QA Lead" data-ex-default="1"></td>
+  <td><input type="date" name="ex3_due" value="2026-07-20" data-ex-default="1"></td>
+  <td><select name="ex3_status" data-ex-default="1"><option>Identified</option><option>Analyzed</option><option selected>Action agreed</option><option>In Progress</option><option>Closed</option><option>Cancelled</option></select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="ex3_opa_0" value="1" data-ex-default="1"> DoR</label><label class="inline"><input type="checkbox" name="ex3_opa_1" value="1" data-ex-default="1"> DoD</label><label class="inline"><input type="checkbox" name="ex3_opa_2" value="1" data-ex-default="1"> C.11</label><label class="inline"><input type="checkbox" name="ex3_opa_3" value="1" checked data-ex-default="1"> Gate checklist</label><label class="inline"><input type="checkbox" name="ex3_opa_4" value="1" checked data-ex-default="1"> Runbook</label><label class="inline"><input type="checkbox" name="ex3_opa_5" value="1" data-ex-default="1"> Estimation</label><label class="inline"><input type="checkbox" name="ex3_opa_6" value="1" data-ex-default="1"> Training</label><label class="inline"><input type="checkbox" name="ex3_opa_7" value="1" data-ex-default="1"> Khác</label></td>
+  <td><input type="text" name="ex3_ev" value="[điền pentest report + INC]" data-ex-default="1"></td>
+  <td class="c"><input type="checkbox" name="ex3_conf" checked data-ex-default="1"></td>
+</tr>
+
+<tr class="ll-log-row" data-ll-blank="1">
+  <td><input type="text" name="log1_id" placeholder="LL-…"></td>
+  <td><input type="date" name="log1_date"></td>
+  <td><select name="log1_src">
+<option value="">—</option>
+<option>Sprint</option>
+<option>Gate</option>
+<option>CR</option>
+<option>Incident</option>
+<option>Workshop</option>
+<option>Release</option>
+</select></td>
+  <td><select name="log1_went">
+<option value="">—</option>
+<option>Went well</option>
+<option>Improve</option>
+</select></td>
+  <td><select name="log1_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></td>
+  <td><input type="text" name="log1_kw" placeholder="keywords"></td>
+  <td><textarea name="log1_ctx" rows="2" placeholder="≤40 từ"></textarea></td>
+  <td><textarea name="log1_imp" rows="2" placeholder="scope/time/…"></textarea></td>
+  <td><textarea name="log1_rc" rows="2" placeholder="root cause"></textarea></td>
+  <td>
+    <select name="log1_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log1_ew_txt" placeholder="mô tả">
+  </td>
+  <td>
+    <select name="log1_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log1_risk_id" placeholder="Risk-ID">
+  </td>
+  <td><textarea name="log1_lesson" rows="2" placeholder="1 câu"></textarea></td>
+  <td><textarea name="log1_rec" rows="2"></textarea></td>
+  <td><textarea name="log1_act" rows="2"></textarea></td>
+  <td><input type="text" name="log1_owner" placeholder="[điền]"></td>
+  <td><input type="date" name="log1_due"></td>
+  <td><select name="log1_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="log1_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="log1_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="log1_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="log1_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="log1_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="log1_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="log1_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="log1_opa_7" value="1"> Khác</label></td>
+  <td><input type="text" name="log1_ev" placeholder="URL/Jira"></td>
+  <td class="c"><input type="checkbox" name="log1_conf"></td>
+</tr>
+
+<tr class="ll-log-row" data-ll-blank="1">
+  <td><input type="text" name="log2_id" placeholder="LL-…"></td>
+  <td><input type="date" name="log2_date"></td>
+  <td><select name="log2_src">
+<option value="">—</option>
+<option>Sprint</option>
+<option>Gate</option>
+<option>CR</option>
+<option>Incident</option>
+<option>Workshop</option>
+<option>Release</option>
+</select></td>
+  <td><select name="log2_went">
+<option value="">—</option>
+<option>Went well</option>
+<option>Improve</option>
+</select></td>
+  <td><select name="log2_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></td>
+  <td><input type="text" name="log2_kw" placeholder="keywords"></td>
+  <td><textarea name="log2_ctx" rows="2" placeholder="≤40 từ"></textarea></td>
+  <td><textarea name="log2_imp" rows="2" placeholder="scope/time/…"></textarea></td>
+  <td><textarea name="log2_rc" rows="2" placeholder="root cause"></textarea></td>
+  <td>
+    <select name="log2_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log2_ew_txt" placeholder="mô tả">
+  </td>
+  <td>
+    <select name="log2_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log2_risk_id" placeholder="Risk-ID">
+  </td>
+  <td><textarea name="log2_lesson" rows="2" placeholder="1 câu"></textarea></td>
+  <td><textarea name="log2_rec" rows="2"></textarea></td>
+  <td><textarea name="log2_act" rows="2"></textarea></td>
+  <td><input type="text" name="log2_owner" placeholder="[điền]"></td>
+  <td><input type="date" name="log2_due"></td>
+  <td><select name="log2_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="log2_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="log2_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="log2_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="log2_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="log2_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="log2_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="log2_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="log2_opa_7" value="1"> Khác</label></td>
+  <td><input type="text" name="log2_ev" placeholder="URL/Jira"></td>
+  <td class="c"><input type="checkbox" name="log2_conf"></td>
+</tr>
+
+<tr class="ll-log-row" data-ll-blank="1">
+  <td><input type="text" name="log3_id" placeholder="LL-…"></td>
+  <td><input type="date" name="log3_date"></td>
+  <td><select name="log3_src">
+<option value="">—</option>
+<option>Sprint</option>
+<option>Gate</option>
+<option>CR</option>
+<option>Incident</option>
+<option>Workshop</option>
+<option>Release</option>
+</select></td>
+  <td><select name="log3_went">
+<option value="">—</option>
+<option>Went well</option>
+<option>Improve</option>
+</select></td>
+  <td><select name="log3_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></td>
+  <td><input type="text" name="log3_kw" placeholder="keywords"></td>
+  <td><textarea name="log3_ctx" rows="2" placeholder="≤40 từ"></textarea></td>
+  <td><textarea name="log3_imp" rows="2" placeholder="scope/time/…"></textarea></td>
+  <td><textarea name="log3_rc" rows="2" placeholder="root cause"></textarea></td>
+  <td>
+    <select name="log3_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log3_ew_txt" placeholder="mô tả">
+  </td>
+  <td>
+    <select name="log3_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log3_risk_id" placeholder="Risk-ID">
+  </td>
+  <td><textarea name="log3_lesson" rows="2" placeholder="1 câu"></textarea></td>
+  <td><textarea name="log3_rec" rows="2"></textarea></td>
+  <td><textarea name="log3_act" rows="2"></textarea></td>
+  <td><input type="text" name="log3_owner" placeholder="[điền]"></td>
+  <td><input type="date" name="log3_due"></td>
+  <td><select name="log3_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="log3_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="log3_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="log3_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="log3_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="log3_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="log3_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="log3_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="log3_opa_7" value="1"> Khác</label></td>
+  <td><input type="text" name="log3_ev" placeholder="URL/Jira"></td>
+  <td class="c"><input type="checkbox" name="log3_conf"></td>
+</tr>
+
+<tr class="ll-log-row" data-ll-blank="1">
+  <td><input type="text" name="log4_id" placeholder="LL-…"></td>
+  <td><input type="date" name="log4_date"></td>
+  <td><select name="log4_src">
+<option value="">—</option>
+<option>Sprint</option>
+<option>Gate</option>
+<option>CR</option>
+<option>Incident</option>
+<option>Workshop</option>
+<option>Release</option>
+</select></td>
+  <td><select name="log4_went">
+<option value="">—</option>
+<option>Went well</option>
+<option>Improve</option>
+</select></td>
+  <td><select name="log4_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></td>
+  <td><input type="text" name="log4_kw" placeholder="keywords"></td>
+  <td><textarea name="log4_ctx" rows="2" placeholder="≤40 từ"></textarea></td>
+  <td><textarea name="log4_imp" rows="2" placeholder="scope/time/…"></textarea></td>
+  <td><textarea name="log4_rc" rows="2" placeholder="root cause"></textarea></td>
+  <td>
+    <select name="log4_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log4_ew_txt" placeholder="mô tả">
+  </td>
+  <td>
+    <select name="log4_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log4_risk_id" placeholder="Risk-ID">
+  </td>
+  <td><textarea name="log4_lesson" rows="2" placeholder="1 câu"></textarea></td>
+  <td><textarea name="log4_rec" rows="2"></textarea></td>
+  <td><textarea name="log4_act" rows="2"></textarea></td>
+  <td><input type="text" name="log4_owner" placeholder="[điền]"></td>
+  <td><input type="date" name="log4_due"></td>
+  <td><select name="log4_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="log4_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="log4_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="log4_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="log4_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="log4_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="log4_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="log4_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="log4_opa_7" value="1"> Khác</label></td>
+  <td><input type="text" name="log4_ev" placeholder="URL/Jira"></td>
+  <td class="c"><input type="checkbox" name="log4_conf"></td>
+</tr>
+
+<tr class="ll-log-row" data-ll-blank="1">
+  <td><input type="text" name="log5_id" placeholder="LL-…"></td>
+  <td><input type="date" name="log5_date"></td>
+  <td><select name="log5_src">
+<option value="">—</option>
+<option>Sprint</option>
+<option>Gate</option>
+<option>CR</option>
+<option>Incident</option>
+<option>Workshop</option>
+<option>Release</option>
+</select></td>
+  <td><select name="log5_went">
+<option value="">—</option>
+<option>Went well</option>
+<option>Improve</option>
+</select></td>
+  <td><select name="log5_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></td>
+  <td><input type="text" name="log5_kw" placeholder="keywords"></td>
+  <td><textarea name="log5_ctx" rows="2" placeholder="≤40 từ"></textarea></td>
+  <td><textarea name="log5_imp" rows="2" placeholder="scope/time/…"></textarea></td>
+  <td><textarea name="log5_rc" rows="2" placeholder="root cause"></textarea></td>
+  <td>
+    <select name="log5_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log5_ew_txt" placeholder="mô tả">
+  </td>
+  <td>
+    <select name="log5_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+    <input type="text" name="log5_risk_id" placeholder="Risk-ID">
+  </td>
+  <td><textarea name="log5_lesson" rows="2" placeholder="1 câu"></textarea></td>
+  <td><textarea name="log5_rec" rows="2"></textarea></td>
+  <td><textarea name="log5_act" rows="2"></textarea></td>
+  <td><input type="text" name="log5_owner" placeholder="[điền]"></td>
+  <td><input type="date" name="log5_due"></td>
+  <td><select name="log5_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select></td>
+  <td class="opa-cell"><label class="inline"><input type="checkbox" name="log5_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="log5_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="log5_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="log5_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="log5_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="log5_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="log5_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="log5_opa_7" value="1"> Khác</label></td>
+  <td><input type="text" name="log5_ev" placeholder="URL/Jira"></td>
+  <td class="c"><input type="checkbox" name="log5_conf"></td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ========== TAB C: FULL REPORT ========== -->
+  <div class="ll-panel" data-ll="report" id="ll-report" role="tabpanel">
+    <h2>C · Full Post-Project Lessons Learned Report</h2>
+
+    <h3 id="ll-meta">Meta</h3>
+    <table class="form">
+      <tr><th style="width:28%">Dự án</th><td>Phát triển hệ thống phân phối trực tuyến (Web + Mobile)</td></tr>
+      <tr><th>Mã TBMT / HĐ</th><td>E-TBMT IB2600184512-00 / HĐ số: <input type="text" name="meta_hd" placeholder="[điền số HĐ]" class="short"></td></tr>
+      <tr><th>Phiên bản báo cáo</th><td><input type="text" name="meta_ver" placeholder="vd. 1.0" class="short"></td></tr>
+      <tr><th>Phạm vi</th><td>
+        <label class="inline"><input type="radio" name="meta_scope" value="full"> Toàn dự án (G7/M7)</label>
+        <label class="inline"><input type="radio" name="meta_scope" value="stage"> Stage/Gate: <input type="text" name="meta_scope_stage" class="short" placeholder="[điền]"></label>
+        <label class="inline"><input type="radio" name="meta_scope" value="rel"> Release: <input type="text" name="meta_scope_rel" class="short" placeholder="[điền]"></label>
+      </td></tr>
+      <tr><th>Ngày workshop EOP</th><td><input type="date" name="meta_ws_date"></td></tr>
+      <tr><th>Facilitator (SM)</th><td><input type="text" name="meta_fac" placeholder="[điền]"></td></tr>
+      <tr><th>Thành phần</th><td>
+        <label class="inline"><input type="checkbox" name="meta_po"> PO</label>
+        <label class="inline"><input type="checkbox" name="meta_it"> IT Lead</label>
+        <label class="inline"><input type="checkbox" name="meta_pm"> PM/SM</label>
+        <label class="inline"><input type="checkbox" name="meta_arch"> Architect</label>
+        <label class="inline"><input type="checkbox" name="meta_dev"> Dev</label>
+        <label class="inline"><input type="checkbox" name="meta_qa"> QA</label>
+        <label class="inline"><input type="checkbox" name="meta_devops"> DevOps</label>
+        · Khác: <input type="text" name="meta_other" class="short" placeholder="[điền]">
+      </td></tr>
+      <tr><th>Liên kết Closure Doc 4</th><td><input type="text" name="meta_closure" placeholder="URL/Ver — xem E.4"> · <a class="no-print" href="pmo-closure.html#c9">→ E.4 §9</a></td></tr>
+      <tr><th>Link Lessons Log export</th><td><input type="text" name="meta_log_export" placeholder="[điền]"></td></tr>
+    </table>
+
+    <h3 id="ll-s1">§1. Executive summary (≤150 từ)</h3>
+    <textarea name="s1_sum" rows="4" placeholder="Tóm tắt ≤150 từ"></textarea>
+    <p><b>3–5 lesson Must embed</b></p>
+    <ol class="must-list">
+      <li><input type="text" name="s1_m1" placeholder="[điền — 1 câu + LL-ID]"></li>
+      <li><input type="text" name="s1_m2" placeholder="[điền]"></li>
+      <li><input type="text" name="s1_m3" placeholder="[điền]"></li>
+      <li><input type="text" name="s1_m4" placeholder="[điền — tuỳ chọn]"></li>
+      <li><input type="text" name="s1_m5" placeholder="[điền — tuỳ chọn]"></li>
+    </ol>
+    <p>Sẵn sàng tái sử dụng knowledge: <input type="text" name="s1_ready" placeholder="[điền]"></p>
+    <table class="form">
+      <tr><th>Tổng dòng Log</th><td><input type="text" name="s1_total" class="short"></td></tr>
+      <tr><th>Closed / Cancelled / Open</th><td>
+        <input type="text" name="s1_closed" class="tiny"> /
+        <input type="text" name="s1_cancel" class="tiny"> /
+        <input type="text" name="s1_open" class="tiny">
+      </td></tr>
+      <tr><th>Must embed còn mở</th><td><input type="text" name="s1_must_open" class="short"></td></tr>
+    </table>
+
+    <h3 id="ll-s2">§2. Performance signals (measurements — PRINCE2)</h3>
+    <p>Bảng rút gọn — <b>không thay</b> Doc 4 Closure.</p>
+    <table class="form">
+      <thead><tr><th>Tín hiệu</th><th>Kết quả / số liệu</th><th>Evidence</th><th>Lesson gợi ý?</th></tr></thead>
+      <tbody>
+<tr><td>Lệch lịch mốc M0–M7 chính</td><td><input type="text" name="sig_sched_val" placeholder="[điền]"></td><td>Plan + BB mốc</td><td><input type="text" name="sig_sched_ll" placeholder="LL-ID hoặc không"></td></tr>
+<tr><td>% Must-have Accepted</td><td><input type="text" name="sig_must_val" placeholder="[điền]"></td><td>Jira MoSCoW=Must</td><td><input type="text" name="sig_must_ll" placeholder="LL-ID hoặc không"></td></tr>
+<tr><td>UAT / defect leakage</td><td><input type="text" name="sig_uat_val" placeholder="[điền]"></td><td>Test report / Jira</td><td><input type="text" name="sig_uat_ll" placeholder="LL-ID hoặc không"></td></tr>
+<tr><td>NFR B.4 nổi bật (1–3 mục)</td><td><input type="text" name="sig_nfr_val" placeholder="[điền]"></td><td>Báo cáo HT / monitoring</td><td><input type="text" name="sig_nfr_ll" placeholder="LL-ID hoặc không"></td></tr>
+<tr><td>CR C.11 duyệt / từ chối</td><td><input type="text" name="sig_cr_val" placeholder="[điền]"></td><td>CR log</td><td><input type="text" name="sig_cr_ll" placeholder="LL-ID hoặc không"></td></tr>
+<tr><td>SLA ổn định T27–T30</td><td><input type="text" name="sig_sla_val" placeholder="[điền]"></td><td>Monitoring / BG9</td><td><input type="text" name="sig_sla_ll" placeholder="LL-ID hoặc không"></td></tr>
+<tr><td>Gate Conditional / Fail (số lần)</td><td><input type="text" name="sig_gate_val" placeholder="[điền]"></td><td>Doc 1</td><td><input type="text" name="sig_gate_ll" placeholder="LL-ID hoặc không"></td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="ll-s3">§3. Went well / badly / Recommendations</h3>
+
+  <h3>3.1. Method — Hybrid–Scrum, gate, DoR/DoD</h3>
+  <table class="form">
+    <tr><th style="width:22%">Went well</th><td><textarea name="s3_method_well" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Went badly</th><td><textarea name="s3_method_bad" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Recommendations</th><td><textarea name="s3_method_rec" placeholder="[điền]"></textarea></td></tr>
+  </table>
+
+  <h3>3.2. Strategies — risk, quality, communications, configuration</h3>
+  <table class="form">
+    <tr><th style="width:22%">Went well</th><td><textarea name="s3_strat_well" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Went badly</th><td><textarea name="s3_strat_bad" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Recommendations</th><td><textarea name="s3_strat_rec" placeholder="[điền]"></textarea></td></tr>
+  </table>
+
+  <h3>3.3. Controls — C.11, thanh toán M-x, BG1–BG9</h3>
+  <table class="form">
+    <tr><th style="width:22%">Went well</th><td><textarea name="s3_ctrl_well" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Went badly</th><td><textarea name="s3_ctrl_bad" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Recommendations</th><td><textarea name="s3_ctrl_rec" placeholder="[điền]"></textarea></td></tr>
+  </table>
+
+  <h3>3.4. Specialist — CDC, mobile, pentest NTP (Lá Chắn Việt)</h3>
+  <table class="form">
+    <tr><th style="width:22%">Went well</th><td><textarea name="s3_spec_well" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Went badly</th><td><textarea name="s3_spec_bad" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Recommendations</th><td><textarea name="s3_spec_rec" placeholder="[điền]"></textarea></td></tr>
+  </table>
+
+  <h3>3.5. Abnormal events — incident, CR lớn, gate fail</h3>
+  <table class="form">
+    <tr><th style="width:22%">Went well</th><td><textarea name="s3_abn_well" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Went badly</th><td><textarea name="s3_abn_bad" placeholder="[điền]"></textarea></td></tr>
+    <tr><th>Recommendations</th><td><textarea name="s3_abn_rec" placeholder="[điền]"></textarea></td></tr>
+  </table>
+
+
+    <h3 id="ll-s4">§4. Significant Lessons (card)</h3>
+    <p class="no-print"><button type="button" id="ll-add-card" class="ghost">+ Thêm card LL</button></p>
+    <div id="ll-cards">
+
+<div class="ll-card" data-ll-card="1">
+  <h3>LL-01 · Significant Lesson</h3>
+  <div class="field-row"><label for="ll01_title">Title</label><input type="text" id="ll01_title" name="ll01_title" placeholder="[điền]"></div>
+  <p>
+    <label class="inline">Category <select name="ll01_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></label>
+    <label class="inline">Mức độ
+      <select name="ll01_level">
+        <option value="">—</option>
+        <option>Success to amplify</option>
+        <option>Problem to avoid</option>
+        <option>Opportunity missed</option>
+      </select>
+    </label>
+    <label class="inline">MoSCoW
+      <select name="ll01_moscow">
+        <option value="">—</option>
+        <option>Must embed</option>
+        <option>Should share</option>
+        <option>Could archive</option>
+      </select>
+    </label>
+  </p>
+  <div class="field-row"><label>Keywords</label><input type="text" name="ll01_kw" placeholder="phân tách bằng dấu phẩy"></div>
+  <table class="form">
+    <tr><th style="width:22%">Situation</th><td><textarea name="ll01_sit" placeholder="[điền — ngữ cảnh, evidence-based]"></textarea></td></tr>
+    <tr><th>Expected (AAR)</th><td><textarea name="ll01_exp" placeholder="Kỳ vọng là gì?"></textarea></td></tr>
+    <tr><th>Actual (AAR)</th><td><textarea name="ll01_act" placeholder="Thực tế là gì?"></textarea></td></tr>
+    <tr><th>Impact (+/−)</th><td><textarea name="ll01_imp" placeholder="Scope / Time / Cost / Quality / NFR / Reputation"></textarea></td></tr>
+    <tr><th>Cause / trigger</th><td><textarea name="ll01_cause" placeholder="Vì sao lệch?"></textarea></td></tr>
+    <tr><th>Early warning</th><td>
+      <select name="ll01_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll01_ew_txt" placeholder="mô tả">
+    </td></tr>
+    <tr><th>Prior risk?</th><td>
+      <select name="ll01_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll01_risk_id" placeholder="Risk-ID">
+    </td></tr>
+    <tr><th>Lesson (1–2 câu)</th><td><textarea name="ll01_lesson" placeholder="generic hóa để tái dùng"></textarea></td></tr>
+    <tr><th>Recommended actions</th><td>
+      <label>BH: <input type="text" name="ll01_rec_bh" placeholder="this project"></label><br>
+      <label>Future: <input type="text" name="ll01_rec_fut" placeholder="future projects"></label><br>
+      <label>PMO: <input type="text" name="ll01_rec_pmo" placeholder="PMO org"></label>
+    </td></tr>
+    <tr><th>Owner / Due / Status</th><td>
+      <input type="text" name="ll01_owner" placeholder="Owner" class="short">
+      <input type="date" name="ll01_due">
+      <select name="ll01_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select>
+    </td></tr>
+    <tr><th>OPA to update</th><td><label class="inline"><input type="checkbox" name="ll01_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="ll01_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="ll01_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="ll01_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="ll01_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="ll01_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="ll01_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="ll01_opa_7" value="1"> Khác</label></td></tr>
+    <tr><th>Evidence</th><td><input type="text" name="ll01_ev" placeholder="Jira/Confluence/biên bản"></td></tr>
+    <tr><th>Confidential?</th><td><label class="inline"><input type="checkbox" name="ll01_conf"> Y</label></td></tr>
+  </table>
+</div>
+
+<div class="ll-card" data-ll-card="1">
+  <h3>LL-02 · Significant Lesson</h3>
+  <div class="field-row"><label for="ll02_title">Title</label><input type="text" id="ll02_title" name="ll02_title" placeholder="[điền]"></div>
+  <p>
+    <label class="inline">Category <select name="ll02_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></label>
+    <label class="inline">Mức độ
+      <select name="ll02_level">
+        <option value="">—</option>
+        <option>Success to amplify</option>
+        <option>Problem to avoid</option>
+        <option>Opportunity missed</option>
+      </select>
+    </label>
+    <label class="inline">MoSCoW
+      <select name="ll02_moscow">
+        <option value="">—</option>
+        <option>Must embed</option>
+        <option>Should share</option>
+        <option>Could archive</option>
+      </select>
+    </label>
+  </p>
+  <div class="field-row"><label>Keywords</label><input type="text" name="ll02_kw" placeholder="phân tách bằng dấu phẩy"></div>
+  <table class="form">
+    <tr><th style="width:22%">Situation</th><td><textarea name="ll02_sit" placeholder="[điền — ngữ cảnh, evidence-based]"></textarea></td></tr>
+    <tr><th>Expected (AAR)</th><td><textarea name="ll02_exp" placeholder="Kỳ vọng là gì?"></textarea></td></tr>
+    <tr><th>Actual (AAR)</th><td><textarea name="ll02_act" placeholder="Thực tế là gì?"></textarea></td></tr>
+    <tr><th>Impact (+/−)</th><td><textarea name="ll02_imp" placeholder="Scope / Time / Cost / Quality / NFR / Reputation"></textarea></td></tr>
+    <tr><th>Cause / trigger</th><td><textarea name="ll02_cause" placeholder="Vì sao lệch?"></textarea></td></tr>
+    <tr><th>Early warning</th><td>
+      <select name="ll02_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll02_ew_txt" placeholder="mô tả">
+    </td></tr>
+    <tr><th>Prior risk?</th><td>
+      <select name="ll02_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll02_risk_id" placeholder="Risk-ID">
+    </td></tr>
+    <tr><th>Lesson (1–2 câu)</th><td><textarea name="ll02_lesson" placeholder="generic hóa để tái dùng"></textarea></td></tr>
+    <tr><th>Recommended actions</th><td>
+      <label>BH: <input type="text" name="ll02_rec_bh" placeholder="this project"></label><br>
+      <label>Future: <input type="text" name="ll02_rec_fut" placeholder="future projects"></label><br>
+      <label>PMO: <input type="text" name="ll02_rec_pmo" placeholder="PMO org"></label>
+    </td></tr>
+    <tr><th>Owner / Due / Status</th><td>
+      <input type="text" name="ll02_owner" placeholder="Owner" class="short">
+      <input type="date" name="ll02_due">
+      <select name="ll02_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select>
+    </td></tr>
+    <tr><th>OPA to update</th><td><label class="inline"><input type="checkbox" name="ll02_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="ll02_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="ll02_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="ll02_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="ll02_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="ll02_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="ll02_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="ll02_opa_7" value="1"> Khác</label></td></tr>
+    <tr><th>Evidence</th><td><input type="text" name="ll02_ev" placeholder="Jira/Confluence/biên bản"></td></tr>
+    <tr><th>Confidential?</th><td><label class="inline"><input type="checkbox" name="ll02_conf"> Y</label></td></tr>
+  </table>
+</div>
+
+<div class="ll-card" data-ll-card="1">
+  <h3>LL-03 · Significant Lesson</h3>
+  <div class="field-row"><label for="ll03_title">Title</label><input type="text" id="ll03_title" name="ll03_title" placeholder="[điền]"></div>
+  <p>
+    <label class="inline">Category <select name="ll03_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></label>
+    <label class="inline">Mức độ
+      <select name="ll03_level">
+        <option value="">—</option>
+        <option>Success to amplify</option>
+        <option>Problem to avoid</option>
+        <option>Opportunity missed</option>
+      </select>
+    </label>
+    <label class="inline">MoSCoW
+      <select name="ll03_moscow">
+        <option value="">—</option>
+        <option>Must embed</option>
+        <option>Should share</option>
+        <option>Could archive</option>
+      </select>
+    </label>
+  </p>
+  <div class="field-row"><label>Keywords</label><input type="text" name="ll03_kw" placeholder="phân tách bằng dấu phẩy"></div>
+  <table class="form">
+    <tr><th style="width:22%">Situation</th><td><textarea name="ll03_sit" placeholder="[điền — ngữ cảnh, evidence-based]"></textarea></td></tr>
+    <tr><th>Expected (AAR)</th><td><textarea name="ll03_exp" placeholder="Kỳ vọng là gì?"></textarea></td></tr>
+    <tr><th>Actual (AAR)</th><td><textarea name="ll03_act" placeholder="Thực tế là gì?"></textarea></td></tr>
+    <tr><th>Impact (+/−)</th><td><textarea name="ll03_imp" placeholder="Scope / Time / Cost / Quality / NFR / Reputation"></textarea></td></tr>
+    <tr><th>Cause / trigger</th><td><textarea name="ll03_cause" placeholder="Vì sao lệch?"></textarea></td></tr>
+    <tr><th>Early warning</th><td>
+      <select name="ll03_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll03_ew_txt" placeholder="mô tả">
+    </td></tr>
+    <tr><th>Prior risk?</th><td>
+      <select name="ll03_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll03_risk_id" placeholder="Risk-ID">
+    </td></tr>
+    <tr><th>Lesson (1–2 câu)</th><td><textarea name="ll03_lesson" placeholder="generic hóa để tái dùng"></textarea></td></tr>
+    <tr><th>Recommended actions</th><td>
+      <label>BH: <input type="text" name="ll03_rec_bh" placeholder="this project"></label><br>
+      <label>Future: <input type="text" name="ll03_rec_fut" placeholder="future projects"></label><br>
+      <label>PMO: <input type="text" name="ll03_rec_pmo" placeholder="PMO org"></label>
+    </td></tr>
+    <tr><th>Owner / Due / Status</th><td>
+      <input type="text" name="ll03_owner" placeholder="Owner" class="short">
+      <input type="date" name="ll03_due">
+      <select name="ll03_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select>
+    </td></tr>
+    <tr><th>OPA to update</th><td><label class="inline"><input type="checkbox" name="ll03_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="ll03_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="ll03_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="ll03_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="ll03_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="ll03_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="ll03_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="ll03_opa_7" value="1"> Khác</label></td></tr>
+    <tr><th>Evidence</th><td><input type="text" name="ll03_ev" placeholder="Jira/Confluence/biên bản"></td></tr>
+    <tr><th>Confidential?</th><td><label class="inline"><input type="checkbox" name="ll03_conf"> Y</label></td></tr>
+  </table>
+</div>
+
+<div class="ll-card" data-ll-card="1">
+  <h3>LL-04 · Significant Lesson</h3>
+  <div class="field-row"><label for="ll04_title">Title</label><input type="text" id="ll04_title" name="ll04_title" placeholder="[điền]"></div>
+  <p>
+    <label class="inline">Category <select name="ll04_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></label>
+    <label class="inline">Mức độ
+      <select name="ll04_level">
+        <option value="">—</option>
+        <option>Success to amplify</option>
+        <option>Problem to avoid</option>
+        <option>Opportunity missed</option>
+      </select>
+    </label>
+    <label class="inline">MoSCoW
+      <select name="ll04_moscow">
+        <option value="">—</option>
+        <option>Must embed</option>
+        <option>Should share</option>
+        <option>Could archive</option>
+      </select>
+    </label>
+  </p>
+  <div class="field-row"><label>Keywords</label><input type="text" name="ll04_kw" placeholder="phân tách bằng dấu phẩy"></div>
+  <table class="form">
+    <tr><th style="width:22%">Situation</th><td><textarea name="ll04_sit" placeholder="[điền — ngữ cảnh, evidence-based]"></textarea></td></tr>
+    <tr><th>Expected (AAR)</th><td><textarea name="ll04_exp" placeholder="Kỳ vọng là gì?"></textarea></td></tr>
+    <tr><th>Actual (AAR)</th><td><textarea name="ll04_act" placeholder="Thực tế là gì?"></textarea></td></tr>
+    <tr><th>Impact (+/−)</th><td><textarea name="ll04_imp" placeholder="Scope / Time / Cost / Quality / NFR / Reputation"></textarea></td></tr>
+    <tr><th>Cause / trigger</th><td><textarea name="ll04_cause" placeholder="Vì sao lệch?"></textarea></td></tr>
+    <tr><th>Early warning</th><td>
+      <select name="ll04_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll04_ew_txt" placeholder="mô tả">
+    </td></tr>
+    <tr><th>Prior risk?</th><td>
+      <select name="ll04_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll04_risk_id" placeholder="Risk-ID">
+    </td></tr>
+    <tr><th>Lesson (1–2 câu)</th><td><textarea name="ll04_lesson" placeholder="generic hóa để tái dùng"></textarea></td></tr>
+    <tr><th>Recommended actions</th><td>
+      <label>BH: <input type="text" name="ll04_rec_bh" placeholder="this project"></label><br>
+      <label>Future: <input type="text" name="ll04_rec_fut" placeholder="future projects"></label><br>
+      <label>PMO: <input type="text" name="ll04_rec_pmo" placeholder="PMO org"></label>
+    </td></tr>
+    <tr><th>Owner / Due / Status</th><td>
+      <input type="text" name="ll04_owner" placeholder="Owner" class="short">
+      <input type="date" name="ll04_due">
+      <select name="ll04_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select>
+    </td></tr>
+    <tr><th>OPA to update</th><td><label class="inline"><input type="checkbox" name="ll04_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="ll04_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="ll04_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="ll04_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="ll04_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="ll04_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="ll04_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="ll04_opa_7" value="1"> Khác</label></td></tr>
+    <tr><th>Evidence</th><td><input type="text" name="ll04_ev" placeholder="Jira/Confluence/biên bản"></td></tr>
+    <tr><th>Confidential?</th><td><label class="inline"><input type="checkbox" name="ll04_conf"> Y</label></td></tr>
+  </table>
+</div>
+
+<div class="ll-card" data-ll-card="1">
+  <h3>LL-05 · Significant Lesson</h3>
+  <div class="field-row"><label for="ll05_title">Title</label><input type="text" id="ll05_title" name="ll05_title" placeholder="[điền]"></div>
+  <p>
+    <label class="inline">Category <select name="ll05_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></label>
+    <label class="inline">Mức độ
+      <select name="ll05_level">
+        <option value="">—</option>
+        <option>Success to amplify</option>
+        <option>Problem to avoid</option>
+        <option>Opportunity missed</option>
+      </select>
+    </label>
+    <label class="inline">MoSCoW
+      <select name="ll05_moscow">
+        <option value="">—</option>
+        <option>Must embed</option>
+        <option>Should share</option>
+        <option>Could archive</option>
+      </select>
+    </label>
+  </p>
+  <div class="field-row"><label>Keywords</label><input type="text" name="ll05_kw" placeholder="phân tách bằng dấu phẩy"></div>
+  <table class="form">
+    <tr><th style="width:22%">Situation</th><td><textarea name="ll05_sit" placeholder="[điền — ngữ cảnh, evidence-based]"></textarea></td></tr>
+    <tr><th>Expected (AAR)</th><td><textarea name="ll05_exp" placeholder="Kỳ vọng là gì?"></textarea></td></tr>
+    <tr><th>Actual (AAR)</th><td><textarea name="ll05_act" placeholder="Thực tế là gì?"></textarea></td></tr>
+    <tr><th>Impact (+/−)</th><td><textarea name="ll05_imp" placeholder="Scope / Time / Cost / Quality / NFR / Reputation"></textarea></td></tr>
+    <tr><th>Cause / trigger</th><td><textarea name="ll05_cause" placeholder="Vì sao lệch?"></textarea></td></tr>
+    <tr><th>Early warning</th><td>
+      <select name="ll05_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll05_ew_txt" placeholder="mô tả">
+    </td></tr>
+    <tr><th>Prior risk?</th><td>
+      <select name="ll05_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll05_risk_id" placeholder="Risk-ID">
+    </td></tr>
+    <tr><th>Lesson (1–2 câu)</th><td><textarea name="ll05_lesson" placeholder="generic hóa để tái dùng"></textarea></td></tr>
+    <tr><th>Recommended actions</th><td>
+      <label>BH: <input type="text" name="ll05_rec_bh" placeholder="this project"></label><br>
+      <label>Future: <input type="text" name="ll05_rec_fut" placeholder="future projects"></label><br>
+      <label>PMO: <input type="text" name="ll05_rec_pmo" placeholder="PMO org"></label>
+    </td></tr>
+    <tr><th>Owner / Due / Status</th><td>
+      <input type="text" name="ll05_owner" placeholder="Owner" class="short">
+      <input type="date" name="ll05_due">
+      <select name="ll05_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select>
+    </td></tr>
+    <tr><th>OPA to update</th><td><label class="inline"><input type="checkbox" name="ll05_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="ll05_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="ll05_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="ll05_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="ll05_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="ll05_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="ll05_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="ll05_opa_7" value="1"> Khác</label></td></tr>
+    <tr><th>Evidence</th><td><input type="text" name="ll05_ev" placeholder="Jira/Confluence/biên bản"></td></tr>
+    <tr><th>Confidential?</th><td><label class="inline"><input type="checkbox" name="ll05_conf"> Y</label></td></tr>
+  </table>
+</div>
+
+<div class="ll-card" data-ll-card="1">
+  <h3>LL-06 · Significant Lesson</h3>
+  <div class="field-row"><label for="ll06_title">Title</label><input type="text" id="ll06_title" name="ll06_title" placeholder="[điền]"></div>
+  <p>
+    <label class="inline">Category <select name="ll06_cat">
+<option value="">—</option>
+<option>People</option>
+<option>Process</option>
+<option>Technology</option>
+<option>Vendor–Client</option>
+<option>Commercial/Contract</option>
+<option>Security/Compliance</option>
+<option>Ops/Handover</option>
+</select></label>
+    <label class="inline">Mức độ
+      <select name="ll06_level">
+        <option value="">—</option>
+        <option>Success to amplify</option>
+        <option>Problem to avoid</option>
+        <option>Opportunity missed</option>
+      </select>
+    </label>
+    <label class="inline">MoSCoW
+      <select name="ll06_moscow">
+        <option value="">—</option>
+        <option>Must embed</option>
+        <option>Should share</option>
+        <option>Could archive</option>
+      </select>
+    </label>
+  </p>
+  <div class="field-row"><label>Keywords</label><input type="text" name="ll06_kw" placeholder="phân tách bằng dấu phẩy"></div>
+  <table class="form">
+    <tr><th style="width:22%">Situation</th><td><textarea name="ll06_sit" placeholder="[điền — ngữ cảnh, evidence-based]"></textarea></td></tr>
+    <tr><th>Expected (AAR)</th><td><textarea name="ll06_exp" placeholder="Kỳ vọng là gì?"></textarea></td></tr>
+    <tr><th>Actual (AAR)</th><td><textarea name="ll06_act" placeholder="Thực tế là gì?"></textarea></td></tr>
+    <tr><th>Impact (+/−)</th><td><textarea name="ll06_imp" placeholder="Scope / Time / Cost / Quality / NFR / Reputation"></textarea></td></tr>
+    <tr><th>Cause / trigger</th><td><textarea name="ll06_cause" placeholder="Vì sao lệch?"></textarea></td></tr>
+    <tr><th>Early warning</th><td>
+      <select name="ll06_ew"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll06_ew_txt" placeholder="mô tả">
+    </td></tr>
+    <tr><th>Prior risk?</th><td>
+      <select name="ll06_risk"><option value="">—</option><option>Y</option><option>N</option></select>
+      <input type="text" name="ll06_risk_id" placeholder="Risk-ID">
+    </td></tr>
+    <tr><th>Lesson (1–2 câu)</th><td><textarea name="ll06_lesson" placeholder="generic hóa để tái dùng"></textarea></td></tr>
+    <tr><th>Recommended actions</th><td>
+      <label>BH: <input type="text" name="ll06_rec_bh" placeholder="this project"></label><br>
+      <label>Future: <input type="text" name="ll06_rec_fut" placeholder="future projects"></label><br>
+      <label>PMO: <input type="text" name="ll06_rec_pmo" placeholder="PMO org"></label>
+    </td></tr>
+    <tr><th>Owner / Due / Status</th><td>
+      <input type="text" name="ll06_owner" placeholder="Owner" class="short">
+      <input type="date" name="ll06_due">
+      <select name="ll06_status">
+<option>Identified</option>
+<option>Analyzed</option>
+<option>Action agreed</option>
+<option>In Progress</option>
+<option>Closed</option>
+<option>Cancelled</option>
+</select>
+    </td></tr>
+    <tr><th>OPA to update</th><td><label class="inline"><input type="checkbox" name="ll06_opa_0" value="1"> DoR</label> <label class="inline"><input type="checkbox" name="ll06_opa_1" value="1"> DoD</label> <label class="inline"><input type="checkbox" name="ll06_opa_2" value="1"> C.11</label> <label class="inline"><input type="checkbox" name="ll06_opa_3" value="1"> Gate checklist</label> <label class="inline"><input type="checkbox" name="ll06_opa_4" value="1"> Runbook</label> <label class="inline"><input type="checkbox" name="ll06_opa_5" value="1"> Estimation</label> <label class="inline"><input type="checkbox" name="ll06_opa_6" value="1"> Training</label> <label class="inline"><input type="checkbox" name="ll06_opa_7" value="1"> Khác</label></td></tr>
+    <tr><th>Evidence</th><td><input type="text" name="ll06_ev" placeholder="Jira/Confluence/biên bản"></td></tr>
+    <tr><th>Confidential?</th><td><label class="inline"><input type="checkbox" name="ll06_conf"> Y</label></td></tr>
+  </table>
+</div>
+    </div>
+
+    <h3 id="ll-s5">§5. Keep / Improve / Try</h3>
+    <p>Khớp <a class="no-print" href="pmo-closure.html#c9">Closure E.4 §9</a> — có thể đồng bộ thủ công từ bảng này.</p>
+    <table class="form">
+      <thead><tr><th>Nhóm</th><th>Keep</th><th>Improve</th><th>Try</th></tr></thead>
+      <tbody>
+
+<tr>
+  <td><b>People</b></td>
+  <td><textarea name="kit_p_k" rows="2" placeholder="Keep"></textarea></td>
+  <td><textarea name="kit_p_i" rows="2" placeholder="Improve"></textarea></td>
+  <td><textarea name="kit_p_t" rows="2" placeholder="Try"></textarea></td>
+</tr>
+
+<tr>
+  <td><b>Process (Hybrid, gate, C.11, DoR/DoD)</b></td>
+  <td><textarea name="kit_pr_k" rows="2" placeholder="Keep"></textarea></td>
+  <td><textarea name="kit_pr_i" rows="2" placeholder="Improve"></textarea></td>
+  <td><textarea name="kit_pr_t" rows="2" placeholder="Try"></textarea></td>
+</tr>
+
+<tr>
+  <td><b>Technology (CDC, mobile, NFR, CI)</b></td>
+  <td><textarea name="kit_t_k" rows="2" placeholder="Keep"></textarea></td>
+  <td><textarea name="kit_t_i" rows="2" placeholder="Improve"></textarea></td>
+  <td><textarea name="kit_t_t" rows="2" placeholder="Try"></textarea></td>
+</tr>
+
+<tr>
+  <td><b>Vendor–Client</b></td>
+  <td><textarea name="kit_v_k" rows="2" placeholder="Keep"></textarea></td>
+  <td><textarea name="kit_v_i" rows="2" placeholder="Improve"></textarea></td>
+  <td><textarea name="kit_v_t" rows="2" placeholder="Try"></textarea></td>
+</tr>
+      </tbody>
+    </table>
+    <p>Workshop: Ngày <input type="date" name="kit_date"> · Facilitator <input type="text" name="kit_fac" class="short"> · Biên bản <input type="text" name="kit_bb" placeholder="[điền link]"></p>
+
+    <h3 id="ll-s6">§6. Actions &amp; Assimilation</h3>
+    <div class="warn-internal">Lesson chưa đưa vào checklist / template / procedure / KPI = chưa học xong (PMI assimilation).</div>
+    <table class="form">
+      <thead><tr><th>#</th><th>Action</th><th>Loại</th><th>Owner</th><th>Due</th><th>Verification</th><th>Done?</th></tr></thead>
+      <tbody>
+
+<tr>
+  <td class="c">1</td>
+  <td><input type="text" name="act1_txt" placeholder="[điền]"></td>
+  <td><select name="act1_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act1_own"></td>
+  <td><input type="date" name="act1_due"></td>
+  <td><input type="text" name="act1_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act1_done"></td>
+</tr>
+
+<tr>
+  <td class="c">2</td>
+  <td><input type="text" name="act2_txt" placeholder="[điền]"></td>
+  <td><select name="act2_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act2_own"></td>
+  <td><input type="date" name="act2_due"></td>
+  <td><input type="text" name="act2_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act2_done"></td>
+</tr>
+
+<tr>
+  <td class="c">3</td>
+  <td><input type="text" name="act3_txt" placeholder="[điền]"></td>
+  <td><select name="act3_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act3_own"></td>
+  <td><input type="date" name="act3_due"></td>
+  <td><input type="text" name="act3_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act3_done"></td>
+</tr>
+
+<tr>
+  <td class="c">4</td>
+  <td><input type="text" name="act4_txt" placeholder="[điền]"></td>
+  <td><select name="act4_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act4_own"></td>
+  <td><input type="date" name="act4_due"></td>
+  <td><input type="text" name="act4_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act4_done"></td>
+</tr>
+
+<tr>
+  <td class="c">5</td>
+  <td><input type="text" name="act5_txt" placeholder="[điền]"></td>
+  <td><select name="act5_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act5_own"></td>
+  <td><input type="date" name="act5_due"></td>
+  <td><input type="text" name="act5_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act5_done"></td>
+</tr>
+
+<tr>
+  <td class="c">6</td>
+  <td><input type="text" name="act6_txt" placeholder="[điền]"></td>
+  <td><select name="act6_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act6_own"></td>
+  <td><input type="date" name="act6_due"></td>
+  <td><input type="text" name="act6_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act6_done"></td>
+</tr>
+
+<tr>
+  <td class="c">7</td>
+  <td><input type="text" name="act7_txt" placeholder="[điền]"></td>
+  <td><select name="act7_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act7_own"></td>
+  <td><input type="date" name="act7_due"></td>
+  <td><input type="text" name="act7_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act7_done"></td>
+</tr>
+
+<tr>
+  <td class="c">8</td>
+  <td><input type="text" name="act8_txt" placeholder="[điền]"></td>
+  <td><select name="act8_type">
+    <option value="">—</option><option>Process</option><option>Template</option>
+    <option>Training</option><option>Tool</option><option>Contract</option>
+  </select></td>
+  <td><input type="text" name="act8_own"></td>
+  <td><input type="date" name="act8_due"></td>
+  <td><input type="text" name="act8_ver" placeholder="làm sao biết xong?"></td>
+  <td class="c"><input type="checkbox" name="act8_done"></td>
+</tr>
+      </tbody>
+    </table>
+    <p><label class="inline"><input type="checkbox" name="s6_assim"> Mọi action Must embed đã có OPA cập nhật hoặc ticket theo dõi đến Closed.</label></p>
+
+    <h3 id="ll-s7">§7. Sharing &amp; Retrieve</h3>
+    <table class="form">
+      <tr><th style="width:28%">Confluence</th><td><input type="text" name="s7_conf" value="QA-OMS / Lessons"></td></tr>
+      <tr><th>PDF ký</th><td><input type="text" name="s7_pdf" placeholder="[điền đường dẫn]"></td></tr>
+      <tr><th>Chia sẻ QA</th><td>
+        <label class="inline"><input type="radio" name="s7_share" value="sum"> Chỉ bản tổng hợp (§1+§5)</label>
+        <label class="inline"><input type="radio" name="s7_share" value="no"> Không chia sẻ raw Log</label>
+      </td></tr>
+      <tr><th>Learning legacy</th><td>
+        <label class="inline"><input type="checkbox" name="s7_ann"> Đã đăng announcement PMO</label>
+        <label class="inline"><input type="checkbox" name="s7_link4"> Đã gắn link vào Doc 4</label>
+      </td></tr>
+    </table>
+    <p><b>5 câu Retrieve</b> (trước Planning dự án sau)</p>
+    <table class="form">
+      <thead><tr><th>#</th><th>Câu hỏi</th><th>Trả lời (có/không + LL-ID)</th><th>Ảnh hưởng kế hoạch</th></tr></thead>
+      <tbody>
+        <tr><td class="c">1</td><td>Estimation / DoR với tích hợp ngoài (CDC/POS) đã từng fail gate chưa?</td>
+          <td><input type="text" name="ret1_a"></td><td><input type="text" name="ret1_p"></td></tr>
+        <tr><td class="c">2</td><td>UAT / defect leakage — pattern nào phải đưa vào DoD test?</td>
+          <td><input type="text" name="ret2_a"></td><td><input type="text" name="ret2_p"></td></tr>
+        <tr><td class="c">3</td><td>Gate Conditional — checklist nào thiếu và đã cập nhật OPA chưa?</td>
+          <td><input type="text" name="ret3_a"></td><td><input type="text" name="ret3_p"></td></tr>
+        <tr><td class="c">4</td><td>CR C.11 — impact M-x / MoSCoW đã được chuẩn hóa chưa?</td>
+          <td><input type="text" name="ret4_a"></td><td><input type="text" name="ret4_p"></td></tr>
+        <tr><td class="c">5</td><td>Security/pentest NTP &amp; go-live rollback — blocker rule còn hiệu lực?</td>
+          <td><input type="text" name="ret5_a"></td><td><input type="text" name="ret5_p"></td></tr>
+      </tbody>
+    </table>
+    <p>PM dự án mới xác nhận Retrieve: <input type="text" name="ret_pm" placeholder="Họ tên" class="short"> · Ngày <input type="date" name="ret_date"> · <label class="inline"><input type="checkbox" name="ret_ok"> Đã đọc Report + Keywords</label></p>
+
+    <h3 id="ll-s8">§8. Approval</h3>
+    <table class="form">
+      <thead><tr><th>Vai trò</th><th>Họ tên</th><th>Quyết định</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>PM/SM trình</td>
+          <td><input type="text" name="ap_pm_name"></td>
+          <td><label class="inline"><input type="checkbox" name="ap_pm_ok"> Trình duyệt</label></td>
+          <td><input type="text" name="ap_pm_sig"></td>
+          <td><input type="date" name="ap_pm_date"></td>
+        </tr>
+        <tr>
+          <td>PMO / Knowledge Owner</td>
+          <td><input type="text" name="ap_pmo_name"></td>
+          <td>
+            <label class="inline"><input type="radio" name="ap_pmo_dec" value="in"> Đã nhập</label>
+            <label class="inline"><input type="radio" name="ap_pmo_dec" value="fix"> Yêu cầu sửa</label>
+          </td>
+          <td><input type="text" name="ap_pmo_sig"></td>
+          <td><input type="date" name="ap_pmo_date"></td>
+        </tr>
+        <tr>
+          <td>PO (QA) — tuỳ chọn</td>
+          <td><input type="text" name="ap_po_name"></td>
+          <td>
+            <label class="inline"><input type="radio" name="ap_po_dec" value="recv"> Đã nhận</label>
+            <label class="inline"><input type="radio" name="ap_po_dec" value="na"> Không áp dụng</label>
+          </td>
+          <td><input type="text" name="ap_po_sig"></td>
+          <td><input type="date" name="ap_po_date"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Ngày đóng Lessons Log dự án: <input type="date" name="ap_close_log"> · Open Must embed → BH/PMO backlog: <input type="text" name="ap_backlog" placeholder="Ticket"></p>
+
+    <h3>Phụ lục — Log export &amp; version</h3>
+    <table class="form">
+      <tr><th style="width:28%">Ngày export Log</th><td><input type="date" name="app_exp_date"></td></tr>
+      <tr><th>Số dòng / File</th><td><input type="text" name="app_exp_n" class="tiny"> · <input type="text" name="app_exp_file" placeholder="[điền]"></td></tr>
+      <tr><th>Ver 0.9</th><td>Ngày <input type="date" name="ver09_d"> · Người <input type="text" name="ver09_who" class="short"> · Draft sau workshop</td></tr>
+      <tr><th>Ver 1.0</th><td>Ngày <input type="date" name="ver10_d"> · Người <input type="text" name="ver10_who" class="short"> · Trình PMO</td></tr>
+    </table>
+  </div>
+
+  <!-- ========== TAB D: AGENDA ========== -->
+  <div class="ll-panel" data-ll="agenda" id="ll-agenda" role="tabpanel">
+    <h2>D · Agenda workshop End-of-Project 90 phút</h2>
+    <p>Facilitator: SM · Scribe: PM/BA · Thành phần tối thiểu: PO, IT Lead, PM/SM, Architect, Dev/QA/DevOps.</p>
+    <table class="form">
+      <thead><tr><th>Phút</th><th>Pha (Derby &amp; Larsen)</th><th>Hoạt động</th><th>Câu hỏi NASA AAR / output</th><th>Ghi chú họp</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="c">0–10</td><td><b>1. Set the Stage</b></td>
+          <td>Mục tiêu, psychological safety; quan sát ≠ ý kiến ≠ hành động</td>
+          <td>Cải thiện hệ thống &amp; quy trình, không đổ lỗi cá nhân</td>
+          <td><textarea name="ag_p1" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td class="c">10–30</td><td><b>2. Gather Data</b></td>
+          <td>Timeline M0–M7 / R0–R4; sticky Went well / Improve; chiếu §2</td>
+          <td>AAR 1–2: Kỳ vọng? Thực tế? → 3–5 hot spots</td>
+          <td><textarea name="ag_p2" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td class="c">30–55</td><td><b>3. Generate Insights</b></td>
+          <td>5 Whys / fishbone; map Category + Keywords</td>
+          <td>AAR 3: Vì sao lệch? Early warning? Prior risk?</td>
+          <td><textarea name="ag_p3" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td class="c">55–80</td><td><b>4. Decide What to Do</b></td>
+          <td>Keep/Improve/Try §5; MoSCoW; Owner–Due–OPA</td>
+          <td>AAR 4: Giữ / sửa / thử gì lần sau?</td>
+          <td><textarea name="ag_p4" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td class="c">80–90</td><td><b>5. Close</b></td>
+          <td>Đọc Must embed; ai soạn Report; hạn nhập repo</td>
+          <td>Owner Full Report; ngày đóng Log dự kiến</td>
+          <td><textarea name="ag_p5" rows="2"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Biến thể ngắn 45–60' (sau Gate / Release)</h3>
+    <table class="form">
+      <tr><td>0–5</td><td>Set the Stage (luật họp)</td></tr>
+      <tr><td>5–20</td><td>AAR 4 câu cho <b>một</b> sự kiện</td></tr>
+      <tr><td>20–40</td><td>1–3 dòng Log + action Must embed</td></tr>
+      <tr><td>40–50/60</td><td>Ai cập nhật OPA; link evidence; đóng họp</td></tr>
+    </table>
+  </div>
+
+  <!-- Source → Field -->
+  <details class="guide audit-box">
+    <summary>Phụ lục audit — Source → Field (rút gọn)</summary>
+    <table class="form">
+      <thead><tr><th>Nguồn</th><th>Field trên form</th></tr></thead>
+      <tbody>
+        <tr><td>PMI 5 activities + Keywords</td><td>Log + §4 + §7 Retrieve</td></tr>
+        <tr><td>PMI assimilation</td><td>OPA · §6 checklist</td></tr>
+        <tr><td>PRINCE2 Lessons Report</td><td>Full Report · §3 · §4 card</td></tr>
+        <tr><td>NASA AAR</td><td>Agenda · Expected/Actual · §5 KIT</td></tr>
+        <tr><td>UK Teal Book register</td><td>Cột Log living</td></tr>
+        <tr><td>Derby &amp; Larsen 5-step</td><td>Agenda 90'</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:9pt">URL: PMI applying-LL · PMI early-often · PRINCE2 Lessons Report · NASA AAR PDF · Teal Book ch.38 · Agile Retrospectives (Derby &amp; Larsen). Chi tiết: <code>pmo/source/05_Post_Project_Lessons_Learned_Report.md</code></p>
+  </details>
+
+  <p class="disclaimer">Bản mẫu hư cấu phục vụ bài tập đóng vai môn Quản trị dự án CNTT. Không có giá trị pháp lý; không phải tài liệu đánh giá thầu trong E-HSDT. Ví dụ minh họa trên Log (LL-EX-*) là hư cấu có cấu trúc — không phải số liệu HĐ thật.</p>
+  <p class="print-hint">In bằng trình duyệt → Save as PDF · khổ A4 · mặc định chỉ in tab đang chọn</p>
+
+  <nav class="pmo-nav no-print">
+    <a href="index.html">Danh mục</a>
+    <a href="pmo.html">E.0</a>
+    <a href="pmo-gate.html">E.1</a>
+    <a href="pmo-closure.html">E.4</a>
+    <a href="pmo-lessons.html"><b>E.5</b></a>
+  </nav>
+</section>
+</form>
+</main>
+</div>
+<script src="assets/pmo.js"></script>
+</body>
+</html>

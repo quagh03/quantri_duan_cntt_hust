@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E.4 – Project Review and Closure Report – Sao Bắc Tech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pmo.css">
+</head>
+<body class="pmo" data-storage-key="pmo-E4">
+
+<div class="bar">
+  <a href="index.html">← Danh mục</a>
+  <span class="title">E.4 · Project Review and Closure Report</span>
+  <span class="bar-actions">
+    <button type="button" class="ghost" data-clear>Xóa dữ liệu form</button>
+    <button type="button" data-print>In / Lưu PDF</button>
+  </span>
+</div>
+
+<div class="layout">
+<nav class="side no-print">
+  <div class="side-label">Mục báo cáo</div>
+  <a href="#c1">1. Executive summary</a>
+  <a href="#c2">2. Scope</a>
+  <a href="#c3">3. Schedule &amp; cost</a>
+  <a href="#c4">4. Quality</a>
+  <a href="#c5">5. Benefits</a>
+  <a href="#c6">6. Handover</a>
+  <a href="#c7">7. Open items BH</a>
+  <a href="#c8">8. Synthesis</a>
+  <a href="#c9">9. Lessons learned</a>
+  <a href="#c10">10. Recommendations</a>
+  <a href="#c11">11. Phê duyệt đóng</a>
+  <div class="side-label">Phần E · PMO</div>
+  <a href="pmo.html">E.0</a>
+  <a href="pmo-gate.html">E.1</a>
+  <a href="pmo-peer.html">E.2</a>
+  <a href="pmo-stakeholder.html">E.3</a>
+  <a href="pmo-closure.html" class="active">E.4</a>
+  <a href="pmo-lessons.html">E.5 Lessons</a>
+</nav>
+
+<main class="pages">
+<form id="pmo-form">
+<section class="pmo-sheet">
+  <span class="code-tag">E.4</span>
+  <h1>Báo cáo rà soát và đóng dự án</h1>
+  <p class="en-sub">Project Review and Closure Report</p>
+
+  <table class="pmo-meta">
+    <tr><th>Dự án</th><td>Phát triển hệ thống phân phối trực tuyến (Web + Mobile)</td></tr>
+    <tr><th>Mã TBMT / HĐ</th><td>E-TBMT IB2600184512-00 / HĐ số: <input class="short" type="text" name="e4_hd" placeholder="[điền]"></td></tr>
+    <tr><th>Chủ đầu tư</th><td>Chuỗi cửa hàng thời trang QA</td></tr>
+    <tr><th>Nhà thầu</th><td>Công ty CP Công nghệ Số Sao Bắc (Sao Bắc Tech)</td></tr>
+    <tr><th>Loại HĐ / Thời gian</th><td>Trọn gói · 30 tuần (+ bảo hành 12 tháng)</td></tr>
+    <tr><th>Phiên bản / Ngày lập</th><td>1.0 · <label>Ngày lập <input type="date" name="e4_date"></label></td></tr>
+    <tr><th>Cột mốc đóng</th><td>Sau Gate <b>G7</b> / nghiệm thu cuối (M7, tuần 30)</td></tr>
+    <tr><th>Tác giả / Rà soát / Phê duyệt</th>
+      <td>PM/SM: <input class="short" type="text" name="e4_author" placeholder="[điền]"> · Rà soát: Architect, QA Lead · Phê duyệt: PO + Ban chỉ đạo QA</td></tr>
+    <tr><th>Lưu trữ</th><td>Confluence: QA-OMS / Closure + PDF ký số; Jira epic CLOSURE</td></tr>
+  </table>
+
+  <div class="guide">
+    <details open>
+      <summary>Hướng dẫn điền (rút gọn)</summary>
+      <ol>
+        <li>Chỉ điền số liệu có nguồn; thiếu thì để trống / [điền] — không ước lượng giả.</li>
+        <li>Mỗi mục Pass/Fail tham chiếu Gate G7 và BG1–BG9.</li>
+        <li>Đánh giá đội/stakeholder chỉ dùng synthesis ẩn danh từ E.2–E.3.</li>
+        <li>Open items phải có owner + hạn + board bảo hành.</li>
+        <li>Sau khi ký §11: Jira dự án → Closed; board BH → Active.</li>
+      </ol>
+    </details>
+  </div>
+
+  <!-- 1 -->
+  <h2 id="c1">1. Executive summary</h2>
+  <h3>1.1. Mục tiêu ban đầu vs kết quả</h3>
+  <table class="form">
+    <thead><tr><th>Mục tiêu</th><th>Kết quả tại T30</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Bàn giao Web + Mobile đúng phạm vi B.3</td>
+        <td>
+          <label class="inline"><input type="radio" name="es_scope" value="dat"> Đạt</label>
+          <label class="inline"><input type="radio" name="es_scope" value="motphan"> Đạt một phần</label>
+          <label class="inline"><input type="radio" name="es_scope" value="chua"> Chưa đạt</label>
+        </td>
+        <td><input type="text" name="es_scope_ev" placeholder="Traceability B.3"></td>
+      </tr>
+      <tr>
+        <td>Go-live toàn chuỗi tuần 26 (M6)</td>
+        <td>Ngày thực tế: <input type="date" name="es_m6"></td>
+        <td><input type="text" name="es_m6_ev" placeholder="BB go-live / G6"></td>
+      </tr>
+      <tr>
+        <td>Ổn định 30 ngày + nghiệm thu cuối (M7)</td>
+        <td>Ngày thực tế: <input type="date" name="es_m7"></td>
+        <td><input type="text" name="es_m7_ev" placeholder="Gate G7 / BG9"></td>
+      </tr>
+      <tr>
+        <td>NFR B.4</td>
+        <td>
+          <label class="inline"><input type="radio" name="es_nfr" value="dat"> Đạt</label>
+          <label class="inline"><input type="radio" name="es_nfr" value="cond"> Conditional</label>
+          <label class="inline"><input type="radio" name="es_nfr" value="chua"> Chưa</label>
+        </td>
+        <td><input type="text" name="es_nfr_ev"></td>
+      </tr>
+      <tr>
+        <td>Thanh toán theo mốc M0–M7</td>
+        <td><input type="text" name="es_pay" placeholder="Trạng thái thu [điền]"></td>
+        <td><input type="text" name="es_pay_ev" placeholder="Commercial log"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>1.2. Tóm tắt (≤ 150 từ)</h3>
+  <textarea name="es_summary" rows="4" placeholder="[điền — phạm vi giao, lệch tiến độ/chi phí, chất lượng, sẵn sàng BH, khuyến nghị]"></textarea>
+  <h3>1.3. Quyết định đề xuất</h3>
+  <p>
+    <label class="inline"><input type="radio" name="es_dec" value="GO"> GO đóng dự án — chuyển BH</label>
+    <label class="inline"><input type="radio" name="es_dec" value="GO-DK"> GO có điều kiện</label>
+    <label class="inline"><input type="radio" name="es_dec" value="NOGO"> NO-GO — chưa đóng</label>
+  </p>
+  <p>Lý do ngắn: <input type="text" name="es_reason"></p>
+  <p>Điều kiện còn mở: Ticket <input class="short" type="text" name="es_ticket"> Due <input class="short" type="text" name="es_due"></p>
+
+  <!-- 2 -->
+  <h2 id="c2">2. Scope delivered vs contracted</h2>
+  <h3>2.1. Phạm vi B.3</h3>
+  <table class="form">
+    <thead><tr><th>Phân hệ B.3</th><th>Epic / mã</th><th>Trạng thái</th><th>Ghi chú lệch</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>B.3.1 Tìm kiếm sản phẩm</td>
+        <td><input type="text" name="sc_tk" placeholder="TK-…"></td>
+        <td>
+          <label class="inline"><input type="radio" name="sc_tk_st" value="Full"> Full</label>
+          <label class="inline"><input type="radio" name="sc_tk_st" value="Partial"> Partial</label>
+          <label class="inline"><input type="radio" name="sc_tk_st" value="Out"> Out</label>
+        </td>
+        <td><input type="text" name="sc_tk_note"></td>
+      </tr>
+      <tr>
+        <td>B.3.2 Quản lý cửa hàng</td>
+        <td><input type="text" name="sc_ch" placeholder="CH-…"></td>
+        <td>
+          <label class="inline"><input type="radio" name="sc_ch_st" value="Full"> Full</label>
+          <label class="inline"><input type="radio" name="sc_ch_st" value="Partial"> Partial</label>
+          <label class="inline"><input type="radio" name="sc_ch_st" value="Out"> Out</label>
+        </td>
+        <td><input type="text" name="sc_ch_note"></td>
+      </tr>
+      <tr>
+        <td>B.3.3 Quản lý đơn hàng</td>
+        <td><input type="text" name="sc_dh" placeholder="DH-…"></td>
+        <td>
+          <label class="inline"><input type="radio" name="sc_dh_st" value="Full"> Full</label>
+          <label class="inline"><input type="radio" name="sc_dh_st" value="Partial"> Partial</label>
+          <label class="inline"><input type="radio" name="sc_dh_st" value="Out"> Out</label>
+        </td>
+        <td><input type="text" name="sc_dh_note"></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Tỷ lệ story Must-have Accepted / tổng Must-have: <input class="tiny" type="text" name="sc_must_pct"> %</p>
+
+  <h3>2.2. CR log tóm tắt (C.11)</h3>
+  <table class="form">
+    <thead><tr><th>Mã CR</th><th>Tóm tắt</th><th>Quyết định</th><th>Ảnh hưởng</th><th>Trạng thái</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="cr1_id" value="CR-001"></td>
+        <td><input type="text" name="cr1_sum" placeholder="[điền]"></td>
+        <td><input type="text" name="cr1_dec"></td>
+        <td><input type="text" name="cr1_impact"></td>
+        <td><input type="text" name="cr1_st"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="cr2_id" placeholder="CR-00x"></td>
+        <td><input type="text" name="cr2_sum"></td>
+        <td><input type="text" name="cr2_dec"></td>
+        <td><input type="text" name="cr2_impact"></td>
+        <td><input type="text" name="cr2_st"></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>CR duyệt vào scope: <input class="tiny" type="text" name="cr_ok"> · Từ chối: <input class="tiny" type="text" name="cr_no"> · Chuyển BH: <input class="tiny" type="text" name="cr_bh"></p>
+
+  <h3>2.3. Out-of-scope đã thống nhất</h3>
+  <p>1. <input type="text" name="oos1" placeholder="[điền]"></p>
+  <p>2. <input type="text" name="oos2" placeholder="[điền]"></p>
+  <p>3. <input type="text" name="oos3" placeholder="[điền]"></p>
+
+  <!-- 3 -->
+  <h2 id="c3">3. Schedule &amp; cost performance</h2>
+  <h3>3.1. Mốc M0–M7</h3>
+  <table class="form">
+    <thead>
+      <tr><th>Mốc</th><th>Nội dung</th><th>Tuần KH</th><th>Ngày KH</th><th>Ngày TT</th><th>Lệch</th><th>Kết quả</th><th>Evidence</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M0</td><td>Ký HĐ, kick-off; tạm ứng 20%</td><td class="c">0</td>
+        <td><input type="date" name="m0_kh"></td><td><input type="date" name="m0_tt"></td>
+        <td><input type="text" name="m0_delta"></td>
+        <td><input type="checkbox" name="m0_ok"> OK</td><td><input type="text" name="m0_ev"></td>
+      </tr>
+      <tr>
+        <td>M1</td><td>SRS duyệt</td><td class="c">3</td>
+        <td><input type="date" name="m1_kh"></td><td><input type="date" name="m1_tt"></td>
+        <td><input type="text" name="m1_delta"></td>
+        <td><input type="checkbox" name="m1_ok"> OK</td><td>BG1</td>
+      </tr>
+      <tr>
+        <td>M2</td><td>Thiết kế + Sprint 0 (R0); TT 20%</td><td class="c">6</td>
+        <td><input type="date" name="m2_kh"></td><td><input type="date" name="m2_tt"></td>
+        <td><input type="text" name="m2_delta"></td>
+        <td><input type="checkbox" name="m2_ok"> OK</td><td>BG2 / G0-G1</td>
+      </tr>
+      <tr>
+        <td>M3</td><td>MVP nội bộ R1</td><td class="c">12</td>
+        <td><input type="date" name="m3_kh"></td><td><input type="date" name="m3_tt"></td>
+        <td><input type="text" name="m3_delta"></td>
+        <td><input type="checkbox" name="m3_ok"> OK</td><td>BG4 / G2-R1</td>
+      </tr>
+      <tr>
+        <td>M4</td><td>Code complete; TT 25%</td><td class="c">18</td>
+        <td><input type="date" name="m4_kh"></td><td><input type="date" name="m4_tt"></td>
+        <td><input type="text" name="m4_delta"></td>
+        <td><input type="checkbox" name="m4_ok"> OK</td><td>BG5 / G2-CC</td>
+      </tr>
+      <tr>
+        <td>M5</td><td>UAT đạt + đào tạo; TT 20%</td><td class="c">23</td>
+        <td><input type="date" name="m5_kh"></td><td><input type="date" name="m5_tt"></td>
+        <td><input type="text" name="m5_delta"></td>
+        <td><input type="checkbox" name="m5_ok"> OK</td><td>BG7 / G4</td>
+      </tr>
+      <tr>
+        <td>M6</td><td>Go-live toàn chuỗi</td><td class="c">26</td>
+        <td><input type="date" name="m6_kh"></td><td><input type="date" name="m6_tt"></td>
+        <td><input type="text" name="m6_delta"></td>
+        <td><input type="checkbox" name="m6_ok"> OK</td><td>BG8 / G6</td>
+      </tr>
+      <tr>
+        <td>M7</td><td>Nghiệm thu cuối; TT 15%; bắt đầu BH</td><td class="c">30</td>
+        <td><input type="date" name="m7_kh"></td><td><input type="date" name="m7_tt"></td>
+        <td><input type="text" name="m7_delta"></td>
+        <td><input type="checkbox" name="m7_ok"> OK</td><td>BG9 / G7</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:9.5pt">Lệch (ngày) = Ngày thực tế − Ngày kế hoạch (âm = sớm).</p>
+
+  <h3>3.2. Release</h3>
+  <table class="form">
+    <thead><tr><th>Release</th><th>Kế hoạch</th><th>Thực tế</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>R0 Walking skeleton</td><td>T6</td><td><input type="text" name="r0_tt" placeholder="[điền]"></td><td><input type="text" name="r0_note"></td></tr>
+      <tr><td>R1 MVP</td><td>T12</td><td><input type="text" name="r1_tt"></td><td><input type="text" name="r1_note"></td></tr>
+      <tr><td>R2 Beta</td><td>T20</td><td><input type="text" name="r2_tt"></td><td><input type="text" name="r2_note"></td></tr>
+      <tr><td>R3 Pilot</td><td>T24–25</td><td><input type="text" name="r3_tt"></td><td><input type="text" name="r3_note"></td></tr>
+      <tr><td>R4 Go-live</td><td>T26</td><td><input type="text" name="r4_tt"></td><td><input type="text" name="r4_note"></td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3. Man-month (nội bộ)</h3>
+  <table class="form">
+    <thead><tr><th>Vai trò</th><th>MM KH</th><th>MM TT</th><th>Lệch</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>PM/SM</td><td>7,0</td><td><input type="text" name="mm_pm"></td><td><input type="text" name="mm_pm_d"></td><td></td></tr>
+      <tr><td>Architect</td><td>3,0</td><td><input type="text" name="mm_arch"></td><td><input type="text" name="mm_arch_d"></td><td></td></tr>
+      <tr><td>BA / Proxy PO</td><td><input type="text" name="mm_ba_kh" placeholder="C.7"></td><td><input type="text" name="mm_ba"></td><td><input type="text" name="mm_ba_d"></td><td></td></tr>
+      <tr><td>Dev team (gop)</td><td><input type="text" name="mm_dev_kh"></td><td><input type="text" name="mm_dev"></td><td><input type="text" name="mm_dev_d"></td><td></td></tr>
+      <tr><td>QA</td><td><input type="text" name="mm_qa_kh"></td><td><input type="text" name="mm_qa"></td><td><input type="text" name="mm_qa_d"></td><td></td></tr>
+      <tr><td>DevOps</td><td><input type="text" name="mm_ops_kh"></td><td><input type="text" name="mm_ops"></td><td><input type="text" name="mm_ops_d"></td><td></td></tr>
+      <tr><td>UI/UX</td><td><input type="text" name="mm_ux_kh"></td><td><input type="text" name="mm_ux"></td><td><input type="text" name="mm_ux_d"></td><td></td></tr>
+      <tr><td>NTP pentest (Lá Chắn Việt)</td><td><input type="text" name="mm_ntp_kh"></td><td><input type="text" name="mm_ntp"></td><td><input type="text" name="mm_ntp_d"></td><td></td></tr>
+    </tbody>
+  </table>
+  <p>Giá HĐ <input class="short" type="text" name="cost_hd"> · Đã TT <input class="short" type="text" name="cost_paid"> · Còn lại <input class="short" type="text" name="cost_left"> · Retention/BH <input class="short" type="text" name="cost_ret"></p>
+
+  <h3>3.4. Chỉ số Agile</h3>
+  <table class="form">
+    <thead><tr><th>Chỉ số</th><th>Mục tiêu</th><th>Thực tế</th><th>Nguồn</th></tr></thead>
+    <tbody>
+      <tr><td>Sprint commitment rate</td><td>≥ 85%</td><td><input type="text" name="ag_commit" placeholder="%"> </td><td>Jira</td></tr>
+      <tr><td>Velocity ổn định</td><td>Theo dõi</td><td>TB <input class="tiny" type="text" name="ag_vel"> · σ <input class="tiny" type="text" name="ag_sig"></td><td>Charts</td></tr>
+      <tr><td>Burn-up Must-have @ T18</td><td>100% B.3</td><td><input type="text" name="ag_burn" placeholder="%"></td><td>Burn-up</td></tr>
+      <tr><td>Story reject tại review</td><td>Thấp</td><td><input type="text" name="ag_reject"></td><td>Review BB</td></tr>
+      <tr><td>Defect leakage → UAT/PRD</td><td><input class="tiny" type="text" name="ag_leak_t"></td><td><input type="text" name="ag_leak"></td><td>QA metrics</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 4 -->
+  <h2 id="c4">4. Quality &amp; acceptance evidence</h2>
+  <h3>4.1. UAT &amp; đào tạo</h3>
+  <table class="form">
+    <tr><th>UAT Pass rate (Must-have)</th><td><input type="text" name="q_uat" placeholder="%"> · Evidence: BB BG7</td></tr>
+    <tr><th>Lỗi Nghiêm trọng/Cao mở tại Pass UAT</th><td>0 / <input class="tiny" type="text" name="q_bug"></td></tr>
+    <tr><th>Đào tạo — % học viên đạt</th><td><input type="text" name="q_train" placeholder="% (≥90%)"></td></tr>
+  </table>
+  <h3>4.2. Bảo mật &amp; NFR</h3>
+  <table class="form">
+    <thead><tr><th>Hạng mục</th><th>Cam kết B.4</th><th>Kết quả đo</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Pentest (NTP Lá Chắn Việt)</td><td>Không Cao/Nghiêm trọng mở</td><td><input type="text" name="nfr_pentest"></td><td><input type="text" name="nfr_pentest_ev"></td></tr>
+      <tr><td>P95 thao tác chính</td><td>≤ 1,5s @ 1000 VU</td><td><input type="text" name="nfr_p95"></td><td>k6</td></tr>
+      <tr><td>API tìm kiếm</td><td>&lt; 300 ms</td><td><input type="text" name="nfr_search"></td><td>k6</td></tr>
+      <tr><td>Uptime 30 ngày sau GL</td><td>≥ 99,9%</td><td><input type="text" name="nfr_uptime" placeholder="%"></td><td>Monitoring</td></tr>
+      <tr><td>CDC P95</td><td>&lt; 3s</td><td><input type="text" name="nfr_cdc"></td><td>Metrics</td></tr>
+      <tr><td>Đối soát tồn kho 7 ngày</td><td>Sai lệch = 0</td><td><input type="text" name="nfr_stock"></td><td>Đối soát</td></tr>
+      <tr><td>Unit test coverage</td><td>≥ 70%</td><td><input type="text" name="nfr_cov" placeholder="%"></td><td>CI</td></tr>
+    </tbody>
+  </table>
+  <h3>4.3. SLA giai đoạn ổn định (T27–T30)</h3>
+  <table class="form">
+    <thead><tr><th>Loại sự cố</th><th>Số ticket</th><th>% đạt SLA</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>P0/P1</td><td><input type="text" name="sla_p0_n"></td><td><input type="text" name="sla_p0_pct"></td><td><input type="text" name="sla_p0_note"></td></tr>
+      <tr><td>P2/P3</td><td><input type="text" name="sla_p2_n"></td><td><input type="text" name="sla_p2_pct"></td><td><input type="text" name="sla_p2_note"></td></tr>
+    </tbody>
+  </table>
+  <h3>4.4. Gate summary</h3>
+  <table class="form">
+    <thead><tr><th>Gate</th><th>Ngày</th><th>Quyết định</th><th>Điều kiện còn mở</th></tr></thead>
+    <tbody>
+      <tr><td>G0/G1</td><td><input type="date" name="gs_g0"></td><td><input type="text" name="gs_g0_dec"></td><td><input type="text" name="gs_g0_open"></td></tr>
+      <tr><td>G2-R1</td><td><input type="date" name="gs_g2r1"></td><td><input type="text" name="gs_g2r1_dec"></td><td><input type="text" name="gs_g2r1_open"></td></tr>
+      <tr><td>G2-CC</td><td><input type="date" name="gs_g2cc"></td><td><input type="text" name="gs_g2cc_dec"></td><td><input type="text" name="gs_g2cc_open"></td></tr>
+      <tr><td>G3</td><td><input type="date" name="gs_g3"></td><td><input type="text" name="gs_g3_dec"></td><td><input type="text" name="gs_g3_open"></td></tr>
+      <tr><td>G4</td><td><input type="date" name="gs_g4"></td><td><input type="text" name="gs_g4_dec"></td><td><input type="text" name="gs_g4_open"></td></tr>
+      <tr><td>G5</td><td><input type="date" name="gs_g5"></td><td><input type="text" name="gs_g5_dec"></td><td><input type="text" name="gs_g5_open"></td></tr>
+      <tr><td>G6</td><td><input type="date" name="gs_g6"></td><td><input type="text" name="gs_g6_dec"></td><td><input type="text" name="gs_g6_open"></td></tr>
+      <tr><td>G7</td><td><input type="date" name="gs_g7"></td><td><input type="text" name="gs_g7_dec"></td><td><input type="text" name="gs_g7_open"></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 5 -->
+  <h2 id="c5">5. Benefits / outcomes cho QA</h2>
+  <table class="form">
+    <thead><tr><th>Lợi ích kỳ vọng</th><th>Mức quan sát (1–5)</th><th>Ghi chú stakeholder</th></tr></thead>
+    <tbody>
+      <tr><td>Tự chủ kênh online</td><td><select name="ben_a"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>Chưa đo</option></select></td><td>Form 3 nhóm A</td></tr>
+      <tr><td>Trải nghiệm mua thống nhất Web/App</td><td><select name="ben_b"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>Chưa đo</option></select></td><td></td></tr>
+      <tr><td>Điều phối giao nội bộ rõ ràng hơn</td><td><select name="ben_c"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>Chưa đo</option></select></td><td>Nhóm C/D</td></tr>
+      <tr><td>IT QA tiếp quản được vận hành</td><td><select name="ben_d"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>Chưa đo</option></select></td><td>Nhóm B</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 6 -->
+  <h2 id="c6">6. Handover package checklist</h2>
+  <table class="form">
+    <thead><tr><th>#</th><th>Hạng mục</th><th>Link / vị trí</th><th>Owner giao</th><th>Owner nhận</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td>Mã nguồn + tag release GL</td><td><input type="text" name="ho1_link"></td><td>DevOps</td><td>IT Lead</td><td><select name="ho1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">2</td><td>Pipeline CI/CD &amp; môi trường</td><td><input type="text" name="ho2_link"></td><td>DevOps</td><td>IT Lead</td><td><select name="ho2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">3</td><td>Tài khoản &amp; bí mật (vault)</td><td><input type="text" name="ho3_link"></td><td>DevOps</td><td>IT Lead</td><td><select name="ho3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">4</td><td>HLD / CSDL / ICD / OpenAPI</td><td><input type="text" name="ho4_link"></td><td>Architect</td><td>IT Lead</td><td><select name="ho4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">5</td><td>Runbook VT + on-call BH</td><td><input type="text" name="ho5_link"></td><td>DevOps</td><td>IT Lead</td><td><select name="ho5_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">6</td><td>HDSD + video đào tạo</td><td><input type="text" name="ho6_link"></td><td>BA</td><td>PO</td><td><select name="ho6_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">7</td><td>Bộ test / dữ liệu mẫu ẩn danh</td><td><input type="text" name="ho7_link"></td><td>QA Lead</td><td>IT QA</td><td><select name="ho7_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">8</td><td>License / thư viện / store</td><td><input type="text" name="ho8_link"></td><td>PM</td><td>PO/Legal</td><td><select name="ho8_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">9</td><td>Code escrow / bàn giao theo HĐ</td><td><input type="text" name="ho9_link"></td><td>PM</td><td>PO</td><td><select name="ho9_st"><option value="">—</option><option>Done</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">10</td><td>Báo cáo 30 ngày ổn định (BG9)</td><td><input type="text" name="ho10_link"></td><td>PM</td><td>PO</td><td><select name="ho10_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">11</td><td>Residual bugs + debt → board BH</td><td><input type="text" name="ho11_link"></td><td>QA Lead</td><td>PO</td><td><select name="ho11_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+      <tr><td class="c">12</td><td>Ma trận quyền PRD sau chuyển BH</td><td><input type="text" name="ho12_link"></td><td>IT Lead</td><td>IT Lead</td><td><select name="ho12_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 7 -->
+  <h2 id="c7">7. Open items chuyển bảo hành</h2>
+  <table class="form">
+    <thead><tr><th>ID</th><th>Loại</th><th>Mô tả</th><th>Severity</th><th>Owner BH</th><th>SLA/Hạn</th><th>Jira</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="bh1_id" value="BH-001"></td>
+        <td><select name="bh1_type"><option>Bug</option><option>Debt</option><option>Enhancement</option></select></td>
+        <td><input type="text" name="bh1_desc"></td>
+        <td><input type="text" name="bh1_sev"></td>
+        <td><input type="text" name="bh1_own"></td>
+        <td><input type="text" name="bh1_due"></td>
+        <td><input type="text" name="bh1_jira"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="bh2_id" placeholder="BH-00x"></td>
+        <td><select name="bh2_type"><option>Bug</option><option>Debt</option><option>Enhancement</option></select></td>
+        <td><input type="text" name="bh2_desc"></td>
+        <td><input type="text" name="bh2_sev"></td>
+        <td><input type="text" name="bh2_own"></td>
+        <td><input type="text" name="bh2_due"></td>
+        <td><input type="text" name="bh2_jira"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="bh3_id"></td>
+        <td><select name="bh3_type"><option>Bug</option><option>Debt</option><option>Enhancement</option></select></td>
+        <td><input type="text" name="bh3_desc"></td>
+        <td><input type="text" name="bh3_sev"></td>
+        <td><input type="text" name="bh3_own"></td>
+        <td><input type="text" name="bh3_due"></td>
+        <td><input type="text" name="bh3_jira"></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:9.5pt">Mọi item Severity Cao+ phải có workaround được PO chấp nhận trước khi Pass G7.</p>
+
+  <!-- 8 -->
+  <h2 id="c8">8. Team &amp; stakeholder evaluation synthesis (ẩn danh)</h2>
+  <p style="font-size:9.5pt">Nguồn: E.2 Peer + E.3 Stakeholder. <b>Không</b> nêu tên cá nhân nhà thầu.</p>
+  <h3>8.1. Đội dự án (People themes)</h3>
+  <table class="form">
+    <thead><tr><th>Theme điểm mạnh</th><th>Theme cần cải thiện</th><th>Action đã/chưa</th></tr></thead>
+    <tbody>
+      <tr><td><input type="text" name="syn_str"></td><td><input type="text" name="syn_imp"></td><td><input type="text" name="syn_act"></td></tr>
+    </tbody>
+  </table>
+  <p>Tỷ lệ hoàn thành Peer EOP: <input class="tiny" type="text" name="syn_peer_pct"> %</p>
+  <h3>8.2. Stakeholder</h3>
+  <table class="form">
+    <thead><tr><th>Nhóm</th><th>n</th><th>Hài lòng TB</th><th>NPS</th><th>Top cải thiện</th></tr></thead>
+    <tbody>
+      <tr><td>Ban chỉ đạo / PO</td><td><input type="text" name="syn_a_n"></td><td><input type="text" name="syn_a_sat"></td><td><input type="text" name="syn_a_nps"></td><td><input type="text" name="syn_a_imp"></td></tr>
+      <tr><td>IT &amp; vận hành</td><td><input type="text" name="syn_b_n"></td><td><input type="text" name="syn_b_sat"></td><td><input type="text" name="syn_b_nps"></td><td><input type="text" name="syn_b_imp"></td></tr>
+      <tr><td>Cửa hàng</td><td><input type="text" name="syn_c_n"></td><td><input type="text" name="syn_c_sat"></td><td><input type="text" name="syn_c_nps"></td><td><input type="text" name="syn_c_imp"></td></tr>
+      <tr><td>Kho / shipper</td><td><input type="text" name="syn_d_n"></td><td><input type="text" name="syn_d_sat"></td><td><input type="text" name="syn_d_nps"></td><td><input type="text" name="syn_d_imp"></td></tr>
+      <tr><td>Kế toán / marketing</td><td><input type="text" name="syn_e_n"></td><td><input type="text" name="syn_e_sat"></td><td><input type="text" name="syn_e_nps"></td><td><input type="text" name="syn_e_imp"></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 9 -->
+  <h2 id="c9">9. Lessons learned</h2>
+  <p class="note-inline">Bảng tóm tắt Keep / Improve / Try. <b>Chi tiết LL → E.5</b> <a href="pmo-lessons.html">pmo-lessons.html</a> (Log + Full Report §4–§6). Có thể đồng bộ thủ công từ E.5 §5.</p>
+  <table class="form">
+    <thead><tr><th>Nhóm</th><th>Keep</th><th>Improve</th><th>Try</th></tr></thead>
+    <tbody>
+      <tr><td><b>People</b></td><td><input type="text" name="ll_p_k"></td><td><input type="text" name="ll_p_i"></td><td><input type="text" name="ll_p_t"></td></tr>
+      <tr><td><b>Process</b> (Hybrid, gate, C.11, DoR/DoD)</td><td><input type="text" name="ll_pr_k"></td><td><input type="text" name="ll_pr_i"></td><td><input type="text" name="ll_pr_t"></td></tr>
+      <tr><td><b>Technology</b> (CDC, mobile, NFR, CI)</td><td><input type="text" name="ll_t_k"></td><td><input type="text" name="ll_t_i"></td><td><input type="text" name="ll_t_t"></td></tr>
+      <tr><td><b>Vendor–Client collaboration</b></td><td><input type="text" name="ll_v_k"></td><td><input type="text" name="ll_v_i"></td><td><input type="text" name="ll_v_t"></td></tr>
+    </tbody>
+  </table>
+  <p>Workshop LL: Ngày <input type="date" name="ll_date"> · Facilitator: SM · Agenda đầy đủ: <a class="no-print" href="pmo-lessons.html">E.5 tab Agenda 90'</a></p>
+
+  <!-- 10 -->
+  <h2 id="c10">10. Recommendations — giai đoạn 2 / vận hành tiếp</h2>
+  <table class="form">
+    <thead><tr><th>#</th><th>Khuyến nghị</th><th>Lý do</th><th>Ưu tiên</th><th>Owner</th><th>Thời điểm</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="c">1</td>
+        <td><input type="text" name="rec1"></td><td><input type="text" name="rec1_why"></td>
+        <td><select name="rec1_pri"><option>Cao</option><option>Trung</option><option>Thấp</option></select></td>
+        <td><input type="text" name="rec1_own"></td><td><input type="text" name="rec1_when"></td>
+      </tr>
+      <tr>
+        <td class="c">2</td>
+        <td><input type="text" name="rec2"></td><td><input type="text" name="rec2_why"></td>
+        <td><select name="rec2_pri"><option>Cao</option><option>Trung</option><option>Thấp</option></select></td>
+        <td><input type="text" name="rec2_own"></td><td><input type="text" name="rec2_when"></td>
+      </tr>
+      <tr>
+        <td class="c">3</td>
+        <td><input type="text" name="rec3"></td><td><input type="text" name="rec3_why"></td>
+        <td><select name="rec3_pri"><option>Cao</option><option>Trung</option><option>Thấp</option></select></td>
+        <td><input type="text" name="rec3_own"></td><td><input type="text" name="rec3_when"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 11 -->
+  <h2 id="c11">11. Formal closure approval</h2>
+  <p>Chúng tôi xác nhận đã rà soát báo cáo, đủ điều kiện <b>đóng dự án triển khai</b> và <b>chuyển giai đoạn bảo hành 12 tháng</b> theo hợp đồng (trừ các điều kiện ghi ở mục 1.3 nếu có).</p>
+  <table class="form">
+    <thead><tr><th>Vai trò</th><th>Họ tên</th><th>Quyết định</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>PO (QA)</td>
+        <td><input type="text" name="ap_po_name"></td>
+        <td>
+          <label class="inline"><input type="radio" name="ap_po_dec" value="duyet"> Duyệt đóng</label>
+          <label class="inline"><input type="radio" name="ap_po_dec" value="dk"> Duyệt có ĐK</label>
+          <label class="inline"><input type="radio" name="ap_po_dec" value="tu"> Từ chối</label>
+        </td>
+        <td><input type="text" name="ap_po_sig"></td>
+        <td><input type="date" name="ap_po_date"></td>
+      </tr>
+      <tr>
+        <td>Ban chỉ đạo QA</td>
+        <td><input type="text" name="ap_bc_name"></td>
+        <td>
+          <label class="inline"><input type="radio" name="ap_bc_dec" value="duyet"> Duyệt đóng</label>
+          <label class="inline"><input type="radio" name="ap_bc_dec" value="dk"> Duyệt có ĐK</label>
+          <label class="inline"><input type="radio" name="ap_bc_dec" value="tu"> Từ chối</label>
+        </td>
+        <td><input type="text" name="ap_bc_sig"></td>
+        <td><input type="date" name="ap_bc_date"></td>
+      </tr>
+      <tr>
+        <td>IT Lead (QA) — handover</td>
+        <td><input type="text" name="ap_it_name"></td>
+        <td>
+          <label class="inline"><input type="radio" name="ap_it_dec" value="du"> Đã nhận đủ</label>
+          <label class="inline"><input type="radio" name="ap_it_dec" value="dk"> Nhận có ĐK</label>
+        </td>
+        <td><input type="text" name="ap_it_sig"></td>
+        <td><input type="date" name="ap_it_date"></td>
+      </tr>
+      <tr>
+        <td>PM/SM Sao Bắc Tech</td>
+        <td><input type="text" name="ap_pm_name"></td>
+        <td><label class="inline"><input type="radio" name="ap_pm_dec" value="trinh"> Trình duyệt</label></td>
+        <td><input type="text" name="ap_pm_sig"></td>
+        <td><input type="date" name="ap_pm_date"></td>
+      </tr>
+      <tr>
+        <td>Thương mại / kế toán (M7)</td>
+        <td><input type="text" name="ap_com_name"></td>
+        <td><label class="inline"><input type="radio" name="ap_com_dec" value="ok"> Hồ sơ TT OK</label></td>
+        <td><input type="text" name="ap_com_sig"></td>
+        <td><input type="date" name="ap_com_date"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="form">
+    <tr><th style="width:40%"><b>Ngày chính thức chuyển bảo hành</b></th><td><input type="date" name="bh_start"></td></tr>
+    <tr><th><b>Ngày kết thúc bảo hành (+12 tháng)</b></th><td><input type="date" name="bh_end"></td></tr>
+    <tr><th>Kênh tiếp nhận sự cố BH</th><td><input type="text" name="bh_channel" placeholder="[điền]"></td></tr>
+    <tr><th>Lịch phát hành bảo trì</th><td><input type="text" name="bh_release" placeholder="Hằng tháng / Kanban — [điền]"></td></tr>
+  </table>
+
+  <h2>Phụ lục A — BG1–BG9</h2>
+  <table class="form">
+    <thead><tr><th>BG</th><th>Sản phẩm</th><th>Ngày BG</th><th>Người nhận QA</th><th>Đủ TC</th></tr></thead>
+    <tbody>
+      <tr><td>BG1</td><td>Khảo sát + SRS + backlog</td><td><input type="date" name="bg1_d"></td><td><input type="text" name="bg1_r"></td><td><input type="checkbox" name="bg1_ok"></td></tr>
+      <tr><td>BG2</td><td>HLD/ICD/DB/UI/PoC CDC/Release Plan</td><td><input type="date" name="bg2_d"></td><td><input type="text" name="bg2_r"></td><td><input type="checkbox" name="bg2_ok"></td></tr>
+      <tr><td>BG3</td><td>Increment + BB sprint review</td><td><input type="date" name="bg3_d"></td><td><input type="text" name="bg3_r"></td><td><input type="checkbox" name="bg3_ok"></td></tr>
+      <tr><td>BG4</td><td>R1 MVP</td><td><input type="date" name="bg4_d"></td><td><input type="text" name="bg4_r"></td><td><input type="checkbox" name="bg4_ok"></td></tr>
+      <tr><td>BG5</td><td>Code complete + API docs</td><td><input type="date" name="bg5_d"></td><td><input type="text" name="bg5_r"></td><td><input type="checkbox" name="bg5_ok"></td></tr>
+      <tr><td>BG6</td><td>R2 beta + HT/hiệu năng/pentest</td><td><input type="date" name="bg6_d"></td><td><input type="text" name="bg6_r"></td><td><input type="checkbox" name="bg6_ok"></td></tr>
+      <tr><td>BG7</td><td>UAT + HDSD + video</td><td><input type="date" name="bg7_d"></td><td><input type="text" name="bg7_r"></td><td><input type="checkbox" name="bg7_ok"></td></tr>
+      <tr><td>BG8</td><td>PRD + store + data + cut-over</td><td><input type="date" name="bg8_d"></td><td><input type="text" name="bg8_r"></td><td><input type="checkbox" name="bg8_ok"></td></tr>
+      <tr><td>BG9</td><td>Mã nguồn + VT + BB + báo cáo 30 ngày</td><td><input type="date" name="bg9_d"></td><td><input type="text" name="bg9_r"></td><td><input type="checkbox" name="bg9_ok"></td></tr>
+    </tbody>
+  </table>
+
+  <p class="disclaimer">Bản mẫu hư cấu phục vụ bài tập đóng vai môn Quản trị dự án CNTT. Không có giá trị pháp lý; không phải tài liệu đánh giá thầu trong E-HSDT. Dùng sau trúng thầu / sau G7.</p>
+  <p class="print-hint">In bằng trình duyệt → Save as PDF · khổ A4</p>
+  <nav class="pmo-nav no-print">
+    <a href="index.html">Danh mục</a>
+    <a href="pmo.html">E.0</a>
+    <a href="pmo-gate.html">E.1</a>
+    <a href="pmo-peer.html">E.2</a>
+    <a href="pmo-stakeholder.html">E.3</a>
+    <a href="pmo-lessons.html">E.5</a>
+  </nav>
+</section>
+</form>
+</main>
+</div>
+<script src="assets/pmo.js"></script>
+</body>
+</html>

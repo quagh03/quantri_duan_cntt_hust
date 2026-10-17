@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E.2 – Peer Evaluation Form – Sao Bắc Tech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pmo.css">
+</head>
+<body class="pmo" data-storage-key="pmo-E2">
+
+<div class="bar">
+  <a href="index.html">← Danh mục</a>
+  <span class="title">E.2 · Project Team Member Peer Evaluation Form</span>
+  <span class="bar-actions">
+    <label class="print-opt no-print">Phiên bản
+      <select id="peer-mode" name="peer_mode">
+        <option value="pulse">Sprint Pulse</option>
+        <option value="full">Full / EOP</option>
+        <option value="summary">Phiếu tổng hợp PM</option>
+      </select>
+    </label>
+    <button type="button" class="ghost" data-clear>Xóa dữ liệu form</button>
+    <button type="button" data-print>In / Lưu PDF</button>
+  </span>
+</div>
+
+<div class="layout">
+<nav class="side no-print">
+  <div class="side-label">Phần E · PMO</div>
+  <a href="pmo.html">E.0 One-pager</a>
+  <a href="pmo-gate.html">E.1 Gate</a>
+  <a href="pmo-peer.html" class="active">E.2 Peer</a>
+  <a href="pmo-stakeholder.html">E.3 Stakeholder</a>
+  <a href="pmo-closure.html">E.4 Closure</a>
+  <a href="pmo-lessons.html">E.5 Lessons</a>
+</nav>
+
+<main class="pages">
+<form id="pmo-form">
+<section class="pmo-sheet">
+  <span class="code-tag">E.2</span>
+  <h1>Đánh giá đồng nghiệp thành viên dự án</h1>
+  <p class="en-sub">Project Team Member Peer Evaluation Form</p>
+
+  <div class="warn-internal">Nội bộ nhà thầu only — không gửi nguyên văn / raw cho khách hàng QA. Không đưa vào E-HSDT.</div>
+
+  <table class="pmo-meta">
+    <tr><th>Dự án</th><td>Hệ thống phân phối trực tuyến QA — IB2600184512-00</td></tr>
+    <tr><th>Nhà thầu</th><td>Sao Bắc Tech</td></tr>
+    <tr><th>Phiên bản / Ngày hiệu lực</th>
+      <td>1.0 · <label>Ngày <input type="date" name="e2_eff"></label></td></tr>
+    <tr><th>Chủ sở hữu</th><td>PM/SM (nội bộ) + HR hỗ trợ tổng hợp cuối dự án</td></tr>
+    <tr><th>Lưu trữ</th><td>Drive nội bộ hạn chế: HR-PMO / Peer-Eval — <b>không</b> Confluence dùng chung với QA</td></tr>
+  </table>
+
+  <div class="guide">
+    <details open>
+      <summary>Hướng dẫn điền (rút gọn)</summary>
+      <ol>
+        <li>Chỉ đánh giá hành vi bạn trực tiếp quan sát; thang 1–5 hoặc N/A nếu tương tác &lt; 2 lần.</li>
+        <li>Mỗi điểm mạnh / cải thiện bắt buộc có ví dụ cụ thể (ticket, PR, sự kiện Scrum).</li>
+        <li>Không ngôn ngữ công kích; tập trung hành vi và tác động tới DoD / Sprint Goal.</li>
+        <li>Sprint Pulse → Retro actions; Full/EOP → coaching + synthesis Closure §8 (ẩn danh).</li>
+        <li>Raw chỉ PM/SM + HR — cấm xếp hạng công khai trên chat/Retro.</li>
+      </ol>
+    </details>
+  </div>
+
+  <!-- ===== PULSE ===== -->
+  <div class="mode-panel active" data-mode="pulse">
+    <h2>PHẦN A — Sprint Pulse (5 câu · ~3 phút)</h2>
+    <p>
+      <label class="inline">Sprint số <input class="tiny" type="text" name="pulse_sprint" placeholder="#"></label>
+      <label class="inline">Tuần lịch <input class="short" type="text" name="pulse_week" placeholder="[điền]"></label>
+      <label class="inline">Ngày điền <input type="date" name="pulse_date"></label>
+    </p>
+    <table class="form">
+      <tr>
+        <th style="width:28%">Người đánh giá (bạn)</th>
+        <td>
+          <input type="text" name="pulse_eval_name" placeholder="Họ tên">
+          <div style="margin-top:4px">
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="Dev"> Dev</label>
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="QA"> QA</label>
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="BA"> BA/Proxy PO</label>
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="DevOps"> DevOps</label>
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="UI"> UI/UX</label>
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="Arch"> Architect</label>
+            <label class="inline"><input type="radio" name="pulse_eval_role" value="PM"> PM/SM</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>Người được đánh giá</th>
+        <td>
+          <input type="text" name="pulse_target_name" placeholder="Họ tên">
+          <input type="text" name="pulse_target_role" placeholder="Vai trò" style="margin-top:4px">
+        </td>
+      </tr>
+      <tr>
+        <th>Mức tương tác sprint này</th>
+        <td>
+          <label class="inline"><input type="radio" name="pulse_interact" value="Thấp"> Thấp</label>
+          <label class="inline"><input type="radio" name="pulse_interact" value="TB"> Trung bình</label>
+          <label class="inline"><input type="radio" name="pulse_interact" value="Cao"> Cao</label>
+        </td>
+      </tr>
+    </table>
+
+    <h3>A1. Điểm nhanh (1–5 hoặc N/A)</h3>
+    <table class="form">
+      <thead><tr><th>#</th><th>Câu hỏi hành vi</th><th style="width:18%">Điểm</th></tr></thead>
+      <tbody>
+        <tr><td class="c">1</td><td><b>Collaboration:</b> Sẵn sàng phối hợp (PR review, làm rõ AC, hỗ trợ khi blocker)</td>
+          <td><select name="pulse_s1"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">2</td><td><b>Ownership:</b> Theo đuổi công việc đến Done theo DoD, không “ném qua hàng rào”</td>
+          <td><select name="pulse_s2"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">3</td><td><b>Quality mindset:</b> Tôn trọng DoD (test, không để bug Cao, cập nhật tài liệu cần thiết)</td>
+          <td><select name="pulse_s3"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">4</td><td><b>Agile discipline:</b> Đúng cam kết Daily/Planning/Review; cập nhật Jira kịp</td>
+          <td><select name="pulse_s4"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">5</td><td><b>Reliability:</b> Đúng hạn cam kết hoặc báo sớm khi rủi ro trễ</td>
+          <td><select name="pulse_s5"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+      </tbody>
+    </table>
+
+    <h3>A2. Một dòng bắt buộc</h3>
+    <p><b>Một điều đồng nghiệp này làm tốt sprint này (kèm ví dụ):</b></p>
+    <textarea name="pulse_good" placeholder="[điền]"></textarea>
+    <p><b>Một điều nên thử sprint sau (hành động được):</b></p>
+    <textarea name="pulse_improve" placeholder="[điền]"></textarea>
+
+    <h3>A3. Cờ an toàn tâm lý (không tính điểm)</h3>
+    <p>
+      <label class="inline"><input type="checkbox" name="pulse_safe"> Tôi cảm thấy thoải mái nêu ý kiến khác trong đội sprint này</label><br>
+      <label class="inline"><input type="checkbox" name="pulse_pm_help"> Có vấn đề cần PM hỗ trợ riêng (PM sẽ liên hệ 1:1)</label>
+    </p>
+  </div>
+
+  <!-- ===== FULL ===== -->
+  <div class="mode-panel" data-mode="full">
+    <h2>PHẦN B — End-of-Phase / End-of-Project Full</h2>
+    <p>
+      <label class="inline"><input type="radio" name="full_type" value="phase"> Cuối phase</label>
+      <input class="short" type="text" name="full_phase" placeholder="phase…">
+      <label class="inline"><input type="radio" name="full_type" value="eop"> Cuối dự án (EOP)</label>
+    </p>
+    <p>
+      Giai đoạn: từ tuần <input class="tiny" type="text" name="full_w1"> đến tuần <input class="tiny" type="text" name="full_w2">
+      · Ngày điền <input type="date" name="full_date">
+    </p>
+    <table class="form">
+      <tr><th style="width:28%">Người đánh giá</th>
+        <td><input type="text" name="full_eval_name" placeholder="Họ tên"> <input type="text" name="full_eval_role" placeholder="Vai trò"></td></tr>
+      <tr><th>Người được đánh giá</th>
+        <td><input type="text" name="full_target_name" placeholder="Họ tên"> <input type="text" name="full_target_role" placeholder="Vai trò"></td></tr>
+      <tr><th>Hình thức</th>
+        <td>
+          <label class="inline"><input type="radio" name="full_form" value="peer"> Peer</label>
+          <label class="inline"><input type="radio" name="full_form" value="self"> Tự đánh giá</label>
+        </td></tr>
+    </table>
+
+    <h3>B1. Tiêu chí hành vi (1–5 / N/A)</h3>
+    <table class="form">
+      <thead><tr><th>#</th><th>Tiêu chí</th><th>Mô tả quan sát</th><th style="width:16%">Điểm</th></tr></thead>
+      <tbody>
+        <tr><td class="c">1</td><td><b>Collaboration</b></td><td>Pair/review, chia sẻ thông tin, không silo Web/Mobile/QA</td>
+          <td><select name="full_c1"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">2</td><td><b>Ownership</b></td><td>Chủ động đến Done; theo dõi dependency Main DB/POS/CDC</td>
+          <td><select name="full_c2"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">3</td><td><b>Quality mindset (DoD)</b></td><td>PR đủ test; không bỏ qua DoD C.4.4 để “cho xong”</td>
+          <td><select name="full_c3"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">4</td><td><b>Communication</b></td><td>Rõ ràng với Proxy PO; viết AC/bug/repro dễ hiểu</td>
+          <td><select name="full_c4"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">5</td><td><b>Agile discipline</b></td><td>Planning Poker có trách nhiệm; cập nhật board; tôn trọng Sprint Goal</td>
+          <td><select name="full_c5"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">6</td><td><b>Technical contribution</b></td><td>Giải pháp đúng HLD/ICD; cải tiến kỹ thuật có kiểm soát nợ</td>
+          <td><select name="full_c6"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">7</td><td><b>Helping others</b></td><td>Mentoring, hỗ trợ on-call, unblocking đồng đội</td>
+          <td><select name="full_c7"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+        <tr><td class="c">8</td><td><b>Reliability</b></td><td>Ước lượng/cam kết đáng tin; báo rủi ro sớm</td>
+          <td><select name="full_c8"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>N/A</option></select></td></tr>
+      </tbody>
+    </table>
+    <p>Điểm có trọng số (PM điền khi tổng hợp): <input class="short" type="text" name="full_weighted" placeholder="__/5"></p>
+
+    <h3>B2. Điểm mạnh (tối thiểu 2 ví dụ)</h3>
+    <p>1. <input type="text" name="full_str1" placeholder="Điểm mạnh"></p>
+    <p>Ví dụ: <input type="text" name="full_str1_ex" placeholder="ticket/PR/sự kiện"></p>
+    <p>2. <input type="text" name="full_str2" placeholder="Điểm mạnh"></p>
+    <p>Ví dụ: <input type="text" name="full_str2_ex" placeholder="ticket/PR/sự kiện"></p>
+
+    <h3>B3. Điểm cần cải thiện</h3>
+    <p>Hành vi cần đổi: <input type="text" name="full_imp_beh"></p>
+    <p>Gợi ý hành động: <input type="text" name="full_imp_act"></p>
+    <p>Hỗ trợ cần từ Lead/PM: <input type="text" name="full_imp_help"></p>
+
+    <h3>B4. Đề xuất coaching</h3>
+    <table class="form">
+      <tr><th style="width:35%">Kỹ năng kỹ thuật</th><td><input type="text" name="full_coach_tech"></td></tr>
+      <tr><th>Agile / giao tiếp stakeholder nội bộ</th><td><input type="text" name="full_coach_agile"></td></tr>
+      <tr><th>Leadership / mentorship</th><td><input type="text" name="full_coach_lead"></td></tr>
+      <tr><th>Đào tạo / chứng chỉ</th><td><input type="text" name="full_coach_train"></td></tr>
+    </table>
+
+    <h3>B5. Phù hợp vai trò (EOP / đổi phase)</h3>
+    <p>
+      <label class="inline"><input type="radio" name="full_fit" value="ok"> Rất phù hợp vai trò hiện tại</label><br>
+      <label class="inline"><input type="radio" name="full_fit" value="rotate"> Phù hợp, nên xoay skill</label>
+      <input class="short" type="text" name="full_fit_skill" placeholder="skill…"><br>
+      <label class="inline"><input type="radio" name="full_fit" value="adjust"> Nên điều chỉnh vai trò / workload</label>
+      <input type="text" name="full_fit_reason" placeholder="lý do hành vi">
+    </p>
+
+    <h3>B6. Xác nhận</h3>
+    <p>Tôi xác nhận đánh giá dựa trên quan sát thực tế, không xung đột lợi ích chưa khai báo.</p>
+    <table class="form">
+      <tr><th>Họ tên</th><td><input type="text" name="full_confirm_name"></td>
+        <th>Chữ ký</th><td><input type="text" name="full_confirm_sig"></td>
+        <th>Ngày</th><td><input type="date" name="full_confirm_date"></td></tr>
+    </table>
+  </div>
+
+  <!-- ===== SUMMARY ===== -->
+  <div class="mode-panel" data-mode="summary">
+    <h2>PHẦN C — Phiếu tổng hợp PM (không chia sẻ raw)</h2>
+    <p>
+      <label class="inline"><input type="radio" name="sum_cycle" value="sprint"> Sprint</label>
+      <input class="tiny" type="text" name="sum_sprint">
+      <label class="inline"><input type="radio" name="sum_cycle" value="phase"> Phase</label>
+      <input class="tiny" type="text" name="sum_phase">
+      <label class="inline"><input type="radio" name="sum_cycle" value="eop"> EOP</label>
+    </p>
+    <p>
+      Số phản hồi hợp lệ: <input class="tiny" type="text" name="sum_n">
+      · Tỷ lệ hoàn thành: <input class="tiny" type="text" name="sum_rate"> %
+    </p>
+    <table class="form">
+      <thead>
+        <tr><th>Thành viên</th><th># peer</th><th>Điểm TB (ẩn)</th><th>Theme mạnh</th><th>Theme cải thiện</th><th>Action coaching</th><th>Owner</th><th>Due</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="sum_r1_name"></td><td><input type="text" name="sum_r1_n"></td>
+          <td><input type="text" name="sum_r1_avg"></td><td><input type="text" name="sum_r1_str"></td>
+          <td><input type="text" name="sum_r1_imp"></td><td><input type="text" name="sum_r1_act"></td>
+          <td><input type="text" name="sum_r1_own"></td><td><input type="text" name="sum_r1_due"></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="sum_r2_name"></td><td><input type="text" name="sum_r2_n"></td>
+          <td><input type="text" name="sum_r2_avg"></td><td><input type="text" name="sum_r2_str"></td>
+          <td><input type="text" name="sum_r2_imp"></td><td><input type="text" name="sum_r2_act"></td>
+          <td><input type="text" name="sum_r2_own"></td><td><input type="text" name="sum_r2_due"></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="sum_r3_name"></td><td><input type="text" name="sum_r3_n"></td>
+          <td><input type="text" name="sum_r3_avg"></td><td><input type="text" name="sum_r3_str"></td>
+          <td><input type="text" name="sum_r3_imp"></td><td><input type="text" name="sum_r3_act"></td>
+          <td><input type="text" name="sum_r3_own"></td><td><input type="text" name="sum_r3_due"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><b>Retro / team-level actions (không gắn tên):</b></p>
+    <p>1. <input type="text" name="sum_retro1"></p>
+    <p>2. <input type="text" name="sum_retro2"></p>
+    <p><label class="inline"><input type="checkbox" name="sum_to_closure"> Đã chuyển theme tổng hợp sang Closure Report §8 (chỉ EOP, ẩn danh)</label></p>
+    <table class="form">
+      <tr><th>PM/SM tổng hợp</th><td><input type="text" name="sum_pm"></td>
+        <th>HR xác nhận lưu</th><td><input type="text" name="sum_hr"></td>
+        <th>Ngày</th><td><input type="date" name="sum_date"></td></tr>
+    </table>
+  </div>
+
+  <p class="disclaimer">Bản mẫu hư cấu phục vụ bài tập đóng vai môn Quản trị dự án CNTT. Không có giá trị pháp lý; không phải tài liệu đánh giá thầu trong E-HSDT. Form này không hỏi về sự hài lòng cửa hàng/PO QA — xem E.3.</p>
+  <p class="print-hint">In bằng trình duyệt → Save as PDF · khổ A4</p>
+  <nav class="pmo-nav no-print">
+    <a href="index.html">Danh mục</a>
+    <a href="pmo.html">E.0</a>
+    <a href="pmo-gate.html">E.1</a>
+    <a href="pmo-stakeholder.html">E.3</a>
+    <a href="pmo-closure.html">E.4</a>
+    <a href="pmo-lessons.html">E.5</a>
+  </nav>
+</section>
+</form>
+</main>
+</div>
+<script src="assets/pmo.js"></script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E.1 – Phase Exit Review Checklist – Sao Bắc Tech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pmo.css">
+</head>
+<body class="pmo print-one-gate" data-storage-key="pmo-E1">
+
+<div class="bar">
+  <a href="index.html">← Danh mục</a>
+  <span class="title">E.1 · Project Control Phase Exit Review Checklist</span>
+  <span class="bar-actions">
+    <label class="print-opt no-print"><input type="checkbox" id="print-only-gate" name="print_only_gate" checked> Chỉ in gate đang chọn</label>
+    <label class="print-opt no-print">Gate
+      <select id="gate-select" name="gate_select">
+        <option value="gate-g0g1">G0/G1</option>
+        <option value="gate-g2">G2-R1 / G2-CC</option>
+        <option value="gate-g3">G3</option>
+        <option value="gate-g4">G4</option>
+        <option value="gate-g5">G5</option>
+        <option value="gate-g6">G6</option>
+        <option value="gate-g7">G7</option>
+      </select>
+    </label>
+    <button type="button" class="ghost" data-clear>Xóa dữ liệu form</button>
+    <button type="button" data-print>In / Lưu PDF</button>
+  </span>
+</div>
+
+<div class="layout">
+<nav class="side no-print">
+  <div class="side-label">Chọn gate</div>
+  <a href="#gate-g0g1" data-gate="gate-g0g1" class="active">G0/G1<small>Tuần 6 · M2 · BG1–2</small></a>
+  <a href="#gate-g2" data-gate="gate-g2">G2-R1 / G2-CC<small>T12 / T18 · M3/M4</small></a>
+  <a href="#gate-g3" data-gate="gate-g3">G3<small>T20 · R2 · pentest</small></a>
+  <a href="#gate-g4" data-gate="gate-g4">G4<small>T23 · UAT · M5</small></a>
+  <a href="#gate-g5" data-gate="gate-g5">G5<small>T25 · Pilot R3</small></a>
+  <a href="#gate-g6" data-gate="gate-g6">G6<small>T26 · Go-live · M6</small></a>
+  <a href="#gate-g7" data-gate="gate-g7">G7<small>T30 · M7 · BH</small></a>
+  <div class="side-label">Phần E · PMO</div>
+  <a href="pmo.html">E.0 One-pager</a>
+  <a href="pmo-peer.html">E.2 Peer</a>
+  <a href="pmo-stakeholder.html">E.3 Stakeholder</a>
+  <a href="pmo-closure.html">E.4 Closure</a>
+  <a href="pmo-lessons.html">E.5 Lessons</a>
+</nav>
+
+<main class="pages">
+<form id="pmo-form">
+<section class="pmo-sheet">
+  <span class="code-tag">E.1</span>
+  <h1>Kiểm soát thoát giai đoạn dự án</h1>
+  <p class="en-sub">Project Control Phase Exit Review Checklist</p>
+
+  <table class="pmo-meta">
+    <tr><th>Dự án</th><td>Phát triển hệ thống phân phối trực tuyến (Web + Mobile) — E-TBMT IB2600184512-00</td></tr>
+    <tr><th>Chủ đầu tư</th><td>Chuỗi cửa hàng thời trang QA</td></tr>
+    <tr><th>Nhà thầu</th><td>Công ty CP Công nghệ Số Sao Bắc (Sao Bắc Tech)</td></tr>
+    <tr><th>Phiên bản / Ngày hiệu lực</th>
+      <td>1.0 · <label>Ngày hiệu lực <input type="date" name="e1_eff"></label></td></tr>
+    <tr><th>Chủ sở hữu form</th><td>PM/SM (Sao Bắc Tech)</td></tr>
+    <tr><th>Lưu trữ</th><td>Confluence: QA-OMS / Governance / Phase Gates + PDF đã ký</td></tr>
+  </table>
+
+  <div class="guide">
+    <details open>
+      <summary>Hướng dẫn điền (rút gọn)</summary>
+      <ol>
+        <li>PM mở checklist gate ≥ 3 ngày làm việc trước họp exit review (60–90 phút).</li>
+        <li>Mỗi dòng: điền <b>Bằng chứng</b>; Status = Đạt / Chưa đạt / N/A. ★ = bắt buộc để Pass.</li>
+        <li>Quyết định: Pass · Conditional Pass (mỗi điều kiện = 1 action item) · Fail.</li>
+        <li>Không dùng để đánh giá nhân sự; không thay phản hồi stakeholder.</li>
+        <li>Action items Conditional bắt buộc ticket Jira epic GATE-Gx.</li>
+        <li>In: mặc định chỉ in gate đang chọn (bỏ tick để in cả bộ).</li>
+      </ol>
+    </details>
+  </div>
+
+  <h2>Thời điểm dùng (tóm tắt)</h2>
+  <table class="form">
+    <thead><tr><th>Gate</th><th>Thời điểm</th><th>Liên kết release / BG / mốc</th></tr></thead>
+    <tbody>
+      <tr><td>G0/G1</td><td>Hết tuần 6</td><td>R0; BG1–BG2; trước TT M2</td></tr>
+      <tr><td>G2</td><td>Tuần 12 và 18</td><td>R1 (BG4)/M3; code complete BG5/M4</td></tr>
+      <tr><td>G3</td><td>Hết tuần 20</td><td>R2 (BG6); trước UAT; pentest Lá Chắn Việt</td></tr>
+      <tr><td>G4</td><td>Hết tuần 23</td><td>BG7; trước TT M5</td></tr>
+      <tr><td>G5</td><td>Hết tuần 25</td><td>Pilot R3; trước go-live</td></tr>
+      <tr><td>G6</td><td>Tuần 26</td><td>R4 (BG8); M6</td></tr>
+      <tr><td>G7</td><td>Hết tuần 30</td><td>BG9; M7 → bảo hành 12 tháng</td></tr>
+    </tbody>
+  </table>
+
+<section class="gate-panel active" id="gate-g0g1">
+<h2>GATE G0/G1 — Sau khảo sát–thiết kế / Sprint 0 (tuần 6)</h2>
+<p><b>Mục tiêu:</b> SRS + thiết kế + R0 walking skeleton sẵn sàng vào GĐ2 Scrum.<br><b>Ghi chú:</b> Đầu vào: BG1 (SRS, backlog), bản thảo BG2, PoC CDC, Release Plan. · Đầu ra: Biên bản G0/G1; phê duyệt BG2; điều kiện TT M2.</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1 ★</td><td>Phạm vi B.3 trong backlog</td><td>100% mã chức năng TK/CH/DH tại B.3 có epic→story, MoSCoW Must-have gắn mã</td><td><input type="text" name="g0_A1_ev" placeholder="[điền]"></td><td>Proxy PO</td><td class="c"><select name="g0_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2 ★</td><td>SRS được PO phê duyệt</td><td>Văn bản/email phê duyệt SRS (M1 hoàn tất)</td><td><input type="text" name="g0_A2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g0_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_A2_note" placeholder=""></td></tr>
+<tr><td class="c">A3</td><td>CR mở</td><td>Không CR mở chưa phân loại theo C.11; log CR cập nhật</td><td><input type="text" name="g0_A3_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g0_A3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_A3_note" placeholder=""></td></tr>
+<tr><td class="c">A4</td><td>Tech/product debt ban đầu</td><td>Danh sách debt đã ghi nhận, không block Sprint 1</td><td><input type="text" name="g0_A4_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g0_A4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_A4_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>M2 readiness</td><td>Thiết kế + Sprint 0 xong theo kế hoạch tuần 6</td><td><input type="text" name="g0_B1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g0_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2</td><td>Release Plan</td><td>R0→R4 đã duyệt; map BG3–BG9</td><td><input type="text" name="g0_B2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g0_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_B2_note" placeholder=""></td></tr>
+<tr><td class="c">B3</td><td>Sprint 1 readiness</td><td>Sprint Backlog Sprint 1 đạt DoR ≥ 100% story cam kết</td><td><input type="text" name="g0_B3_ev" placeholder="[điền]"></td><td>Proxy PO</td><td class="c"><select name="g0_B3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_B3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>Prototype UI/UX</td><td>Prototype bấm được; usability ≥ 5 khách hàng thật (theo BG2)</td><td><input type="text" name="g0_C1_ev" placeholder="[điền]"></td><td>UI/UX</td><td class="c"><select name="g0_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2</td><td>DoR/DoD đã công bố</td><td>DoR/DoD (C.4.4) trên Confluence, team xác nhận</td><td><input type="text" name="g0_C2_ev" placeholder="[điền]"></td><td>SM</td><td class="c"><select name="g0_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3</td><td>PoC CDC</td><td>Độ trễ P95 &lt; 3s trên bản sao Main DB</td><td><input type="text" name="g0_C3_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g0_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_C3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1 ★</td><td>Quyền đọc Main DB / CDC</td><td>Quyền log giao dịch (hoặc PoC tương đương) sẵn sàng hoặc có kế hoạch có ngày</td><td><input type="text" name="g0_D1_ev" placeholder="[điền]"></td><td>IT Lead</td><td class="c"><select name="g0_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2</td><td>ICD sơ bộ</td><td>ICD Main DB / POS / thanh toán / HĐĐT có phiên bản</td><td><input type="text" name="g0_D2_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g0_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_D2_note" placeholder=""></td></tr>
+<tr><td class="c">D3</td><td>Mock/stub</td><td>Phụ thuộc ngoài chưa sẵn có mock cho Sprint 1–2</td><td><input type="text" name="g0_D3_ev" placeholder="[điền]"></td><td>Dev Lead</td><td class="c"><select name="g0_D3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_D3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1</td><td>Mô hình dữ liệu PII</td><td>Phân loại PII; nguyên tắc NĐ 13/2023 ghi trong thiết kế</td><td><input type="text" name="g0_E1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g0_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2</td><td>Baseline truy cập</td><td>Ma trận quyền DEV/STG; không dùng tài khoản dùng chung không kiểm soát</td><td><input type="text" name="g0_E2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g0_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_E2_note" placeholder=""></td></tr>
+<tr><td class="c">E3</td><td>SAST pipeline</td><td>Pipeline CI có bước SAST (có thể cảnh báo ở G0/G1)</td><td><input type="text" name="g0_E3_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g0_E3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_E3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1 ★</td><td>DEV/STG + CI/CD</td><td>Pipeline xanh triển khai walking skeleton lên STG</td><td><input type="text" name="g0_F1_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g0_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2</td><td>Monitoring tối thiểu</td><td>Health check + log tập trung cho skeleton</td><td><input type="text" name="g0_F2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g0_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_F2_note" placeholder=""></td></tr>
+<tr><td class="c">F3</td><td>Kênh phối hợp</td><td>Jira/Confluence/chat dự án; lịch Scrum đã chốt</td><td><input type="text" name="g0_F3_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g0_F3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_F3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1 ★</td><td>Biên bản nghiệm thu tăng dần thiết kế</td><td>BG1+BG2 được PO/IT Lead xác nhận đủ điều kiện M2</td><td><input type="text" name="g0_G1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g0_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_G1_note" placeholder=""></td></tr>
+<tr><td class="c">G2</td><td>Hồ sơ thanh toán M2</td><td>Đủ chứng từ theo HĐ (placeholder theo HĐ thực tế)</td><td><input type="text" name="g0_G2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g0_G2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g0_G2_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g0_dec" value="Pass"> Pass</label><label class="inline"><input type="radio" name="g0_dec" value="Conditional"> Conditional Pass</label><label class="inline"><input type="radio" name="g0_dec" value="Fail"> Fail</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g0_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g0_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g0_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g0_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g0_sig_po_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g0_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g0_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g0_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g0_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g0_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g0_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g0_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g0_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g0_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g0_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g0_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g0_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g0_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g0_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g0_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+<section class="gate-panel" id="gate-g2">
+<h2>GATE G2 — Sau cụm Sprint phát triển (R1 tuần 12 / Code complete tuần 18)</h2>
+<p><b>Mục tiêu:</b> Áp dụng 2 lần: G2-R1 (trước/tại R1 MVP BG4, M3) và G2-CC (code complete BG5, trước M4).<br><b>Ghi chú:</b> Đánh dấu phiên bản họp ở khối quyết định bên dưới.</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1 ★</td><td>Must-have theo kế hoạch release</td><td>G2-R1: epic tìm kiếm + tồn kho RT + CH cơ bản Done; G2-CC: 100% chức năng B.3 chạy được trên STG</td><td><input type="text" name="g2_A1_ev" placeholder="[điền]"></td><td>Proxy PO</td><td class="c"><select name="g2_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2</td><td>Story bị PO từ chối</td><td>Số story reject tại review được xử lý hoặc có plan ≤ 1 sprint</td><td><input type="text" name="g2_A2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g2_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_A2_note" placeholder=""></td></tr>
+<tr><td class="c">A3</td><td>CR / đổi ngang C.11</td><td>Mọi thay đổi ngoài B.3 epic đã qua CR hoặc đổi ngang ghi nhận</td><td><input type="text" name="g2_A3_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g2_A3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_A3_note" placeholder=""></td></tr>
+<tr><td class="c">A4</td><td>Debt không block mốc</td><td>Không debt Critical mở block R1/M4</td><td><input type="text" name="g2_A4_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g2_A4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_A4_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>Commitment sprint</td><td>Tỷ lệ cam kết sprint đạt ≥ 85% trên các sprint đã đóng của cụm</td><td><input type="text" name="g2_B1_ev" placeholder="[điền]"></td><td>SM</td><td class="c"><select name="g2_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2 ★</td><td>Burn-up</td><td>G2-R1: đúng quỹ đạo R1; G2-CC: Must-have hoàn thành trước tuần 18 (hoặc phương án Ban chỉ đạo đã duyệt)</td><td><input type="text" name="g2_B2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g2_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_B2_note" placeholder=""></td></tr>
+<tr><td class="c">B3</td><td>Velocity ổn định</td><td>Không giảm &gt; 30% so với TB 3 sprint gần nhất mà không giải thích</td><td><input type="text" name="g2_B3_ev" placeholder="[điền]"></td><td>SM</td><td class="c"><select name="g2_B3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_B3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>DoD</td><td>100% story Accepted tại review đạt DoD C.4.4</td><td><input type="text" name="g2_C1_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g2_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2 ★</td><td>Defect mở</td><td>0 lỗi Nghiêm trọng/Cao mở trên phạm vi release</td><td><input type="text" name="g2_C2_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g2_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3 ★</td><td>Unit test coverage</td><td>Coverage mã mới ≥ 70% (bắt buộc tại G2-CC; khuyến nghị tại G2-R1)</td><td><input type="text" name="g2_C3_ev" placeholder="[điền]"></td><td>Dev Lead</td><td class="c"><select name="g2_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_C3_note" placeholder=""></td></tr>
+<tr><td class="c">C4</td><td>NFR sớm</td><td>Từ Sprint 3: P95 API liên quan ≤ 1,5s (smoke); SAST không lỗi Cao</td><td><input type="text" name="g2_C4_ev" placeholder="[điền]"></td><td>QA/DevOps</td><td class="c"><select name="g2_C4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_C4_note" placeholder=""></td></tr>
+<tr><td class="c">C5</td><td>Defect leakage nội bộ</td><td>Leakage STG←DEV trong ngưỡng team thống nhất</td><td><input type="text" name="g2_C5_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g2_C5_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_C5_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1 ★</td><td>CDC / tồn kho</td><td>G2-R1: đồng bộ tồn kho RT demo trên STG dữ liệu ẩn danh; G2-CC: tích hợp theo ICD giai đoạn</td><td><input type="text" name="g2_D1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g2_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2</td><td>POS / thanh toán / HĐĐT</td><td>Trạng thái tích hợp đúng Release Plan; lệch có CR hoặc mock có hạn</td><td><input type="text" name="g2_D2_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g2_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_D2_note" placeholder=""></td></tr>
+<tr><td class="c">D3</td><td>Dữ liệu STG</td><td>Dataset ẩn danh, đủ cho demo PO</td><td><input type="text" name="g2_D3_ev" placeholder="[điền]"></td><td>BA + DevOps</td><td class="c"><select name="g2_D3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_D3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1 ★</td><td>SAST</td><td>Không lỗ hổng Cao/Nghiêm trọng mở trên nhánh chính</td><td><input type="text" name="g2_E1_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g2_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2</td><td>Quyền &amp; secret</td><td>Secret không hard-code; vault/CI secrets</td><td><input type="text" name="g2_E2_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g2_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_E2_note" placeholder=""></td></tr>
+<tr><td class="c">E3</td><td>PII trên STG</td><td>Không PII thật chưa ẩn danh</td><td><input type="text" name="g2_E3_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g2_E3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_E3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1</td><td>Monitoring</td><td>Dashboard dịch vụ R1/R2 phạm vi; alert cơ bản</td><td><input type="text" name="g2_F1_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g2_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2</td><td>Runbook stub</td><td>Sự cố deploy/rollback STG có runbook ngắn</td><td><input type="text" name="g2_F2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g2_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_F2_note" placeholder=""></td></tr>
+<tr><td class="c">F3</td><td>Mobile (nếu G2-CC)</td><td>Build iOS/Android nội bộ cài được cho QA</td><td><input type="text" name="g2_F3_ev" placeholder="[điền]"></td><td>Mobile Lead</td><td class="c"><select name="g2_F3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_F3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1 ★</td><td>Biên bản sprint review</td><td>BG3 đủ cho các sprint trong cụm; làm căn cứ M3/M4</td><td><input type="text" name="g2_G1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g2_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_G1_note" placeholder=""></td></tr>
+<tr><td class="c">G2</td><td>Thanh toán</td><td>G2-CC: hồ sơ đề nghị thanh toán M4 (25%) sẵn sàng khi Pass</td><td><input type="text" name="g2_G2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g2_G2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g2_G2_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+<tr><th>Phiên bản gate</th><td>
+          <label class="inline"><input type="radio" name="g2_ver" value="G2-R1"> G2-R1 (T12)</label>
+          <label class="inline"><input type="radio" name="g2_ver" value="G2-CC"> G2-CC (T18)</label>
+        </td></tr>
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g2_dec" value="Pass"> Pass</label><label class="inline"><input type="radio" name="g2_dec" value="Conditional"> Conditional Pass</label><label class="inline"><input type="radio" name="g2_dec" value="Fail"> Fail</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g2_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g2_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g2_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g2_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g2_sig_po_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g2_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g2_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g2_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g2_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g2_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g2_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g2_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g2_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g2_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g2_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g2_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g2_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g2_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g2_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g2_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+<section class="gate-panel" id="gate-g3">
+<h2>GATE G3 — Ổn định hóa / trước UAT (tuần 20, sau Sprint 7 / R2)</h2>
+<p><b>Mục tiêu:</b> Beta kín + báo cáo kiểm thử hệ thống/hiệu năng/bảo mật đạt ngưỡng vào UAT (BG6 → chuẩn bị BG7).<br><b>Ghi chú:</b> Pentest NTP: Lá Chắn Việt.</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1 ★</td><td>Scope B.3</td><td>100% Must-have B.3 có trên STG/beta build</td><td><input type="text" name="g3_A1_ev" placeholder="[điền]"></td><td>Proxy PO</td><td class="c"><select name="g3_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2</td><td>Should/Could</td><td>Không nhầm Should/Could vào phạm vi UAT bắt buộc</td><td><input type="text" name="g3_A2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g3_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_A2_note" placeholder=""></td></tr>
+<tr><td class="c">A3</td><td>CR freeze UAT</td><td>CR mới sau G3 chỉ xử lý qua C.11; freeze scope UAT đã thông báo</td><td><input type="text" name="g3_A3_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g3_A3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_A3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>R2 đúng hạn</td><td>Beta kín tuần 20–21 theo Release Plan</td><td><input type="text" name="g3_B1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g3_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2</td><td>Kế hoạch UAT</td><td>Lịch UAT tuần 21–23, kịch bản &amp; môi trường chốt</td><td><input type="text" name="g3_B2_ev" placeholder="[điền]"></td><td>QA Lead + PO</td><td class="c"><select name="g3_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_B2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>Kiểm thử hệ thống</td><td>Báo cáo HT đạt; 0 Nghiêm trọng/Cao mở</td><td><input type="text" name="g3_C1_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g3_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2 ★</td><td>Hiệu năng B.4</td><td>P95 thao tác chính ≤ 1,5s @ 1000 VU; API search &lt; 300ms</td><td><input type="text" name="g3_C2_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g3_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3 ★</td><td>Tương thích</td><td>Chrome/Safari/Firefox/Edge (2 bản gần nhất); iOS 15+; Android 9+; 320px</td><td><input type="text" name="g3_C3_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g3_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_C3_note" placeholder=""></td></tr>
+<tr><td class="c">C4</td><td>Regression tự động</td><td>Suite hồi quy xanh trên build ứng viên UAT</td><td><input type="text" name="g3_C4_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g3_C4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_C4_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1 ★</td><td>Tích hợp end-to-end</td><td>POS/kho/kế toán/HĐĐT/cổng TT theo ICD — E2E pass trên STG</td><td><input type="text" name="g3_D1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g3_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2 ★</td><td>CDC</td><td>P95 độ trễ &lt; 3s; công cụ đối soát sẵn sàng</td><td><input type="text" name="g3_D2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g3_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_D2_note" placeholder=""></td></tr>
+<tr><td class="c">D3</td><td>Data UAT</td><td>Bộ dữ liệu UAT ẩn danh + kịch bản nghiệp vụ cửa hàng/kho/shipper</td><td><input type="text" name="g3_D3_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g3_D3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_D3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1 ★</td><td>Pentest (NTP Lá Chắn Việt)</td><td>Không lỗ hổng Cao/Nghiêm trọng mở; OWASP Top 10</td><td><input type="text" name="g3_E1_ev" placeholder="[điền]"></td><td>Architect + NTP</td><td class="c"><select name="g3_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2 ★</td><td>TLS / mã hóa PII</td><td>HTTPS/TLS 1.3; PII mã hóa khi lưu (theo thiết kế)</td><td><input type="text" name="g3_E2_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g3_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_E2_note" placeholder=""></td></tr>
+<tr><td class="c">E3</td><td>SAST/DAST</td><td>Không Cao/Nghiêm trọng mở</td><td><input type="text" name="g3_E3_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g3_E3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_E3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1 ★</td><td>Beta phân phối</td><td>TestFlight / Play Internal cho ~50 NV QA</td><td><input type="text" name="g3_F1_ev" placeholder="[điền]"></td><td>Mobile Lead</td><td class="c"><select name="g3_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2</td><td>Monitoring beta</td><td>Alert on-call nhà thầu trong dogfooding</td><td><input type="text" name="g3_F2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g3_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_F2_note" placeholder=""></td></tr>
+<tr><td class="c">F3</td><td>HDSD draft</td><td>Bản nháp HDSD + video outline cho đào tạo</td><td><input type="text" name="g3_F3_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g3_F3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_F3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1</td><td>BG6 acceptance</td><td>Biên bản xác nhận beta + báo cáo KT</td><td><input type="text" name="g3_G1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g3_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_G1_note" placeholder=""></td></tr>
+<tr><td class="c">G2</td><td>Sẵn sàng M5 path</td><td>Điều kiện tiến tới UAT/M5 rõ ràng</td><td><input type="text" name="g3_G2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g3_G2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g3_G2_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g3_dec" value="Pass"> Pass</label><label class="inline"><input type="radio" name="g3_dec" value="Conditional"> Conditional Pass</label><label class="inline"><input type="radio" name="g3_dec" value="Fail"> Fail</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g3_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g3_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g3_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g3_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g3_sig_po_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g3_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g3_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g3_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g3_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g3_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g3_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g3_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g3_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g3_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g3_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g3_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g3_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g3_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g3_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g3_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+<section class="gate-panel" id="gate-g4">
+<h2>GATE G4 — Sau UAT (tuần 23, BG7 / trước M5)</h2>
+<p><b>Mục tiêu:</b> UAT đạt + đào tạo ≥90%; đủ điều kiện thanh toán M5.<br><b>Ghi chú:</b> Đầu ra: BB UAT BG7; lịch pilot 03 cửa hàng tuần 24–25.</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1 ★</td><td>UAT scope</td><td>100% kịch bản Must-have B.3 đã chạy UAT</td><td><input type="text" name="g4_A1_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g4_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2</td><td>Defect từ UAT</td><td>0 Nghiêm trọng/Cao mở; Trung bình có plan trước pilot</td><td><input type="text" name="g4_A2_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g4_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_A2_note" placeholder=""></td></tr>
+<tr><td class="c">A3</td><td>CR phát sinh UAT</td><td>Đã phân loại: sửa ngay / CR / backlog bảo hành</td><td><input type="text" name="g4_A3_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g4_A3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_A3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>M5</td><td>UAT đạt + đào tạo xong đúng tuần 23</td><td><input type="text" name="g4_B1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g4_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2</td><td>Lịch pilot</td><td>03 cửa hàng pilot, tuần 24–25 đã chốt</td><td><input type="text" name="g4_B2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g4_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_B2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>Biên bản UAT</td><td>UAT Pass (hoặc Conditional có sign-off PO)</td><td><input type="text" name="g4_C1_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g4_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2 ★</td><td>Đào tạo</td><td>≥ 90% học viên vượt bài kiểm tra thao tác</td><td><input type="text" name="g4_C2_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g4_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3</td><td>HDSD + video</td><td>Tài liệu HDSD &amp; video đào tạo đã bàn giao bản UAT</td><td><input type="text" name="g4_C3_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g4_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_C3_note" placeholder=""></td></tr>
+<tr><td class="c">C4</td><td>DoD UAT build</td><td>Build UAT gắn tag; thay đổi sau UAT qua change control</td><td><input type="text" name="g4_C4_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g4_C4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_C4_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1</td><td>Đối soát dữ liệu UAT</td><td>Không sai lệch tồn kho theo kịch bản đối soát</td><td><input type="text" name="g4_D1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g4_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2</td><td>Cut-over draft</td><td>Kế hoạch cut-over/rollback bản nháp cho pilot</td><td><input type="text" name="g4_D2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g4_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_D2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1</td><td>Quyền UAT</td><td>Tài khoản UAT thu hồi/điều chỉnh sau UAT theo chính sách</td><td><input type="text" name="g4_E1_ev" placeholder="[điền]"></td><td>IT Lead</td><td class="c"><select name="g4_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2</td><td>Nhật ký xử lý PII trong UAT</td><td>Tuân thủ thỏa thuận dữ liệu thử nghiệm</td><td><input type="text" name="g4_E2_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g4_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_E2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1 ★</td><td>Support pilot</td><td>Ma trận hỗ trợ cửa hàng pilot (L1 QA / L2 nhà thầu)</td><td><input type="text" name="g4_F1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g4_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2</td><td>Training confirmation</td><td>Danh sách cửa hàng/kho/shipper đã đào tạo</td><td><input type="text" name="g4_F2_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g4_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_F2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1 ★</td><td>Thanh toán M5</td><td>Đủ điều kiện đề nghị thanh toán 20% sau UAT đạt</td><td><input type="text" name="g4_G1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g4_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_G1_note" placeholder=""></td></tr>
+<tr><td class="c">G2</td><td>BG7 signed</td><td>Kịch bản + BB UAT + HDSD xác nhận</td><td><input type="text" name="g4_G2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g4_G2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g4_G2_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g4_dec" value="Pass"> Pass</label><label class="inline"><input type="radio" name="g4_dec" value="Conditional"> Conditional Pass</label><label class="inline"><input type="radio" name="g4_dec" value="Fail"> Fail</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g4_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g4_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g4_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g4_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g4_sig_po_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g4_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g4_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g4_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g4_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g4_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g4_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g4_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g4_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g4_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g4_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g4_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g4_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g4_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g4_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g4_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+<section class="gate-panel" id="gate-g5">
+<h2>GATE G5 — Sau pilot (tuần 24–25, R3)</h2>
+<p><b>Mục tiêu:</b> Pilot ổn định; Go / No-Go tiến G6.<br><b>Ghi chú:</b> Kèm Form 3 Mini (stakeholder cửa hàng pilot).</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1</td><td>Feedback pilot</td><td>100% feedback ưu tiên P0/P1 đã triage (fix / CR / wontfix)</td><td><input type="text" name="g5_A1_ev" placeholder="[điền]"></td><td>Proxy PO</td><td class="c"><select name="g5_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2 ★</td><td>Không scope creep</td><td>Không phát sinh chức năng ngoài B.3 đưa vào go-live mà chưa CR</td><td><input type="text" name="g5_A2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g5_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_A2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>Pilot window</td><td>Pilot đủ thời lượng đã chốt; báo cáo kết quả tuần 25</td><td><input type="text" name="g5_B1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g5_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2</td><td>Go-live date</td><td>Ngày M6 tuần 26 được Ban chỉ đạo xác nhận</td><td><input type="text" name="g5_B2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g5_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_B2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>Ổn định pilot</td><td>0 sự cố Nghiêm trọng mở; lỗi Cao có workaround được PO chấp nhận</td><td><input type="text" name="g5_C1_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g5_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2</td><td>UX cửa hàng</td><td>Phản hồi 03 cửa hàng pilot không có blocker nghiệp vụ</td><td><input type="text" name="g5_C2_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g5_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3</td><td>App RC</td><td>Bản RC (ứng viên phát hành) gắn version</td><td><input type="text" name="g5_C3_ev" placeholder="[điền]"></td><td>Mobile Lead</td><td class="c"><select name="g5_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_C3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1 ★</td><td>Dữ liệu thật pilot</td><td>Đối soát tồn kho hàng ngày sai lệch = 0 trong cửa sổ pilot (hoặc giải thích có duyệt)</td><td><input type="text" name="g5_D1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g5_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2 ★</td><td>Cut-over/rollback</td><td>Kế hoạch cut-over &amp; rollback đã diễn tập hoặc walkthrough</td><td><input type="text" name="g5_D2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g5_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_D2_note" placeholder=""></td></tr>
+<tr><td class="c">D3</td><td>Đồng bộ CDC PRD-ready</td><td>Cấu hình CDC cho PRD đã review</td><td><input type="text" name="g5_D3_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g5_D3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_D3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1</td><td>Truy cập pilot</td><td>Chỉ cửa hàng/user được phép; nhật ký truy cập</td><td><input type="text" name="g5_E1_ev" placeholder="[điền]"></td><td>IT Lead</td><td class="c"><select name="g5_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2</td><td>Sự cố bảo mật</td><td>Không incident bảo mật mở</td><td><input type="text" name="g5_E2_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g5_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_E2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1 ★</td><td>Runbook vận hành</td><td>Runbook L1/L2, FAQ cửa hàng, escalation</td><td><input type="text" name="g5_F1_ev" placeholder="[điền]"></td><td>DevOps + BA</td><td class="c"><select name="g5_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2 ★</td><td>Monitoring PRD</td><td>Dashboard + alert + on-call 24/7 kế hoạch go-live</td><td><input type="text" name="g5_F2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g5_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_F2_note" placeholder=""></td></tr>
+<tr><td class="c">F3</td><td>Training toàn chuỗi (kế hoạch)</td><td>Kế hoạch đào tạo lan tỏa trước M6</td><td><input type="text" name="g5_F3_ev" placeholder="[điền]"></td><td>BA</td><td class="c"><select name="g5_F3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_F3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1</td><td>Sẵn sàng BG8</td><td>Điều kiện go-live (PRD, store, data) tracked</td><td><input type="text" name="g5_G1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g5_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g5_G1_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g5_dec" value="Pass"> Pass</label><label class="inline"><input type="radio" name="g5_dec" value="Conditional"> Conditional Pass</label><label class="inline"><input type="radio" name="g5_dec" value="Fail"> Fail</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g5_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g5_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g5_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g5_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g5_sig_po_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g5_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g5_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g5_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g5_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g5_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g5_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g5_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g5_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g5_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g5_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g5_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g5_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g5_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g5_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g5_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+<section class="gate-panel" id="gate-g6">
+<h2>GATE G6 — Go-live readiness (tuần 26, R4 / BG8 / M6)</h2>
+<p><b>Mục tiêu:</b> GO / NO-GO cut-over; Pass mới được go-live.<br><b>Ghi chú:</b> Ban chỉ đạo đồng phê duyệt.</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1 ★</td><td>Scope go-live</td><td>Đúng phạm vi B.3 + CR đã duyệt; out-of-scope không đưa PRD</td><td><input type="text" name="g6_A1_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g6_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2</td><td>Known issues</td><td>Danh sách known issues được PO ký chấp nhận</td><td><input type="text" name="g6_A2_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g6_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_A2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>Cửa sổ go-live</td><td>Thời điểm cut-over, war-room, rollback window đã chốt</td><td><input type="text" name="g6_B1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g6_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2</td><td>Truyền thông nội bộ QA</td><td>Cửa hàng/kho/shipper/kế toán nhận hướng dẫn</td><td><input type="text" name="g6_B2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g6_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_B2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>Build PRD</td><td>Version go-live = bản đã qua G5; hash/tag lưu</td><td><input type="text" name="g6_C1_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g6_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2 ★</td><td>Smoke PRD</td><td>Smoke sau deploy Pass</td><td><input type="text" name="g6_C2_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g6_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3</td><td>NFR sẵn sàng đo</td><td>Monitoring sẵn để đo uptime/P95 sau go-live</td><td><input type="text" name="g6_C3_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g6_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_C3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1 ★</td><td>Chuyển đổi dữ liệu</td><td>Đối soát dữ liệu khớp 100% theo tiêu chí BG8</td><td><input type="text" name="g6_D1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g6_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2 ★</td><td>Cut-over thực thi</td><td>Các bước cut-over có owner + T+ checklist</td><td><input type="text" name="g6_D2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g6_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_D2_note" placeholder=""></td></tr>
+<tr><td class="c">D3 ★</td><td>Rollback sẵn sàng</td><td>Tiêu chí kích hoạt rollback rõ; backup/RPO≤5p, RTO≤15p</td><td><input type="text" name="g6_D3_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g6_D3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_D3_note" placeholder=""></td></tr>
+<tr><td class="c">D4</td><td>Store publish</td><td>App Store / Google Play bản chính thức sẵn sàng submit/release</td><td><input type="text" name="g6_D4_ev" placeholder="[điền]"></td><td>Mobile Lead</td><td class="c"><select name="g6_D4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_D4_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1 ★</td><td>Hardening PRD</td><td>TLS, WAF/security header, secret PRD, tắt tài khoản tạm</td><td><input type="text" name="g6_E1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g6_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2 ★</td><td>Quyền production</td><td>Least privilege; break-glass có quy trình</td><td><input type="text" name="g6_E2_ev" placeholder="[điền]"></td><td>IT Lead</td><td class="c"><select name="g6_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_E2_note" placeholder=""></td></tr>
+<tr><td class="c">E3</td><td>NĐ 13/2023</td><td>Thông báo/chính sách xử lý DL cá nhân theo thỏa thuận QA</td><td><input type="text" name="g6_E3_ev" placeholder="[điền]"></td><td>BA + PO</td><td class="c"><select name="g6_E3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_E3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1 ★</td><td>War-room</td><td>Danh sách war-room 72h; kênh chat; cầu thang leo thang</td><td><input type="text" name="g6_F1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g6_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2 ★</td><td>Support L1/L2/L3</td><td>SLA nội bộ giai đoạn ổn định đã phổ biến</td><td><input type="text" name="g6_F2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g6_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_F2_note" placeholder=""></td></tr>
+<tr><td class="c">F3</td><td>Backup &amp; restore</td><td>Backup PRD verified</td><td><input type="text" name="g6_F3_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g6_F3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_F3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1 ★</td><td>BG8</td><td>Hệ thống PRD + app + data + cut-over/rollback documented</td><td><input type="text" name="g6_G1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g6_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_G1_note" placeholder=""></td></tr>
+<tr><td class="c">G2</td><td>Mốc M6</td><td>Xác nhận go-live toàn chuỗi</td><td><input type="text" name="g6_G2_ev" placeholder="[điền]"></td><td>PO</td><td class="c"><select name="g6_G2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g6_G2_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+<tr><th>Giờ cut-over dự kiến</th><td><input type="text" name="g6_cutover" placeholder="[điền]"></td></tr>
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g6_dec" value="GO"> GO (Pass)</label><label class="inline"><input type="radio" name="g6_dec" value="GO-cond"> GO with conditions</label><label class="inline"><input type="radio" name="g6_dec" value="NO-GO"> NO-GO (Fail)</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g6_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g6_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g6_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g6_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g6_sig_po_date"></td></tr>
+<tr><td>Ban chỉ đạo QA (đại diện)</td><td><input type="text" name="g6_sig_bc_name" placeholder="Họ tên"></td><td><input type="text" name="g6_sig_bc_sig" placeholder="Chữ ký"></td><td><input type="date" name="g6_sig_bc_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g6_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g6_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g6_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g6_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g6_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g6_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g6_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g6_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g6_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g6_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g6_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g6_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g6_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g6_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g6_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+<section class="gate-panel" id="gate-g7">
+<h2>GATE G7 — Exit ổn định 30 ngày / nghiệm thu cuối → bảo hành (tuần 30, BG9 / M7)</h2>
+<p><b>Mục tiêu:</b> Đóng dự án → bảo hành 12 tháng; kèm Form 2 EOP + Form 3 Full + Form 4 Closure.<br><b>Ghi chú:</b> Handover package (Form 4 §6); ngày bắt đầu BH.</p>
+<p style="font-size:9.5pt"><b>★</b> = bắt buộc để Pass (không được Conditional nếu thiếu). Status: Đạt / Chưa đạt / N/A.</p>
+<table class="form"><thead><tr><th style="width:7%">#</th><th style="width:18%">Hạng mục</th><th style="width:22%">Tiêu chí đạt</th><th style="width:18%">Bằng chứng / Link / Ticket</th><th style="width:10%">Owner</th><th style="width:10%">Status</th><th>Ghi chú</th></tr></thead><tbody>
+<tr><td colspan="7" class="sec-row">A. Scope &amp; backlog</td></tr>
+<tr><td class="c">A1 ★</td><td>Phạm vi hợp đồng</td><td>B.3 + CR đã duyệt đã giao; out-of-scope chuyển backlog giai đoạn 2/bảo hành</td><td><input type="text" name="g7_A1_ev" placeholder="[điền]"></td><td>PO + PM</td><td class="c"><select name="g7_A1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_A1_note" placeholder=""></td></tr>
+<tr><td class="c">A2</td><td>Enhancement backlog</td><td>Backlog sau dự án đã bàn giao PO</td><td><input type="text" name="g7_A2_ev" placeholder="[điền]"></td><td>Proxy PO</td><td class="c"><select name="g7_A2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_A2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">B. Schedule &amp; milestones</td></tr>
+<tr><td class="c">B1 ★</td><td>30 ngày ổn định</td><td>Đủ cửa sổ tuần 27–30; báo cáo vận hành</td><td><input type="text" name="g7_B1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_B1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_B1_note" placeholder=""></td></tr>
+<tr><td class="c">B2 ★</td><td>M7</td><td>Đủ điều kiện nghiệm thu cuối / thanh toán 15%</td><td><input type="text" name="g7_B2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_B2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_B2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">C. Quality</td></tr>
+<tr><td class="c">C1 ★</td><td>Uptime B.4</td><td>Uptime ≥ 99,9%/tháng trong cửa sổ đo</td><td><input type="text" name="g7_C1_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g7_C1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_C1_note" placeholder=""></td></tr>
+<tr><td class="c">C2 ★</td><td>Đồng bộ</td><td>Đối soát 7 ngày liên tiếp không sai lệch tồn kho</td><td><input type="text" name="g7_C2_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g7_C2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_C2_note" placeholder=""></td></tr>
+<tr><td class="c">C3</td><td>Defect leakage PRD</td><td>Leakage trong ngưỡng; 0 Nghiêm trọng mở không có plan</td><td><input type="text" name="g7_C3_ev" placeholder="[điền]"></td><td>QA Lead</td><td class="c"><select name="g7_C3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_C3_note" placeholder=""></td></tr>
+<tr><td class="c">C4</td><td>SLA sự cố giai đoạn ổn định</td><td>Tuân thủ cam kết xử lý sự cố (theo HĐ/SLA)</td><td><input type="text" name="g7_C4_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_C4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_C4_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">D. Integration &amp; data</td></tr>
+<tr><td class="c">D1</td><td>Tích hợp ổn định</td><td>Không sự cố tích hợp P0 mở</td><td><input type="text" name="g7_D1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g7_D1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_D1_note" placeholder=""></td></tr>
+<tr><td class="c">D2</td><td>Blue-green / release</td><td>Quy trình phát hành bảo hành đã thử</td><td><input type="text" name="g7_D2_ev" placeholder="[điền]"></td><td>DevOps</td><td class="c"><select name="g7_D2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_D2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">E. Security &amp; compliance</td></tr>
+<tr><td class="c">E1</td><td>Residual security</td><td>Finding còn lại ≤ Trung bình có plan trong bảo hành</td><td><input type="text" name="g7_E1_ev" placeholder="[điền]"></td><td>Architect</td><td class="c"><select name="g7_E1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_E1_note" placeholder=""></td></tr>
+<tr><td class="c">E2</td><td>Thu hồi quyền dự án</td><td>Tài khoản tạm nhà thầu thu hẹp theo mô hình bảo hành</td><td><input type="text" name="g7_E2_ev" placeholder="[điền]"></td><td>IT Lead</td><td class="c"><select name="g7_E2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_E2_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">F. Ops readiness</td></tr>
+<tr><td class="c">F1 ★</td><td>Handover package</td><td>Mã nguồn, tài liệu VT, tài khoản, license — đủ BG9</td><td><input type="text" name="g7_F1_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_F1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_F1_note" placeholder=""></td></tr>
+<tr><td class="c">F2 ★</td><td>Training xác nhận</td><td>Đội vận hành QA xác nhận sẵn sàng độc lập (có hỗ trợ BH)</td><td><input type="text" name="g7_F2_ev" placeholder="[điền]"></td><td>IT Lead</td><td class="c"><select name="g7_F2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_F2_note" placeholder=""></td></tr>
+<tr><td class="c">F3</td><td>Chuyển Kanban bảo hành</td><td>Board bảo hành, SLA, lịch phát hành tháng</td><td><input type="text" name="g7_F3_ev" placeholder="[điền]"></td><td>SM</td><td class="c"><select name="g7_F3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_F3_note" placeholder=""></td></tr>
+<tr><td colspan="7" class="sec-row">G. Commercial / contract</td></tr>
+<tr><td class="c">G1 ★</td><td>Biên bản nghiệm thu cuối</td><td>Ký giữa QA và Sao Bắc Tech</td><td><input type="text" name="g7_G1_ev" placeholder="[điền]"></td><td>PO + PM</td><td class="c"><select name="g7_G1_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_G1_note" placeholder=""></td></tr>
+<tr><td class="c">G2 ★</td><td>Ngày bắt đầu bảo hành 12 tháng</td><td>Ghi rõ ngày hiệu lực</td><td><input type="text" name="g7_G2_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_G2_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_G2_note" placeholder=""></td></tr>
+<tr><td class="c">G3</td><td>Thanh toán M7</td><td>Hồ sơ 15%</td><td><input type="text" name="g7_G3_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_G3_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_G3_note" placeholder=""></td></tr>
+<tr><td class="c">G4</td><td>Code escrow / license</td><td>Theo điều khoản HĐ — checklist đủ hoặc N/A có giải thích</td><td><input type="text" name="g7_G4_ev" placeholder="[điền]"></td><td>PM</td><td class="c"><select name="g7_G4_st"><option value="">—</option><option>Đạt</option><option>Chưa đạt</option><option>N/A</option></select></td><td><input type="text" name="g7_G4_note" placeholder=""></td></tr>
+</tbody></table>
+
+<h3>Quyết định gate</h3>
+<table class="form">
+<tr><th>Ngày chuyển bảo hành</th><td><input type="date" name="g7_bh"></td></tr>
+<tr><th style="width:28%">Quyết định</th><td><label class="inline"><input type="radio" name="g7_dec" value="Pass"> Pass — đóng dự án, chuyển BH</label><label class="inline"><input type="radio" name="g7_dec" value="Conditional"> Conditional Pass</label><label class="inline"><input type="radio" name="g7_dec" value="Fail"> Fail — chưa nghiệm thu</label></td></tr>
+<tr><th>Điều kiện / blockers</th><td><textarea name="g7_cond" placeholder="Conditional: điều kiện · Fail: blockers"></textarea></td></tr>
+<tr><th>Ngày họp</th><td><input type="date" name="g7_meet"></td></tr>
+</table>
+<table class="form">
+<thead><tr><th>Vai trò</th><th>Họ tên</th><th>Chữ ký</th><th>Ngày</th></tr></thead>
+<tbody>
+<tr><td>PO (QA)</td><td><input type="text" name="g7_sig_po_name" placeholder="Họ tên"></td><td><input type="text" name="g7_sig_po_sig" placeholder="Chữ ký"></td><td><input type="date" name="g7_sig_po_date"></td></tr>
+<tr><td>Ban chỉ đạo QA (đại diện)</td><td><input type="text" name="g7_sig_bc_name" placeholder="Họ tên"></td><td><input type="text" name="g7_sig_bc_sig" placeholder="Chữ ký"></td><td><input type="date" name="g7_sig_bc_date"></td></tr>
+<tr><td>PM/SM (Sao Bắc Tech)</td><td><input type="text" name="g7_sig_pm_name" placeholder="Họ tên"></td><td><input type="text" name="g7_sig_pm_sig" placeholder="Chữ ký"></td><td><input type="date" name="g7_sig_pm_date"></td></tr>
+<tr><td>IT Lead (QA)</td><td><input type="text" name="g7_sig_it_name" placeholder="Họ tên"></td><td><input type="text" name="g7_sig_it_sig" placeholder="Chữ ký"></td><td><input type="date" name="g7_sig_it_date"></td></tr>
+
+</tbody>
+</table>
+<h3>Action items (Conditional — bắt buộc)</h3>
+<table class="form">
+<thead><tr><th>#</th><th>Mô tả</th><th>Owner</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td><input type="text" name="g7_ai1_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g7_ai1_owner" placeholder="Owner"></td><td><input type="text" name="g7_ai1_due" placeholder="Due"></td></tr>
+<tr><td class="c">2</td><td><input type="text" name="g7_ai2_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g7_ai2_owner" placeholder="Owner"></td><td><input type="text" name="g7_ai2_due" placeholder="Due"></td></tr>
+<tr><td class="c">3</td><td><input type="text" name="g7_ai3_desc" placeholder="Mô tả action item"></td><td><input type="text" name="g7_ai3_owner" placeholder="Owner"></td><td><input type="text" name="g7_ai3_due" placeholder="Due"></td></tr>
+
+</tbody>
+</table>
+</section>
+
+  <p class="disclaimer">Bản mẫu hư cấu phục vụ bài tập đóng vai môn Quản trị dự án CNTT. Không có giá trị pháp lý; không phải tài liệu đánh giá thầu trong E-HSDT.</p>
+  <p class="print-hint">In bằng trình duyệt → Save as PDF · khổ A4 · Tài liệu nội bộ PMO Sao Bắc Tech — dùng sau trúng thầu.</p>
+  <nav class="pmo-nav no-print">
+    <a href="index.html">Danh mục</a>
+    <a href="pmo.html">E.0</a>
+    <a href="pmo-peer.html">E.2</a>
+    <a href="pmo-stakeholder.html">E.3</a>
+    <a href="pmo-closure.html">E.4</a>
+    <a href="pmo-lessons.html">E.5</a>
+  </nav>
+</section>
+</form>
+</main>
+</div>
+<script src="assets/pmo.js"></script>
+</body>
+</html>

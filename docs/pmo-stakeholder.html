@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E.3 – Stakeholder Post Project Evaluation – Sao Bắc Tech</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pmo.css">
+</head>
+<body class="pmo" data-storage-key="pmo-E3">
+
+<div class="bar">
+  <a href="index.html">← Danh mục</a>
+  <span class="title">E.3 · Stakeholder Post Project Evaluation Form</span>
+  <span class="bar-actions">
+    <label class="print-opt no-print">Nhóm
+      <select id="stakeholder-group" name="stakeholder_group">
+        <option value="A">A. Ban chỉ đạo / PO</option>
+        <option value="B">B. IT Lead &amp; vận hành</option>
+        <option value="C">C. Cửa hàng pilot</option>
+        <option value="D">D. Kho / shipper</option>
+        <option value="E">E. Kế toán / marketing</option>
+        <option value="Pulse">Pulse R1/R2</option>
+      </select>
+    </label>
+    <button type="button" class="ghost" data-clear>Xóa dữ liệu form</button>
+    <button type="button" data-print>In / Lưu PDF</button>
+  </span>
+</div>
+
+<div class="layout">
+<nav class="side no-print">
+  <div class="side-label">Phần E · PMO</div>
+  <a href="pmo.html">E.0 One-pager</a>
+  <a href="pmo-gate.html">E.1 Gate</a>
+  <a href="pmo-peer.html">E.2 Peer</a>
+  <a href="pmo-stakeholder.html" class="active">E.3 Stakeholder</a>
+  <a href="pmo-closure.html">E.4 Closure</a>
+  <a href="pmo-lessons.html">E.5 Lessons</a>
+</nav>
+
+<main class="pages">
+<form id="pmo-form">
+<section class="pmo-sheet">
+  <span class="code-tag">E.3</span>
+  <h1>Đánh giá sau dự án từ các bên liên quan</h1>
+  <p class="en-sub">Stakeholder Post Project Evaluation Form · ≤ 10 phút / người</p>
+
+  <table class="pmo-meta">
+    <tr><th>Dự án</th><td>Hệ thống phân phối trực tuyến (Web + Mobile) — IB2600184512-00</td></tr>
+    <tr><th>Chủ đầu tư</th><td>Chuỗi cửa hàng thời trang QA</td></tr>
+    <tr><th>Nhà thầu</th><td>Sao Bắc Tech</td></tr>
+    <tr><th>Phiên bản / Ngày</th><td>1.0 · <label>Ngày hiệu lực <input type="date" name="e3_eff"></label></td></tr>
+    <tr><th>Chủ sở hữu</th><td>PO (QA) phối hợp PM Sao Bắc Tech thu thập</td></tr>
+    <tr><th>Lưu trữ</th><td>Confluence: QA-OMS / Feedback / Stakeholder · tóm tắt vào Closure §8</td></tr>
+  </table>
+
+  <div class="guide">
+    <details open>
+      <summary>Hướng dẫn điền (rút gọn)</summary>
+      <ol>
+        <li>Chọn đúng nhóm A–E (hoặc Pulse); chỉ điền phần của nhóm — tối đa 10 phút.</li>
+        <li>Likert 1–5: 1 = Rất không đồng ý · 3 = Trung bình · 5 = Rất đồng ý; N/A nếu không trải nghiệm.</li>
+        <li>NPS: sẵn sàng giới thiệu cách triển khai/phối hợp nhà thầu? 0–10.</li>
+        <li>Không đánh giá điểm nhân sự nhà thầu (xem E.2); không thay biên bản UAT/gate.</li>
+        <li>Trả lời theo trải nghiệm thực tế (pilot/go-live).</li>
+      </ol>
+    </details>
+  </div>
+
+  <h2>PHẦN 0 — Thông tin người trả lời</h2>
+  <table class="form">
+    <tr><th style="width:28%">Họ tên</th><td><input type="text" name="s0_name" placeholder="[điền]"></td></tr>
+    <tr><th>Email công việc</th><td><input type="email" name="s0_email" placeholder="[điền]"></td></tr>
+    <tr><th>Đơn vị / cửa hàng</th><td><input type="text" name="s0_unit" placeholder="[điền]"></td></tr>
+    <tr><th>Đợt khảo sát</th><td>
+      <label class="inline"><input type="radio" name="s0_wave" value="PulseR1"> Pulse R1</label>
+      <label class="inline"><input type="radio" name="s0_wave" value="PulseR2"> Pulse R2</label>
+      <label class="inline"><input type="radio" name="s0_wave" value="Mini"> Mini sau Pilot</label>
+      <label class="inline"><input type="radio" name="s0_wave" value="Full"> Full T30</label>
+    </td></tr>
+    <tr><th>Ngày điền</th><td><input type="date" name="s0_date"></td></tr>
+    <tr><th>Mức độ tham gia</th><td>
+      <label class="inline"><input type="radio" name="s0_level" value="freq"> Thường xuyên</label>
+      <label class="inline"><input type="radio" name="s0_level" value="occ"> Thỉnh thoảng</label>
+      <label class="inline"><input type="radio" name="s0_level" value="golive"> Chỉ dùng khi go-live/pilot</label>
+    </td></tr>
+  </table>
+
+
+<div class="group-panel active" data-group="A">
+<h2>PHIÊN BẢN A — Ban chỉ đạo / Product Owner</h2>
+<h3>A. Mục tiêu nghiệp vụ</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">A1</td><td>Hệ thống hỗ trợ <b>tự chủ kênh phân phối online</b> đúng định hướng chiến lược QA</td><td><div class="likert"><label class="inline"><input type="radio" name="a_a1" value="1"> 1</label><label class="inline"><input type="radio" name="a_a1" value="2"> 2</label><label class="inline"><input type="radio" name="a_a1" value="3"> 3</label><label class="inline"><input type="radio" name="a_a1" value="4"> 4</label><label class="inline"><input type="radio" name="a_a1" value="5"> 5</label><label class="inline"><input type="radio" name="a_a1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">A2</td><td>Phạm vi Must-have B.3 giao đúng cam kết hợp đồng (epic)</td><td><div class="likert"><label class="inline"><input type="radio" name="a_a2" value="1"> 1</label><label class="inline"><input type="radio" name="a_a2" value="2"> 2</label><label class="inline"><input type="radio" name="a_a2" value="3"> 3</label><label class="inline"><input type="radio" name="a_a2" value="4"> 4</label><label class="inline"><input type="radio" name="a_a2" value="5"> 5</label><label class="inline"><input type="radio" name="a_a2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">A3</td><td>Trải nghiệm mua của khách (tìm–chọn CH–đặt–giao) rõ ràng, theo dõi được</td><td><div class="likert"><label class="inline"><input type="radio" name="a_a3" value="1"> 1</label><label class="inline"><input type="radio" name="a_a3" value="2"> 2</label><label class="inline"><input type="radio" name="a_a3" value="3"> 3</label><label class="inline"><input type="radio" name="a_a3" value="4"> 4</label><label class="inline"><input type="radio" name="a_a3" value="5"> 5</label><label class="inline"><input type="radio" name="a_a3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">A4</td><td>Điều phối giao hàng nội bộ / cửa hàng được nhìn thấy trên hệ thống</td><td><div class="likert"><label class="inline"><input type="radio" name="a_a4" value="1"> 1</label><label class="inline"><input type="radio" name="a_a4" value="2"> 2</label><label class="inline"><input type="radio" name="a_a4" value="3"> 3</label><label class="inline"><input type="radio" name="a_a4" value="4"> 4</label><label class="inline"><input type="radio" name="a_a4" value="5"> 5</label><label class="inline"><input type="radio" name="a_a4" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">A5</td><td>Minh bạch tiến độ (sprint review, burn-up, mốc M) đủ để ra quyết định</td><td><div class="likert"><label class="inline"><input type="radio" name="a_a5" value="1"> 1</label><label class="inline"><input type="radio" name="a_a5" value="2"> 2</label><label class="inline"><input type="radio" name="a_a5" value="3"> 3</label><label class="inline"><input type="radio" name="a_a5" value="4"> 4</label><label class="inline"><input type="radio" name="a_a5" value="5"> 5</label><label class="inline"><input type="radio" name="a_a5" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>B. Chất lượng &amp; phối hợp nhà thầu</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">B1</td><td>Chất lượng sản phẩm tại thời điểm đánh giá ổn định, đáng tin</td><td><div class="likert"><label class="inline"><input type="radio" name="a_b1" value="1"> 1</label><label class="inline"><input type="radio" name="a_b1" value="2"> 2</label><label class="inline"><input type="radio" name="a_b1" value="3"> 3</label><label class="inline"><input type="radio" name="a_b1" value="4"> 4</label><label class="inline"><input type="radio" name="a_b1" value="5"> 5</label><label class="inline"><input type="radio" name="a_b1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B2</td><td>Nhà thầu phản hồi yêu cầu / sự cố đúng kỳ vọng</td><td><div class="likert"><label class="inline"><input type="radio" name="a_b2" value="1"> 1</label><label class="inline"><input type="radio" name="a_b2" value="2"> 2</label><label class="inline"><input type="radio" name="a_b2" value="3"> 3</label><label class="inline"><input type="radio" name="a_b2" value="4"> 4</label><label class="inline"><input type="radio" name="a_b2" value="5"> 5</label><label class="inline"><input type="radio" name="a_b2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B3</td><td>Quản lý thay đổi (C.11) minh bạch, không phát sinh ngoài kiểm soát</td><td><div class="likert"><label class="inline"><input type="radio" name="a_b3" value="1"> 1</label><label class="inline"><input type="radio" name="a_b3" value="2"> 2</label><label class="inline"><input type="radio" name="a_b3" value="3"> 3</label><label class="inline"><input type="radio" name="a_b3" value="4"> 4</label><label class="inline"><input type="radio" name="a_b3" value="5"> 5</label><label class="inline"><input type="radio" name="a_b3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B4</td><td>Quality gate / demo có đủ bằng chứng để Ban chỉ đạo yên tâm</td><td><div class="likert"><label class="inline"><input type="radio" name="a_b4" value="1"> 1</label><label class="inline"><input type="radio" name="a_b4" value="2"> 2</label><label class="inline"><input type="radio" name="a_b4" value="3"> 3</label><label class="inline"><input type="radio" name="a_b4" value="4"> 4</label><label class="inline"><input type="radio" name="a_b4" value="5"> 5</label><label class="inline"><input type="radio" name="a_b4" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>C. Đào tạo, bàn giao, sẵn sàng</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">C1</td><td>Đào tạo / tài liệu đủ cho tổ chức vận hành</td><td><div class="likert"><label class="inline"><input type="radio" name="a_c1" value="1"> 1</label><label class="inline"><input type="radio" name="a_c1" value="2"> 2</label><label class="inline"><input type="radio" name="a_c1" value="3"> 3</label><label class="inline"><input type="radio" name="a_c1" value="4"> 4</label><label class="inline"><input type="radio" name="a_c1" value="5"> 5</label><label class="inline"><input type="radio" name="a_c1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">C2</td><td>QA sẵn sàng vận hành với mô hình bảo hành 12 tháng</td><td><div class="likert"><label class="inline"><input type="radio" name="a_c2" value="1"> 1</label><label class="inline"><input type="radio" name="a_c2" value="2"> 2</label><label class="inline"><input type="radio" name="a_c2" value="3"> 3</label><label class="inline"><input type="radio" name="a_c2" value="4"> 4</label><label class="inline"><input type="radio" name="a_c2" value="5"> 5</label><label class="inline"><input type="radio" name="a_c2" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>D. Tổng thể</h3>
+
+<table class="form">
+<tr><th style="width:20%">Hài lòng tổng thể (1–5)</th><td><select name="a_sat"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+<tr><th>NPS (0–10)</th><td><select name="a_nps"><option value="">—</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td></tr>
+<tr><th>3 điều giữ lại</th><td>
+  1) <input type="text" name="a_k1"><br>
+  2) <input type="text" name="a_k2"><br>
+  3) <input type="text" name="a_k3">
+</td></tr>
+<tr><th>3 điều cải thiện</th><td>
+  1) <input type="text" name="a_i1"><br>
+  2) <input type="text" name="a_i2"><br>
+  3) <input type="text" name="a_i3">
+</td></tr>
+<tr><th>Rủi ro còn mở</th><td><textarea name="a_risk" placeholder="[điền]"></textarea></td></tr>
+</table>
+<p>Xác nhận: <input type="text" name="a_sig" placeholder="Chữ ký / email"> · Ngày <input type="date" name="a_sig_date"></p>
+
+</div>
+
+
+<div class="group-panel" data-group="B">
+<h2>PHIÊN BẢN B — IT Lead &amp; vận hành</h2>
+<h3>A. Sản phẩm &amp; vận hành kỹ thuật</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">B-A1</td><td>Kiến trúc/HLD/ICD đủ để đội IT QA tiếp quản</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_a1" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_a1" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_a1" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_a1" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_a1" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_a1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-A2</td><td>Giám sát, log, alert đủ dùng vận hành hàng ngày</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_a2" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_a2" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_a2" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_a2" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_a2" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_a2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-A3</td><td>Tích hợp Main DB / POS / CDC / cổng TT vận hành ổn</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_a3" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_a3" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_a3" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_a3" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_a3" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_a3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-A4</td><td>Quy trình release / rollback / backup rõ, thực hành được</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_a4" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_a4" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_a4" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_a4" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_a4" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_a4" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-A5</td><td>Bảo mật &amp; quyền truy cập PRD chấp nhận được</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_a5" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_a5" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_a5" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_a5" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_a5" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_a5" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-A6</td><td>Hiệu năng thực tế đáp ứng nhu cầu giờ cao điểm (theo quan sát)</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_a6" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_a6" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_a6" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_a6" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_a6" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_a6" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>B. Phối hợp &amp; bàn giao</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">B-B1</td><td>Nhà thầu minh bạch sự cố &amp; root cause</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_b1" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_b1" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_b1" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_b1" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_b1" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_b1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-B2</td><td>Tài liệu vận hành / OpenAPI / runbook đủ dùng</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_b2" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_b2" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_b2" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_b2" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_b2" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_b2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-B3</td><td>Đội IT QA có thể xử lý L1/L2 cơ bản trước khi escalate bảo hành</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_b3" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_b3" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_b3" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_b3" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_b3" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_b3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">B-B4</td><td>Bàn giao mã nguồn, môi trường, tài khoản đầy đủ (Full)</td><td><div class="likert"><label class="inline"><input type="radio" name="b_b_b4" value="1"> 1</label><label class="inline"><input type="radio" name="b_b_b4" value="2"> 2</label><label class="inline"><input type="radio" name="b_b_b4" value="3"> 3</label><label class="inline"><input type="radio" name="b_b_b4" value="4"> 4</label><label class="inline"><input type="radio" name="b_b_b4" value="5"> 5</label><label class="inline"><input type="radio" name="b_b_b4" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>C. Mở &amp; tổng thể</h3>
+
+<table class="form">
+<tr><th style="width:20%">Hài lòng tổng thể (1–5)</th><td><select name="b_sat"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+<tr><th>NPS (0–10)</th><td><select name="b_nps"><option value="">—</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td></tr>
+<tr><th>3 điều giữ lại</th><td>
+  1) <input type="text" name="b_k1"><br>
+  2) <input type="text" name="b_k2"><br>
+  3) <input type="text" name="b_k3">
+</td></tr>
+<tr><th>3 điều cải thiện</th><td>
+  1) <input type="text" name="b_i1"><br>
+  2) <input type="text" name="b_i2"><br>
+  3) <input type="text" name="b_i3">
+</td></tr>
+<tr><th>Rủi ro còn mở</th><td><textarea name="b_risk" placeholder="[điền]"></textarea></td></tr>
+</table>
+<p>Xác nhận: <input type="text" name="b_sig" placeholder="Chữ ký / email"> · Ngày <input type="date" name="b_sig_date"></p>
+
+<p>Nhu cầu hỗ trợ 30/90 ngày tới: <input type="text" name="b_support"></p>
+</div>
+
+
+<div class="group-panel" data-group="C">
+<h2>PHIÊN BẢN C — Cửa hàng pilot (và sau go-live — Full)</h2>
+<p>Cửa hàng: <input type="text" name="c_store" placeholder="[điền]"></p>
+<h3>A. Nghiệp vụ cửa hàng</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">C-A1</td><td>Nhân viên cửa hàng tìm hiểu đơn online dễ dàng</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_a1" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_a1" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_a1" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_a1" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_a1" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_a1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">C-A2</td><td>Thông tin tồn kho / sản phẩm trên app|web <b>đáng tin</b> khi phục vụ khách</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_a2" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_a2" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_a2" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_a2" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_a2" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_a2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">C-A3</td><td>Quy trình nhận–chuẩn bị–giao / bàn giao shipper rõ ràng hơn hoặc tương đương quy trình cũ</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_a3" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_a3" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_a3" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_a3" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_a3" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_a3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">C-A4</td><td>Hệ thống không gây chậm đáng kể giờ cao điểm tại cửa hàng</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_a4" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_a4" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_a4" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_a4" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_a4" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_a4" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">C-A5</td><td>Khi có sự cố, biết liên hệ ai và được hỗ trợ kịp</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_a5" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_a5" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_a5" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_a5" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_a5" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_a5" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>B. Đào tạo</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">C-B1</td><td>Đào tạo / video / HDSD đủ để thao tác độc lập</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_b1" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_b1" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_b1" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_b1" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_b1" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_b1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">C-B2</td><td>Tài liệu đúng thực tế màn hình đang dùng</td><td><div class="likert"><label class="inline"><input type="radio" name="c_c_b2" value="1"> 1</label><label class="inline"><input type="radio" name="c_c_b2" value="2"> 2</label><label class="inline"><input type="radio" name="c_c_b2" value="3"> 3</label><label class="inline"><input type="radio" name="c_c_b2" value="4"> 4</label><label class="inline"><input type="radio" name="c_c_b2" value="5"> 5</label><label class="inline"><input type="radio" name="c_c_b2" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>C. Mở</h3>
+
+<table class="form">
+<tr><th style="width:20%">Hài lòng tổng thể (1–5)</th><td><select name="c_sat"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+<tr><th>NPS (0–10)</th><td><select name="c_nps"><option value="">—</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td></tr>
+<tr><th>3 điều giữ lại</th><td>
+  1) <input type="text" name="c_k1"><br>
+  2) <input type="text" name="c_k2"><br>
+  3) <input type="text" name="c_k3">
+</td></tr>
+<tr><th>3 điều cải thiện</th><td>
+  1) <input type="text" name="c_i1"><br>
+  2) <input type="text" name="c_i2"><br>
+  3) <input type="text" name="c_i3">
+</td></tr>
+<tr><th>Rủi ro còn mở</th><td><textarea name="c_risk" placeholder="[điền]"></textarea></td></tr>
+</table>
+<p>Xác nhận: <input type="text" name="c_sig" placeholder="Chữ ký / email"> · Ngày <input type="date" name="c_sig_date"></p>
+
+</div>
+
+
+<div class="group-panel" data-group="D">
+<h2>PHIÊN BẢN D — Kho / Shipper</h2>
+<h3>A. Điều phối &amp; giao hàng</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">D-A1</td><td>Thông tin đơn / địa chỉ / khung giờ đủ để giao</td><td><div class="likert"><label class="inline"><input type="radio" name="d_d_a1" value="1"> 1</label><label class="inline"><input type="radio" name="d_d_a1" value="2"> 2</label><label class="inline"><input type="radio" name="d_d_a1" value="3"> 3</label><label class="inline"><input type="radio" name="d_d_a1" value="4"> 4</label><label class="inline"><input type="radio" name="d_d_a1" value="5"> 5</label><label class="inline"><input type="radio" name="d_d_a1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">D-A2</td><td>Cập nhật trạng thái đơn trên app thuận tiện</td><td><div class="likert"><label class="inline"><input type="radio" name="d_d_a2" value="1"> 1</label><label class="inline"><input type="radio" name="d_d_a2" value="2"> 2</label><label class="inline"><input type="radio" name="d_d_a2" value="3"> 3</label><label class="inline"><input type="radio" name="d_d_a2" value="4"> 4</label><label class="inline"><input type="radio" name="d_d_a2" value="5"> 5</label><label class="inline"><input type="radio" name="d_d_a2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">D-A3</td><td>Đồng bộ với cửa hàng / kho không gây nhầm đơn</td><td><div class="likert"><label class="inline"><input type="radio" name="d_d_a3" value="1"> 1</label><label class="inline"><input type="radio" name="d_d_a3" value="2"> 2</label><label class="inline"><input type="radio" name="d_d_a3" value="3"> 3</label><label class="inline"><input type="radio" name="d_d_a3" value="4"> 4</label><label class="inline"><input type="radio" name="d_d_a3" value="5"> 5</label><label class="inline"><input type="radio" name="d_d_a3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">D-A4</td><td>Ứng dụng mobile ổn định trên thiết bị đang dùng</td><td><div class="likert"><label class="inline"><input type="radio" name="d_d_a4" value="1"> 1</label><label class="inline"><input type="radio" name="d_d_a4" value="2"> 2</label><label class="inline"><input type="radio" name="d_d_a4" value="3"> 3</label><label class="inline"><input type="radio" name="d_d_a4" value="4"> 4</label><label class="inline"><input type="radio" name="d_d_a4" value="5"> 5</label><label class="inline"><input type="radio" name="d_d_a4" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">D-A5</td><td>Đào tạo thao tác đủ ngắn gọn để đi làm ngay</td><td><div class="likert"><label class="inline"><input type="radio" name="d_d_a5" value="1"> 1</label><label class="inline"><input type="radio" name="d_d_a5" value="2"> 2</label><label class="inline"><input type="radio" name="d_d_a5" value="3"> 3</label><label class="inline"><input type="radio" name="d_d_a5" value="4"> 4</label><label class="inline"><input type="radio" name="d_d_a5" value="5"> 5</label><label class="inline"><input type="radio" name="d_d_a5" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>B. Mở &amp; tổng thể</h3>
+
+<table class="form">
+<tr><th style="width:20%">Hài lòng tổng thể (1–5)</th><td><select name="d_sat"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+<tr><th>NPS (0–10)</th><td><select name="d_nps"><option value="">—</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td></tr>
+<tr><th>3 điều giữ lại</th><td>
+  1) <input type="text" name="d_k1"><br>
+  2) <input type="text" name="d_k2"><br>
+  3) <input type="text" name="d_k3">
+</td></tr>
+<tr><th>3 điều cải thiện</th><td>
+  1) <input type="text" name="d_i1"><br>
+  2) <input type="text" name="d_i2"><br>
+  3) <input type="text" name="d_i3">
+</td></tr>
+<tr><th>Rủi ro còn mở</th><td><textarea name="d_risk" placeholder="[điền]"></textarea></td></tr>
+</table>
+<p>Xác nhận: <input type="text" name="d_sig" placeholder="Chữ ký / email"> · Ngày <input type="date" name="d_sig_date"></p>
+
+</div>
+
+
+<div class="group-panel" data-group="E">
+<h2>PHIÊN BẢN E — Kế toán / Marketing</h2>
+<h3>A. Quy trình liên quan</h3>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">E-A1</td><td>Đối soát đơn / doanh thu online / hóa đơn điện tử rõ ràng hơn trước</td><td><div class="likert"><label class="inline"><input type="radio" name="e_e_a1" value="1"> 1</label><label class="inline"><input type="radio" name="e_e_a1" value="2"> 2</label><label class="inline"><input type="radio" name="e_e_a1" value="3"> 3</label><label class="inline"><input type="radio" name="e_e_a1" value="4"> 4</label><label class="inline"><input type="radio" name="e_e_a1" value="5"> 5</label><label class="inline"><input type="radio" name="e_e_a1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">E-A2</td><td>Số liệu phục vụ báo cáo / chiến dịch (nếu có) đủ tin cậy</td><td><div class="likert"><label class="inline"><input type="radio" name="e_e_a2" value="1"> 1</label><label class="inline"><input type="radio" name="e_e_a2" value="2"> 2</label><label class="inline"><input type="radio" name="e_e_a2" value="3"> 3</label><label class="inline"><input type="radio" name="e_e_a2" value="4"> 4</label><label class="inline"><input type="radio" name="e_e_a2" value="5"> 5</label><label class="inline"><input type="radio" name="e_e_a2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">E-A3</td><td>Thay đổi quy trình được thông báo và đào tạo kịp</td><td><div class="likert"><label class="inline"><input type="radio" name="e_e_a3" value="1"> 1</label><label class="inline"><input type="radio" name="e_e_a3" value="2"> 2</label><label class="inline"><input type="radio" name="e_e_a3" value="3"> 3</label><label class="inline"><input type="radio" name="e_e_a3" value="4"> 4</label><label class="inline"><input type="radio" name="e_e_a3" value="5"> 5</label><label class="inline"><input type="radio" name="e_e_a3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">E-A4</td><td>Phối hợp nhà thầu khi có lệch chứng từ / dữ liệu là minh bạch</td><td><div class="likert"><label class="inline"><input type="radio" name="e_e_a4" value="1"> 1</label><label class="inline"><input type="radio" name="e_e_a4" value="2"> 2</label><label class="inline"><input type="radio" name="e_e_a4" value="3"> 3</label><label class="inline"><input type="radio" name="e_e_a4" value="4"> 4</label><label class="inline"><input type="radio" name="e_e_a4" value="5"> 5</label><label class="inline"><input type="radio" name="e_e_a4" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<h3>B. Mở &amp; tổng thể</h3>
+
+<table class="form">
+<tr><th style="width:20%">Hài lòng tổng thể (1–5)</th><td><select name="e_sat"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
+<tr><th>NPS (0–10)</th><td><select name="e_nps"><option value="">—</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td></tr>
+<tr><th>3 điều giữ lại</th><td>
+  1) <input type="text" name="e_k1"><br>
+  2) <input type="text" name="e_k2"><br>
+  3) <input type="text" name="e_k3">
+</td></tr>
+<tr><th>3 điều cải thiện</th><td>
+  1) <input type="text" name="e_i1"><br>
+  2) <input type="text" name="e_i2"><br>
+  3) <input type="text" name="e_i3">
+</td></tr>
+<tr><th>Rủi ro còn mở</th><td><textarea name="e_risk" placeholder="[điền]"></textarea></td></tr>
+</table>
+<p>Xác nhận: <input type="text" name="e_sig" placeholder="Chữ ký / email"> · Ngày <input type="date" name="e_sig_date"></p>
+
+</div>
+
+
+<div class="group-panel" data-group="Pulse">
+<h2>PHIÊN BẢN PULSE (R1/R2) — 5 câu chung (≤ 3 phút)</h2>
+<p>Chỉ dùng cho Ban dự án / IT Lead sau demo R1 hoặc dogfooding R2.</p>
+<table class="form"><thead><tr><th>#</th><th>Câu hỏi</th><th style="width:36%">1–5 / N/A</th></tr></thead><tbody>
+<tr><td class="c">P1</td><td>Increment demo/beta đúng ưu tiên nghiệp vụ đã thống nhất</td><td><div class="likert"><label class="inline"><input type="radio" name="p_p1" value="1"> 1</label><label class="inline"><input type="radio" name="p_p1" value="2"> 2</label><label class="inline"><input type="radio" name="p_p1" value="3"> 3</label><label class="inline"><input type="radio" name="p_p1" value="4"> 4</label><label class="inline"><input type="radio" name="p_p1" value="5"> 5</label><label class="inline"><input type="radio" name="p_p1" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">P2</td><td>Chất lượng bản demo/beta đủ để lấy phản hồi hữu ích</td><td><div class="likert"><label class="inline"><input type="radio" name="p_p2" value="1"> 1</label><label class="inline"><input type="radio" name="p_p2" value="2"> 2</label><label class="inline"><input type="radio" name="p_p2" value="3"> 3</label><label class="inline"><input type="radio" name="p_p2" value="4"> 4</label><label class="inline"><input type="radio" name="p_p2" value="5"> 5</label><label class="inline"><input type="radio" name="p_p2" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">P3</td><td>Tiến độ và rủi ro được nhà thầu trình bày minh bạch</td><td><div class="likert"><label class="inline"><input type="radio" name="p_p3" value="1"> 1</label><label class="inline"><input type="radio" name="p_p3" value="2"> 2</label><label class="inline"><input type="radio" name="p_p3" value="3"> 3</label><label class="inline"><input type="radio" name="p_p3" value="4"> 4</label><label class="inline"><input type="radio" name="p_p3" value="5"> 5</label><label class="inline"><input type="radio" name="p_p3" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">P4</td><td>Phản hồi của QA được tiếp thu vào backlog rõ ràng</td><td><div class="likert"><label class="inline"><input type="radio" name="p_p4" value="1"> 1</label><label class="inline"><input type="radio" name="p_p4" value="2"> 2</label><label class="inline"><input type="radio" name="p_p4" value="3"> 3</label><label class="inline"><input type="radio" name="p_p4" value="4"> 4</label><label class="inline"><input type="radio" name="p_p4" value="5"> 5</label><label class="inline"><input type="radio" name="p_p4" value="N/A"> N/A</label></div></td></tr>
+<tr><td class="c">P5</td><td>Mức tin tưởng tiếp tục theo kế hoạch release tới mốc tiếp theo</td><td><div class="likert"><label class="inline"><input type="radio" name="p_p5" value="1"> 1</label><label class="inline"><input type="radio" name="p_p5" value="2"> 2</label><label class="inline"><input type="radio" name="p_p5" value="3"> 3</label><label class="inline"><input type="radio" name="p_p5" value="4"> 4</label><label class="inline"><input type="radio" name="p_p5" value="5"> 5</label><label class="inline"><input type="radio" name="p_p5" value="N/A"> N/A</label></div></td></tr>
+</tbody></table>
+<p>Một điều cải thiện trước mốc tới: <input type="text" name="p_improve"></p>
+</div>
+
+
+  <p class="disclaimer">Bản mẫu hư cấu phục vụ bài tập đóng vai môn Quản trị dự án CNTT. Không có giá trị pháp lý; không phải tài liệu đánh giá thầu trong E-HSDT.</p>
+  <p class="print-hint">In bằng trình duyệt → Save as PDF · khổ A4</p>
+  <nav class="pmo-nav no-print">
+    <a href="index.html">Danh mục</a>
+    <a href="pmo.html">E.0</a>
+    <a href="pmo-gate.html">E.1</a>
+    <a href="pmo-peer.html">E.2</a>
+    <a href="pmo-closure.html">E.4</a>
+    <a href="pmo-lessons.html">E.5</a>
+  </nav>
+</section>
+</form>
+</main>
+</div>
+<script src="assets/pmo.js"></script>
+</body>
+</html>
